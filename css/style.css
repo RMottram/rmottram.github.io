@@ -1,0 +1,112 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.navbar
+{
+    /* background-color: rgb(110, 105, 105); */
+    background-color: transparent;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar {
+      background-color: rgb(58, 146, 236);
+    }
+  }
+
+.nav-link {
+    color: white !important;
+}
+
+.navbar-nav > li
+{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+#about-hover:hover {
+    color: rgb(255, 101, 101) !important;
+    text-shadow: 1px 1px 6px black;
+}
+
+#portfolio-hover:hover {
+    color: rgb(255, 190, 101) !important;
+    text-shadow: 0px 0px 6px black;
+}
+
+#contact-hover:hover {
+    color: rgb(58, 146, 236) !important;
+    text-shadow: 0px 0px 6px black;
+}
+
+.jumbotron {
+    background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url('/assets/hero.png');
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+}
+
+#about-me {
+    background-color: rgb(255, 101, 101) !important;
+}
+
+#my-portfolio {
+    background-color: rgb(255, 190, 101);
+}
+
+.hero-text {
+    font-size: 4rem;
+    letter-spacing: .6rem;
+    font-family: 'Nunito', serif;
+    font-weight: bold;
+    color: white;
+}
+
+.hero-sub-text {
+    font-size: 2rem;
+    letter-spacing: .2rem;
+    font-family: 'Nunito', serif;
+    color: white;
+}
+
+.container {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.rounded-circle
+{
+    margin: auto;
+    height: auto;
+    width: auto;
+    border: 10px solid transparent;
+}
+
+.about-title {
+    font-size: 6rem;
+    font-family: 'Nunito', serif;
+}
+
+.about-text {
+    font-size: 1.4rem;
+    font-family: 'Nunito', serif;
+}
+
+.portfolio-title {
+    font-size: 6rem;
+    font-family: 'Nunito', serif;
+}
+
+.portfolio-text {
+    font-size: 1.4rem;
+    font-family: 'Nunito', serif;
+}
+
+.umbriel-title {
+    font-size: 3rem;
+    font-family: 'Nunito', serif;
+}
