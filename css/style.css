@@ -2,6 +2,10 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    font-size: 16px;
+}
+
 .navbar
 {
     /* background-color: rgb(110, 105, 105); */
@@ -87,7 +91,7 @@ html {
 }
 
 .about-title {
-    font-size: 4rem;
+    font-size: 6rem;
     font-family: 'Nunito', serif;
 }
 
@@ -97,7 +101,7 @@ html {
 }
 
 .portfolio-title {
-    font-size: 4rem;
+    font-size: 6rem;
     font-family: 'Nunito', serif;
 }
 
@@ -107,6 +111,48 @@ html {
 }
 
 .umbriel-title {
-    font-size: 2rem;
+    font-size: 4rem;
     font-family: 'Nunito', serif;
 }
+
+@media screen and (max-width: 768px) {
+    .hero-text {
+        font-size: 3rem;
+        letter-spacing: .6rem;
+        font-family: 'Nunito', serif;
+        font-weight: bold;
+        color: white;
+    }
+    
+    .hero-sub-text {
+        font-size: 1.4rem;
+        letter-spacing: .2rem;
+        font-family: 'Nunito', serif;
+        color: white;
+    }
+    
+    .about-title {
+        font-size: 3rem;
+        font-family: 'Nunito', serif;
+    }
+    
+    .about-text {
+        font-size: 1.2rem;
+        font-family: 'Nunito', serif;
+    }
+    
+    .portfolio-title {
+        font-size: 3rem;
+        font-family: 'Nunito', serif;
+    }
+    
+    .portfolio-text {
+        font-size: 1.2rem;
+        font-family: 'Nunito', serif;
+    }
+    
+    .umbriel-title {
+        font-size: 2rem;
+        font-family: 'Nunito', serif;
+    }
+  }
