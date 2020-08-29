@@ -12,12 +12,7 @@ body {
     background-color: transparent;
     font-size: 1.4rem;
     text-align: center;
-}
-
-@media only screen and (max-width: 991px) {
-    .navbar {
-      background-color: rgb(58, 146, 236);
-    }
+    letter-spacing: .1rem;
 }
 
 .nav-link {
@@ -26,8 +21,8 @@ body {
 
 .navbar-nav > li
 {
-    margin-left: 15px;
-    margin-right: 15px;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
 .fas {
@@ -51,12 +46,20 @@ body {
 
 .jumbotron {
     background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url('../assets/hero.png');
-    height: 50rem;
+    height: 70rem;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
+}
+
+.container img {
+    width: 4rem;
+    height: 4rem;
+    filter: invert();
+    margin-left: 8rem;
+    margin-right: 8rem;
 }
 
 .vertical-center {
@@ -67,27 +70,28 @@ body {
 
 #about-me {
     background-color: rgb(255, 101, 101);
-    height: 80rem;
+    height: 100%;
     align-content: center;
 }
 
 #my-portfolio {
     background-color: rgb(255, 190, 101);
-    height: 80rem;
+    height: 100%;
     align-content: center;
 }
 
 .hero-text {
-    font-size: 4rem;
-    letter-spacing: .6rem;
-    font-family: 'Nunito', serif;
-    font-weight: bold;
+    font-size: 6rem;
+    letter-spacing: .4rem;
+    font-family: 'Menlo', monospace;
+    font-weight: 800;
     color: white;
 }
 
 .hero-sub-text {
     font-size: 2rem;
     letter-spacing: .2rem;
+    font-weight: 400;
     font-family: 'Nunito', serif;
     color: white;
 }
@@ -110,38 +114,65 @@ body {
 .about-title {
     font-size: 6rem;
     font-family: 'Nunito', serif;
-    font-weight: 700;
-    letter-spacing: .2rem;
+    font-weight: 800;
+    letter-spacing: .4rem;
 }
 
 .about-text {
     font-size: 1.4rem;
     font-family: 'Nunito', serif;
+    font-weight: 200;
 }
 
 .portfolio-title {
     font-size: 6rem;
     font-family: 'Nunito', serif;
-    font-weight: 700;
-    letter-spacing: .2rem;
+    font-weight: 800;
+    letter-spacing: .4rem;
 }
 
 .portfolio-text {
     font-size: 1.4rem;
     font-family: 'Nunito', serif;
+    font-weight: 200;
 }
 
 .umbriel-title {
     font-size: 4rem;
     font-family: 'Nunito', serif;
-    font-weight: 700;
-    letter-spacing: .2rem;
+    font-weight: 600;
+    letter-spacing: .4rem;
 }
+
+.subtitles {
+    font-size: 2rem;
+    font-family: 'Nunito', serif;
+    font-weight: 400;
+}
+
+.carousel {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+}
+
+
+/* Media queries */
 
 @media screen and (max-width: 768px) {
 
+    .jumbotron {
+        height: 35rem !important;
+    }
+
     .navbar {
         font-size: 1.2rem;
+    }
+
+    .navbar-nav > li {
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 
     .fas {
@@ -149,42 +180,68 @@ body {
     }
 
     .hero-text {
-        font-size: 3rem;
+        font-size: 1.8rem;
         letter-spacing: .6rem;
         font-family: 'Nunito', serif;
-        font-weight: bold;
+        font-weight: 400 !important;
         color: white;
     }
     
     .hero-sub-text {
-        font-size: 1.4rem;
+        font-size: 1rem;
         letter-spacing: .2rem;
         font-family: 'Nunito', serif;
+        font-weight: 200 !important;
         color: white;
     }
     
     .about-title {
         font-size: 4rem;
+        font-weight: 600 !important;
         font-family: 'Nunito', serif;
     }
     
     .about-text {
         font-size: 1.2rem;
+        font-weight: 200 !important;
         font-family: 'Nunito', serif;
     }
     
     .portfolio-title {
         font-size: 4rem;
+        font-weight: 600 !important;
         font-family: 'Nunito', serif;
     }
     
     .portfolio-text {
         font-size: 1.2rem;
+        font-weight: 200 !important;
         font-family: 'Nunito', serif;
     }
     
     .umbriel-title {
         font-size: 2rem;
+        font-weight: 400 !important;
         font-family: 'Nunito', serif;
     }
-  }
+
+    .subtitles {
+        font-size: 1.8rem;
+        font-family: 'Nunito', serif;
+        font-weight: 400;
+    }
+}
+
+/* Override when drop-down menu  appears */
+@media only screen and (max-width: 991px) {
+    .navbar {
+      background-color: rgb(58, 146, 236);
+    }
+}
+
+/* Remove parallex from mobile devices */
+@media only screen and (max-width: 991) {
+    .jumbotron {
+        background-attachment: scroll !important;
+    }
+}
