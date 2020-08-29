@@ -87,7 +87,7 @@ html {
 }
 
 .about-title {
-    font-size: 6rem;
+    font-size: 4rem;
     font-family: 'Nunito', serif;
 }
 
@@ -97,7 +97,7 @@ html {
 }
 
 .portfolio-title {
-    font-size: 6rem;
+    font-size: 4rem;
     font-family: 'Nunito', serif;
 }
 
@@ -107,6 +107,6 @@ html {
 }
 
 .umbriel-title {
-    font-size: 3rem;
+    font-size: 2rem;
     font-family: 'Nunito', serif;
 }
