@@ -10,15 +10,15 @@ body {
 {
     /* background-color: rgb(110, 105, 105); */
     background-color: transparent;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     text-align: center;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
     .navbar {
       background-color: rgb(58, 146, 236);
     }
-  }
+}
 
 .nav-link {
     color: white !important;
@@ -30,9 +30,13 @@ body {
     margin-right: 15px;
 }
 
+.fas {
+    font-size: 1.6rem !important;
+}
+
 #about-hover:hover {
     color: rgb(255, 101, 101) !important;
-    text-shadow: 1px 1px 6px black;
+    text-shadow: 0px 0px 6px black;
 }
 
 #portfolio-hover:hover {
@@ -47,17 +51,30 @@ body {
 
 .jumbotron {
     background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url('../assets/hero.png');
+    height: 50rem;
     background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
 }
 
+.vertical-center {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+}
+
 #about-me {
-    background-color: rgb(255, 101, 101) !important;
+    background-color: rgb(255, 101, 101);
+    height: 80rem;
+    align-content: center;
 }
 
 #my-portfolio {
     background-color: rgb(255, 190, 101);
+    height: 80rem;
+    align-content: center;
 }
 
 .hero-text {
@@ -93,6 +110,8 @@ body {
 .about-title {
     font-size: 6rem;
     font-family: 'Nunito', serif;
+    font-weight: 700;
+    letter-spacing: .2rem;
 }
 
 .about-text {
@@ -103,6 +122,8 @@ body {
 .portfolio-title {
     font-size: 6rem;
     font-family: 'Nunito', serif;
+    font-weight: 700;
+    letter-spacing: .2rem;
 }
 
 .portfolio-text {
@@ -113,9 +134,20 @@ body {
 .umbriel-title {
     font-size: 4rem;
     font-family: 'Nunito', serif;
+    font-weight: 700;
+    letter-spacing: .2rem;
 }
 
 @media screen and (max-width: 768px) {
+
+    .navbar {
+        font-size: 1.2rem;
+    }
+
+    .fas {
+        font-size: 1.4rem !important;
+    }
+
     .hero-text {
         font-size: 3rem;
         letter-spacing: .6rem;
@@ -132,7 +164,7 @@ body {
     }
     
     .about-title {
-        font-size: 3rem;
+        font-size: 4rem;
         font-family: 'Nunito', serif;
     }
     
@@ -142,7 +174,7 @@ body {
     }
     
     .portfolio-title {
-        font-size: 3rem;
+        font-size: 4rem;
         font-family: 'Nunito', serif;
     }
     
