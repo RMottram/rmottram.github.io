@@ -47,7 +47,8 @@ body {
 
 .jumbotron {
     background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url('../assets/hero.png');
-    height: 100%;
+    height: 50rem;
+    width: 100%;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -59,8 +60,8 @@ body {
     width: 4rem;
     height: 4rem;
     /* filter: invert(); */
-    margin-left: 8rem;
-    margin-right: 8rem;
+    margin-left: 6rem;
+    margin-right: 6rem;
 }
 
 .vertical-center {
@@ -91,15 +92,15 @@ body {
     font-size: 6rem;
     letter-spacing: .4rem;
     font-family: 'Menlo', monospace;
-    font-weight: 800;
+    font-weight: 400;
     color: white;
 }
 
 .hero-sub-text {
     font-size: 2rem;
     letter-spacing: .2rem;
-    font-weight: 400;
-    font-family: 'Nunito', serif;
+    font-weight: 200;
+    font-family: 'Menlo', monospace;
     color: white;
 }
 
@@ -187,7 +188,8 @@ body {
 @media screen and (max-width: 768px) {
 
     .jumbotron {
-        height: 35rem !important;
+        height: 30rem !important;
+        width: 100%;
     }
 
     .navbar {
@@ -207,7 +209,7 @@ body {
         font-size: 1.4rem;
         letter-spacing: .6rem;
         font-family: 'Nunito', serif;
-        font-weight: 400 !important;
+        font-weight: 200 !important;
         color: white;
     }
     
@@ -215,7 +217,7 @@ body {
         font-size: 1rem;
         letter-spacing: .2rem;
         font-family: 'Nunito', serif;
-        font-weight: 200 !important;
+        font-weight: 100 !important;
         color: white;
     }
     
@@ -270,8 +272,8 @@ body {
         width: 2rem;
         height: 2rem;
         /* filter: invert(); */
-        margin-left: 4rem;
-        margin-right: 4rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
     }
 }
 
