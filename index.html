@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/hover.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -42,9 +43,6 @@
         <div class="container">
         <h1 class="hero-text align-middle typing-anim"><span class="type"></span></h1>
         <h2 class="hero-sub-text align-middle">Computer Science by Research postgraduate</h2>
-        <!-- <a href="https://github.com/RMottram"><img class="hero-img hvr-grow" src="./assets/github.png" alt="github link"></a>
-        <a href="https://www.instagram.com/ryan.codesuk/"><img class="hero-img hvr-grow" src="./assets/insta.png" alt="instagram link"></a>
-        <a href="https://www.linkedin.com/in/ryan-mottram/"><img class="hero-img hvr-grow" src="./assets/linkedin.png" alt="linkedin link"></a> -->
       </div>
       </div>
       <!-- Jumbotron E -->
@@ -58,16 +56,16 @@
           </div>
           <div class="col-lg-8" style="text-align: center;">
             <br><br><br><br>
-            <h1 class="about-title">About</h1>
-            <img src="./assets/me-sm.jpg" class="rounded-circle" alt="the developer">
+            <h1 data-aos="fade-down" data-aos-delay="100" class="about-title">About</h1>
+            <img data-aos="fade-down" data-aos-delay="100" src="./assets/me-sm.jpg" class="rounded-circle" alt="the developer">
             <br>
-            <p class="about-text">A postgraduate originally from Lowestoft attending the University of Lincoln, UK undergoing a
+            <p data-aos="fade-left" data-aos-delay="100" class="about-text">A postgraduate originally from Lowestoft attending the University of Lincoln, UK undergoing a
               Computer Science by Research Masters in cyber security and machine learning. Giving you an insight to what I have done/doing/can do and would
               like to do for myself or even you?
               <br><br>
               So what you waiting for? Take a look at what I have done or read more about me and make your own opinion.</p>
               <br><br>
-              <p class="about-text">My interest never started in tech and programming, it started in sport where I did Sport and Exercise Sciences in high school and college.
+              <p data-aos="fade-right" data-aos-delay="100" class="about-text">My interest never started in tech and programming, it started in sport where I did Sport and Exercise Sciences in high school and college.
                 After college I stared working full time in a restaurant waiting on tables for 2 years before attending college  again to train in technology.
                 After attending college for another 2 years and earning very high grades, I started University in 2017 where I have had the most amazing experience
                 and learnt so many valuable skills in the area of Computer Science.
@@ -90,10 +88,10 @@
 
           <div class="col-lg-8" style="text-align: center;">
             <br><br><br><br>
-            <h1 class="portfolio-title">Portfolio</h1>
-          <img src="./assets/umbriel-sm.png" alt="umbriel logo" class="rounded-circle">
-          <h1 class="umbriel-title">Umbriel</h1>
-          <p class="portfolio-text">This was a little summer project after completing my third year of University to ease the boredom of the summer break.
+            <h1 data-aos="fade-down" data-aos-delay="100" class="portfolio-title">Portfolio</h1>
+          <img data-aos="fade" data-aos-delay="100" src="./assets/umbriel-sm.png" alt="umbriel logo" class="rounded-circle">
+          <h1 data-aos="fade" data-aos-delay="100" class="umbriel-title">Umbriel</h1>
+          <p data-aos="fade-left" data-aos-delay="100" class="portfolio-text">This was a little summer project after completing my third year of University to ease the boredom of the summer break.
           The inspiration for the project was for one it took a feature from my University project into a more sophisticated version and also my password manager subscription
           was coming to an end so I could use this as a free alternative.
           </p>
@@ -101,8 +99,9 @@
 
           <!-- Row 2,1 Portfolio S -->
           <div class="row">
-            <div class="col-lg-8">
+            <div data-aos="fade-left" data-aos-delay="100" class="col-lg-8">
           <h1 class="subtitles">Technologies Used</h1>
+          <p class="portfolio-text">- Xcode</p>
             <p class="portfolio-text">- SwiftUI</p>
             <p class="portfolio-text">- CoreData</p>
             <p class="portfolio-text">- CloudKit</p>
@@ -115,7 +114,7 @@
             <br>
           </div>
 
-          <div class="col-lg-4">
+          <div data-aos="fade-right" data-aos-delay="100" class="col-lg-4">
             <div class="carousel slide" data-ride="carousel" data-interval="3000">
               <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -155,7 +154,197 @@
         </div>
         <!-- Row 2 Portfolio E -->
 
+        <!-- Row 3 Portfolio S -->
+        <div class="row" id="about-me">
+          <div class="col-lg-2">
+          </div>
 
+          <div class="col-lg-8" style="text-align: center;">
+            <br><br><br><br>
+          <img data-aos="fade" data-aos-delay="100" src="./assets/project-sc-2.png" id="uni-proj-sc" alt="umbriel logo">
+          <h1 data-aos="fade" data-aos-delay="100" class="umbriel-title">University Project</h1>
+          <p data-aos="fade-left" data-aos-delay="100" class="portfolio-text">I chose my final year project to be an application that can identify mobile vulnerabilities and output the results to the user. This combined two of my interests in technology; mobile app development and cyber security. <br><br>I chose the kind of vulnerabilities the app would identify which included weak passwords, un-secure WiFi, file checker and connected Bluetooth devices. A password would be classified weak by using pre-determined attributes such as length, use of uppercase and lowercase letters, numbers and symbols. The WiFi scanner checks for the kind of ports that are open and would instruct the user if any unnecessary ports were open that could cause their phone to be hacked. The Bluetooth connection feature would output any connected devices and if a user did not recognise any they can delete it. The file checker allows the user to browse the file system on their device and they can select a document which would be checked if it could contain malicious code that would compromise the device.
+          </p>
+          <br><br>
+
+          <!-- Row 3,1 Portfolio S -->
+          <div class="row">
+
+            <div class="col-lg-2">
+            </div>
+
+            <div data-aos="fade-left" data-aos-delay="100" class="col-lg-8">
+          <h1 class="subtitles">Technologies Used</h1>
+            <p class="portfolio-text">- Visual Studio - Xamarin.iOS</p>
+            <p class="portfolio-text">- C#  - UIKit - CloudKit</p>
+            <p class="portfolio-text">- CoreBluetooth - MobileCoreServices</p>
+            <br>
+            <h1 class="subtitles">Features</h1>
+            <p class="portfolio-text">- Password strength checker</p>
+            <p class="portfolio-text">- Internet port scanner</p>
+            <p class="portfolio-text">- File checker</p>
+            <p class="portfolio-text">- Bluetooth scanner</p>
+            <p class="portfolio-text">- Page to help educate users to stay safe</p>
+          </div>
+
+          <div data-aos="fade-right" data-aos-delay="100" class="col-lg-2">
+          </div>
+
+          </div>
+          <!-- Row 3,1 Portfolio E -->
+          </div>
+          <br><br>
+          <div class="col-lg-2">
+          </div>
+
+        </div>
+        <!-- Row 3 Portfolio E -->
+
+        <!-- Row 4 Portfolio S -->
+        <div class="row" id="my-portfolio">
+          <div class="col-lg-2">
+          </div>
+
+          <div class="col-lg-8" style="text-align: center;">
+            <br><br><br><br>
+          <img data-aos="fade" data-aos-delay="100" src="./assets/wally-sc-2.png" id="wally-sc" alt="umbriel logo">
+          <h1 data-aos="fade" data-aos-delay="100" class="umbriel-title">Where's Wally?</h1>
+          <p data-aos="fade-left" data-aos-delay="100" class="portfolio-text">Where's Wally or for you Americans out there, Waldo! Was my second year assignment in the Objective Oriented Programming (OOP) module at University. The aim of the assignment was to use OOP principles to programatically find Wally in a black and white image. <br><br> The program consisted of importing the original black and white image, a reference image of Wally also in black and white and the algorithms in the program would cross reference the pixel values of Wally to the scene image to try and identify the closest relating values. After the algorithm has finished the cross referencing, the program would output a second scene image with the area of where the program thought Wally was hiding shaded slightly darker. More can be seen in the demo video.
+          </p>
+          <br><br>
+
+          <!-- Row 4,1 Portfolio S -->
+          <div class="row">
+
+            <div class="col-lg-2">
+            </div>
+
+            <div data-aos="fade-left" data-aos-delay="100" class="col-lg-8">
+          <h1 class="subtitles">Technologies Used</h1>
+            <p class="portfolio-text">- Visual Studio</p>
+            <p class="portfolio-text">- C++</p>
+            <p class="portfolio-text">- 2D Matrices</p>
+            <p class="portfolio-text">- Polymorphism</p>
+            <br>
+            <h1 class="subtitles">Features</h1>
+            <p class="portfolio-text">- Output image of the position of Wally</p>
+            <p class="portfolio-text">- Where's Wally facts while program is performing calculations</p>
+          </div>
+
+          <div data-aos="fade-right" data-aos-delay="100" class="col-lg-2">
+          </div>
+
+          </div>
+          <!-- Row 4,1 Portfolio E -->
+          <br><br>
+          </div>
+
+          <div class="col-lg-2">
+          </div>
+
+        </div>
+        <!-- Row 4 Portfolio E -->
+
+        <!-- Row 5 About S -->
+        <div class="row" id="contact-me">
+
+          <div class="col-lg-6" style="text-align: center;">
+            <br><br><br><br>
+
+            <div class="container">
+              <!-- <h1 data-aos="fade-down" data-aos-delay="100" class="contact-title">Contact Me</h1> -->
+            <p data-aos="fade-right" data-aos-delay="100" class="about-text">My other projects and work can be found on my GitHub page!</p>
+            <a data-aos="fade-right" data-aos-delay="100" href="https://github.com/RMottram"><img class="hero-img hvr-grow" src="./assets/github.png" alt="github link"></a>
+            <br><br>
+            <p class="about-text">You can get in contact with me using my Instagram or LinkedIn socials or use the contact form.</p>
+            <a data-aos="fade-right" data-aos-delay="100" href="https://instagram.com/ryan.codesuk"><img class="hero-img hvr-grow" src="./assets/insta.png" alt="github link"></a>
+            <a data-aos="fade-right" data-aos-delay="100" href="https://www.linkedin.com/in/ryan-mottram/"><img class="hero-img hvr-grow" src="./assets/linkedin.png" alt="github link"></a>
+          </div>
+
+        </div>
+
+              <br><br>
+
+          <div class="col-lg-6">
+            <!--Section: Contact v.2-->
+<section class="mb-4">
+<br><br>
+  <!--Section heading-->
+  <h1 data-aos="fade-down" data-aos-delay="100" class="contact-title text-left">Contact Me</h1>
+
+  <div class="row">
+
+      <!--Grid column-->
+      <div class="col-md-9 mb-md-0 mb-5">
+          <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+
+              <!--Grid row-->
+              <div class="row">
+
+                  <!--Grid column-->
+                  <div class="col-md-6">
+                      <div class="md-form mb-0">
+                          <input type="text" id="name" name="name" class="form-control">
+                          <label for="name" class="">Full name</label>
+                      </div>
+                  </div>
+                  <!--Grid column-->
+
+                  <!--Grid column-->
+                  <div class="col-md-6">
+                      <div class="md-form mb-0">
+                          <input type="text" id="email" name="email" class="form-control">
+                          <label for="email" class="">Email address</label>
+                      </div>
+                  </div>
+                  <!--Grid column-->
+
+              </div>
+              <!--Grid row-->
+
+              <!--Grid row-->
+              <div class="row">
+                  <div class="col-md-12">
+                      <div class="md-form mb-0">
+                          <input type="text" id="subject" name="subject" class="form-control">
+                          <label for="subject" class="">Subject</label>
+                      </div>
+                  </div>
+              </div>
+              <!--Grid row-->
+
+              <!--Grid row-->
+              <div class="row">
+
+                  <!--Grid column-->
+                  <div class="col-md-12">
+
+                      <div class="md-form">
+                          <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                          <label for="message">Message</label>
+                      </div>
+
+                  </div>
+              </div>
+              <!--Grid row-->
+
+          </form>
+
+          <div class="text-center text-md-left">
+            <a class="btn btn-primary" onclick="validateForm();">Send</a>
+          </div>
+          <div class="status"></div>
+      </div>
+      <!--Grid column-->
+
+  </div>
+
+</section>
+<!--Section: Contact v.2-->
+          </div>
+        <!-- Row 5 About E -->
+
+      </div>
 
       </div>
       <!-- Container E -->
@@ -173,5 +362,9 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 <script src="./scripts/script.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>

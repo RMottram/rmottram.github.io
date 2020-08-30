@@ -22,8 +22,8 @@
 }
 .hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
   /* edit scale to change grow size */
-  -webkit-transform: scale(1.4);
-  transform: scale(1.4);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 /* Shrink */

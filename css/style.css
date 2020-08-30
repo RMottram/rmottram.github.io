@@ -47,7 +47,7 @@ body {
 
 .jumbotron {
     background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url('../assets/hero.png');
-    height: 70rem;
+    height: 100%;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -58,7 +58,7 @@ body {
 .container img {
     width: 4rem;
     height: 4rem;
-    filter: invert();
+    /* filter: invert(); */
     margin-left: 8rem;
     margin-right: 8rem;
 }
@@ -77,6 +77,12 @@ body {
 
 #my-portfolio {
     background-color: rgb(255, 190, 101);
+    height: 100%;
+    align-content: center;
+}
+
+#contact-me {
+    background-color: rgb(58, 146, 236);
     height: 100%;
     align-content: center;
 }
@@ -151,11 +157,28 @@ body {
     font-weight: 400;
 }
 
+.contact-title {
+    font-size: 4rem;
+    font-family: 'Nunito', serif;
+    font-weight: 600;
+    letter-spacing: .4rem;
+}
+
 .carousel {
     display: block;
     position: relative;
     margin: 0 auto;
     width: 100%;
+}
+
+.col-lg-8 #wally-sc, #uni-proj-sc {
+    height: 30%;
+    width: 70%;
+}
+
+.container > a {
+    width: 50%;
+    height: 50%;
 }
 
 
@@ -230,6 +253,25 @@ body {
         font-size: 1.8rem;
         font-family: 'Nunito', serif;
         font-weight: 400;
+    }
+
+    .contact-title {
+        font-size: 4rem;
+        font-weight: 600 !important;
+        font-family: 'Nunito', serif;
+    }
+
+    .col-lg-8 #wally-sc, #uni-proj-sc {
+        height: 10%;
+        width: 70%;
+    }
+
+    .container img {
+        width: 2rem;
+        height: 2rem;
+        /* filter: invert(); */
+        margin-left: 4rem;
+        margin-right: 4rem;
     }
 }
 
