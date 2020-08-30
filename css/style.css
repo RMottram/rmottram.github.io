@@ -1,3 +1,14 @@
+/* CUSTOM COLOURS 'MONOKAI'
+    rgb(40, 40, 35);    BACKGROUND
+    rgb(248, 248, 248); BODY TEXT
+    rgb(249, 38, 114);  MAIN HEADINGS
+    rgb(102, 217, 239); BUTTONS
+    rgb(253, 151, 31);  PROJECT TITLE
+    rgb(230, 219, 116); COLLAPSED NAVBAR
+    rgb(166, 226, 46);  SUBHEADINGS
+    rgb(174, 129, 255); ??
+*/
+
 html {
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
@@ -5,11 +16,12 @@ html {
 
 body {
     font-size: 16px;
+    color: rgb(242, 242, 248) !important;
+    background-color: rgb(40, 40, 35) !important;
 }
 
 .navbar
 {
-    /* background-color: rgb(110, 105, 105); */
     background-color: transparent;
     font-size: 1.4rem;
     text-align: center;
@@ -30,23 +42,23 @@ body {
     font-size: 1.6rem !important;
 }
 
-#about-hover:hover {
-    color: rgb(255, 101, 101) !important;
+.fas:hover {
+    color: rgb(102, 217, 239);
     text-shadow: 0px 0px 6px black;
 }
 
-#portfolio-hover:hover {
-    color: rgb(255, 190, 101) !important;
-    text-shadow: 0px 0px 6px black;
+.fab {
+    font-size: 4rem !important;
+    margin: 2rem;
+    color: rgb(102, 217, 239);
 }
 
-#contact-hover:hover {
-    color: rgb(58, 146, 236) !important;
+.fab:hover {
     text-shadow: 0px 0px 6px black;
 }
 
 .jumbotron {
-    background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url('../assets/hero.png');
+    background: linear-gradient( rgba(40, 40, 35, 0.6), rgba(0, 0, 0, 0.6) ), url('../assets/hero.png');
     height: 50rem;
     width: 100%;
     background-position: center;
@@ -71,19 +83,16 @@ body {
 }
 
 #about-me {
-    background-color: rgb(255, 101, 101);
     height: 100%;
     align-content: center;
 }
 
 #my-portfolio {
-    background-color: rgb(255, 190, 101);
     height: 100%;
     align-content: center;
 }
 
 #contact-me {
-    background-color: rgb(58, 146, 236);
     height: 100%;
     align-content: center;
 }
@@ -124,6 +133,7 @@ body {
     font-family: 'Nunito', serif;
     font-weight: 800;
     letter-spacing: .4rem;
+    color: rgb(249, 38, 114);
 }
 
 .about-text {
@@ -137,6 +147,7 @@ body {
     font-family: 'Nunito', serif;
     font-weight: 800;
     letter-spacing: .4rem;
+    color: rgb(249, 38, 114);
 }
 
 .portfolio-text {
@@ -145,17 +156,19 @@ body {
     font-weight: 200;
 }
 
-.umbriel-title {
+.project-title {
     font-size: 4rem;
     font-family: 'Nunito', serif;
     font-weight: 600;
     letter-spacing: .4rem;
+    color: rgb(253, 151, 31);
 }
 
 .subtitles {
     font-size: 2rem;
     font-family: 'Nunito', serif;
     font-weight: 400;
+    color: rgb(166, 226, 46);;
 }
 
 .contact-title {
@@ -163,6 +176,7 @@ body {
     font-family: 'Nunito', serif;
     font-weight: 600;
     letter-spacing: .4rem;
+    color: rgb(249, 38, 114);
 }
 
 .carousel {
@@ -280,7 +294,7 @@ body {
 /* Override when drop-down menu  appears */
 @media only screen and (max-width: 991px) {
     .navbar {
-      background-color: rgb(58, 146, 236);
+      background-color: rgb(230, 219, 116);
     }
 }
 
