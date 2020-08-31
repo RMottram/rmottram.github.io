@@ -205,12 +205,14 @@ body {
 
 /* Media queries */
 
+/* Mobile */
 @media screen and (max-width: 768px) {
 
     .jumbotron {
         height: 30rem !important;
         width: 100%;
         background-size: auto !important;
+        background-attachment: scroll !important;
     }
 
     .navbar {
@@ -303,18 +305,9 @@ body {
     }
 }
 
-/* Remove parallex from mobile devices */
-@media only screen and (max-width: 991) {
-
-    .navbar {
-        font-size: 1.2rem;
-    }
-
-    .jumbotron {
-        background-attachment: scroll !important;
-    }
-
+/* Portrait and Landscape iPads */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
     .carousel {
-        width: 50 !important;
+        width: 50% !important;
     }
 }
