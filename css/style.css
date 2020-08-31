@@ -278,10 +278,6 @@ body {
         font-weight: 400;
     }
 
-    .carousel {
-        width: 75%;
-    }
-
     .contact-title {
         font-size: 4rem;
         font-weight: 600 !important;
@@ -307,16 +303,18 @@ body {
     }
 }
 
-/* Override when drop-down menu  appears */
-@media only screen and (max-width: 991px) {
+/* Remove parallex from mobile devices */
+@media only screen and (max-width: 991) {
+
     .navbar {
         font-size: 1.2rem;
     }
-}
 
-/* Remove parallex from mobile devices */
-@media only screen and (max-width: 991) {
     .jumbotron {
         background-attachment: scroll !important;
+    }
+
+    .carousel {
+        width: 75%;
     }
 }
