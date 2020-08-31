@@ -235,7 +235,7 @@ body {
     }
     
     .hero-sub-text {
-        font-size: 1rem;
+        font-size: .8rem;
         letter-spacing: .2rem;
         font-family: 'Nunito', serif;
         font-weight: 100 !important;
@@ -278,6 +278,10 @@ body {
         font-weight: 400;
     }
 
+    .carousel {
+        width: 75%;
+    }
+
     .contact-title {
         font-size: 4rem;
         font-weight: 600 !important;
@@ -298,7 +302,6 @@ body {
     .container img {
         width: 2rem;
         height: 2rem;
-        /* filter: invert(); */
         margin-left: 2rem;
         margin-right: 2rem;
     }
