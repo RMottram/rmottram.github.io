@@ -98,7 +98,7 @@ body {
 }
 
 .hero-text {
-    font-size: 6rem;
+    font-size: 4rem;
     letter-spacing: .4rem;
     font-family: 'Menlo', monospace;
     font-weight: 400;
@@ -179,6 +179,12 @@ body {
     color: rgb(249, 38, 114);
 }
 
+.footer-text {
+    font-size: 1.1rem;
+    font-family: 'Nunito', serif;
+    font-weight: 100;
+}
+
 .carousel {
     display: block;
     position: relative;
@@ -204,6 +210,7 @@ body {
     .jumbotron {
         height: 30rem !important;
         width: 100%;
+        background-size: auto !important;
     }
 
     .navbar {
@@ -277,6 +284,12 @@ body {
         font-family: 'Nunito', serif;
     }
 
+    .footer-text {
+        font-size: .8rem !important;
+        font-family: 'Nunito', serif;
+        font-weight: 100 !important;
+    }
+
     .col-lg-8 #wally-sc, #uni-proj-sc {
         height: 10%;
         width: 70%;
@@ -294,7 +307,7 @@ body {
 /* Override when drop-down menu  appears */
 @media only screen and (max-width: 991px) {
     .navbar {
-      background-color: rgb(230, 219, 116);
+        font-size: 1.2rem;
     }
 }
 
