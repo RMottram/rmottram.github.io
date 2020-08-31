@@ -1,6 +1,6 @@
 /* CUSTOM COLOURS 'MONOKAI'
-    rgb(40, 40, 35);    BACKGROUND
-    rgb(248, 248, 248); BODY TEXT
+    rgb(46, 46, 46);    BACKGROUND
+    rgb(214, 214, 214); BODY TEXT
     rgb(249, 38, 114);  MAIN HEADINGS
     rgb(102, 217, 239); BUTTONS
     rgb(253, 151, 31);  PROJECT TITLE
@@ -16,8 +16,8 @@ html {
 
 body {
     font-size: 16px;
-    color: rgb(242, 242, 248) !important;
-    background-color: rgb(40, 40, 35) !important;
+    color: rgb(214, 214, 214) !important;
+    background-color: rgb(46, 46, 46) !important;
 }
 
 .navbar
@@ -209,7 +209,7 @@ body {
 @media screen and (max-width: 768px) {
 
     .jumbotron {
-        background: linear-gradient( rgba(40, 40, 35, 0.6), rgba(0, 0, 0, 0.6) ), url('../assets/hero.png');
+        background: linear-gradient( rgba(46, 46, 46, 0.6), rgba(0, 0, 0, 0.6) ), url('../assets/hero.png');
         height: 100% !important;
         width: 100%;
         background-size: cover !important;
