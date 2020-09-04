@@ -156,6 +156,10 @@ body {
     font-weight: 200;
 }
 
+#app-store-badge {
+    height: 4rem;
+}
+
 .project-title {
     font-size: 4rem;
     font-family: 'Nunito', serif;
@@ -197,11 +201,11 @@ body {
     width: 75%;
 }
 
-.container > a {
-    width: 50%;
-    height: 50%;
-}
+/* Umbriel.html */
 
+.biometric-disclaimer {
+    font-size: .8rem;
+}
 
 /* Media queries */
 
@@ -276,6 +280,10 @@ body {
         font-family: 'Nunito', serif;
     }
 
+    #app-store-badge {
+        height: 3rem;
+    }
+
     .subtitles {
         font-size: 1.4rem !important;
         font-family: 'Nunito', serif;
@@ -294,22 +302,18 @@ body {
         font-weight: 100 !important;
     }
 
-    .col-lg-8 .col-sm-8 #wally-sc, #uni-proj-sc {
+    #wally-sc, #uni-proj-sc {
         height: 25%;
-        width: 75%;
+        width: 100%;
     }
 
-    .container img {
-        width: 2rem;
-        height: 2rem;
-        margin-left: 2rem;
-        margin-right: 2rem;
+    .biometric-disclaimer {
+        font-size: .4rem;
     }
+
+    #umbriel-logo{
+        width: 50%;
+        height: 50%;
+    }
+
 }
-
-/* Portrait and Landscape iPads */
-/* @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
-    .carousel {
-        width: 75% !important;
-    }
-} */
