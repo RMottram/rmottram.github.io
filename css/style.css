@@ -205,6 +205,41 @@ body {
 
 .biometric-disclaimer {
     font-size: .8rem;
+    color: black;
+}
+
+.fa-info-circle:hover {
+color: rgb(255, 101, 101);
+}
+
+.fa-question-circle:hover {
+    color: rgb(255, 190, 101);
+}
+
+.fa-user-secret:hover {
+    color: rgb(117, 211, 99);
+}
+
+.umbriel-title {
+    font-size: 4rem;
+    font-family: 'Nunito', serif;
+    font-weight: 800;
+    letter-spacing: .4rem;
+    color: black;
+}
+
+.umbriel-subtitle {
+    font-size: 2rem;
+    font-family: 'Nunito', serif;
+    font-weight: 200;
+    color: black;
+}
+
+#umbriel-info {
+    font-size: 1.6rem;
+    font-family: 'Nunito', serif;
+    font-weight: 300;
+    color: black;
 }
 
 /* Media queries */
@@ -312,8 +347,8 @@ body {
     }
 
     #umbriel-logo{
-        width: 50%;
-        height: 50%;
+        width: 75%;
+        height: 75%;
     }
 
 }
