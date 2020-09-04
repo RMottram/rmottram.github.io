@@ -270,14 +270,14 @@ body {
         font-family: 'Nunito', serif;
     }
     
-    .umbriel-title {
-        font-size: 2rem !important;
+    .project-title {
+        font-size: 2.6rem !important;
         font-weight: 400 !important;
         font-family: 'Nunito', serif;
     }
 
     .subtitles {
-        font-size: 1.8rem !important;
+        font-size: 1.4rem !important;
         font-family: 'Nunito', serif;
         font-weight: 400;
     }
@@ -294,9 +294,9 @@ body {
         font-weight: 100 !important;
     }
 
-    .col-lg-8 #wally-sc, #uni-proj-sc {
-        height: 10%;
-        width: 50%;
+    .col-lg-8 .col-sm-8 #wally-sc, #uni-proj-sc {
+        height: 25%;
+        width: 75%;
     }
 
     .container img {
@@ -308,8 +308,8 @@ body {
 }
 
 /* Portrait and Landscape iPads */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+/* @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
     .carousel {
         width: 75% !important;
     }
-}
+} */
