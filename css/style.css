@@ -9,6 +9,14 @@
     rgb(174, 129, 255); ??
 */
 
+/* Custom colours 'Umbriel'
+    rgb(255, 101, 101);
+    rgb(255, 190, 101);
+    rgb(117, 211, 99);
+    rgb(127, 73, 255);
+    rgb(58, 136, 236);
+ */
+
 html {
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
@@ -276,7 +284,7 @@ color: rgb(255, 101, 101);
         font-weight: 600 !important;
         color: white;
     }
-    
+
     .hero-sub-text {
         font-size: 1.5rem;
         letter-spacing: .2rem;
@@ -284,31 +292,31 @@ color: rgb(255, 101, 101);
         font-weight: 300 !important;
         color: white;
     }
-    
+
     .about-title {
         font-size: 4rem !important;
         font-weight: 600 !important;
         font-family: 'Nunito', serif;
     }
-    
+
     .about-text {
         font-size: 1.2rem !important;
         font-weight: 200 !important;
         font-family: 'Nunito', serif;
     }
-    
+
     .portfolio-title {
         font-size: 4rem !important;
         font-weight: 600 !important;
         font-family: 'Nunito', serif;
     }
-    
+
     .portfolio-text {
         font-size: 1.2rem !important;
         font-weight: 200 !important;
         font-family: 'Nunito', serif;
     }
-    
+
     .project-title {
         font-size: 2.6rem !important;
         font-weight: 400 !important;
