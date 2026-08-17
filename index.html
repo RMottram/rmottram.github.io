@@ -2,383 +2,287 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/hover.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryan Mottram - Portfolio</title>
+    <meta name="description" content="Ryan Mottram - Computer Science by Research postgraduate. Apps, projects and things I build.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/cd101d4302.js" crossorigin="anonymous"></script>
-    <title>Ryan Mottram Portfolio</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="./css/app.css">
 </head>
-<body>
 
-    <!-- NAV BAR START -->
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a data-toggle="tooltip" data-placement="bottom" title="About" id="about-hover" class="nav-link hvr-grow" href="#about-me"><i class="fas fa-user"></i></a>
-            </li>
-            <li class="nav-item">
-                <a data-toggle="tooltip" data-placement="bottom" title="Portfolio" id="portfolio-hover" class="nav-link hvr-grow" href="#my-portfolio"><i class="fas fa-laptop-code"></i></a>
-            </li>
-            <li class="nav-item">
-                <a data-toggle="tooltip" data-placement="bottom" title="Contact" id="contact-hover" class="nav-link hvr-grow" href="#contact-me"><i class="fas fa-at"></i></a>
-            </li>
-        </ul>
-    </div>
-</nav>
-<!-- NAV BAR END -->
+<body class="app-page theme-home" id="top">
 
-<!-- Jumbotron S -->
-<div class="jumbotron vertical-center rounded-0 m-0">
-    <div class="container">
-        <h1 class="hero-text align-middle">Ryan Mottram</h1>
-        <h2 class="hero-sub-text align-middle">Computer Science by Research postgraduate</h2>
-    </div>
-</div>
-<!-- Jumbotron E -->
-
-<!-- Container S -->
-<div class="container-fluid text-center">
-
-    <!-- Row 1 About S -->
-    <div class="row" id="about-me">
-
-        <div class="col-lg-1 col-md-1 col-sm-1">
+    <!-- ---------------- NAV ---------------- -->
+    <nav class="app-nav">
+        <a class="brand" href="#top"><span>Ryan Mottram</span></a>
+        <div class="nav-links">
+            <a href="#about-me">About</a>
+            <a href="#my-portfolio">Portfolio</a>
+            <a href="./apps.html">Apps</a>
+            <a href="#contact-me">Contact</a>
         </div>
+    </nav>
 
-        <div class="col-lg-10 col-md-10 col-sm-10" style="text-align: center;">
-
-            <br><br><br><br>
-            <h1 data-aos="fade-down" data-aos-delay="100" class="about-title">About</h1>
-            <img data-aos="fade-down" data-aos-delay="100" src="./assets/me-sm.jpg" class="rounded-circle" alt="the developer">
-            <br>
-            <p data-aos="fade-left" data-aos-delay="100" class="about-text">A postgraduate originally from Lowestoft attending the University of Lincoln, UK undergoing a
-                Computer Science by Research Masters in cyber security and machine learning. Giving you an insight to what I have done/doing/can do and would
-                like to do for myself or even you?
-                <br><br>
-                So what you waiting for? Take a look at what I have done or read more about me and make your own opinion.</p>
-                <br><br>
-                <p data-aos="fade-right" data-aos-delay="100" class="about-text">My interest never started in tech and programming, it started in sport where I did Sport and Exercise Sciences in high school and college.
-                    After college I stared working full time in a restaurant waiting on tables for 2 years before attending college  again to train in technology.
-                    After attending college for another 2 years and earning very high grades, I started University in 2017 where I have had the most amazing experience
-                    and learnt so many valuable skills in the area of Computer Science.
-                    <br><br>
-                    I am still very passionate about sport, I have played football from the ages 10-19, I attend the gym very regularly and have picked up a new sport Ultimate
-                    Frisbee while at University.
-                    <br><br><br><br>
-                </p>
-
-            </div>
-
-            <div class="col-lg-1 col-md-1 col-sm-1">
-            </div>
-
+    <!-- ---------------- HERO ---------------- -->
+    <header class="hero">
+        <div class="subtag" data-aos="fade-up">Machine Learning · Software Engineering · Indie Developer</div>
+        <h1 data-aos="fade-up" data-aos-delay="60">Ryan Mottram</h1>
+        <p class="tagline" data-aos="fade-up" data-aos-delay="120">
+            A hardworking and enthusiastic developer with a main area of interest and knowledge in machine learning and software engineering.
+        </p>
+        <div class="cta-row" data-aos="fade-up" data-aos-delay="180">
+            <a class="btn-ghost" href="./apps.html"><i class="fas fa-mobile-screen-button"></i> View my apps</a>
+            <a class="btn-ghost" href="#contact-me"><i class="fas fa-at"></i> Get in touch</a>
         </div>
-        <!-- Row 1 About E -->
+    </header>
 
-        <!-- Row 2 Portfolio Header S -->
-        <div class="row" style="text-align: center;">
-            <div class="col-lg-12 col-md-12 col-sm-12">
-                <h1 data-aos="fade-down" data-aos-delay="100" class="portfolio-title">Portfolio</h1>
-                <br><br>
+    <!-- ---------------- ABOUT ---------------- -->
+    <section class="section" id="about-me">
+        <div class="app-wrap">
+            <div class="section-head" data-aos="fade-up">
+                <div class="eyebrow">About</div>
+            </div>
+            <div class="split about-split">
+                <img class="about-photo" src="./assets/me-md.jpg" alt="Ryan Mottram" data-aos="fade-right">
+                <div data-aos="fade-left">
+                    <p class="lead">I'm a Machine Learning and Software Engineering enthusiast from Bradwell, Norfolk, with programming,
+                        algorithmic and problem-solving skills across data science, machine learning and software development.
+                        I'm always eager to expand my knowledge and take on new challenges in technology.</p>
+                    <p class="lead">I currently work as a Data Analyst at BT (Adastral Park), where I own the automated procedures
+                        that calculate KPIs and help maintain the Python ETL pipelines behind BT &amp; EE device registration.
+                        Pulling data from GCP, transforming it, and loading it into BigQuery for dashboards and reports.
+                        Alongside this I'm building my AI and machine learning skills on AWS, working hands on with SageMaker,
+                        Amazon Q Developer and Lambda.</p>
+                    <p class="lead">Outside of work I build my own iOS apps and I always have a backlog of Lego sets where I usually build one every two months.</p>
+                </div>
+            </div>
+
+            <div class="about-extra">
+                <div class="facts-grid">
+                    <div class="spec" data-aos="fade-up">
+                        <h4>Currently</h4>
+                        <ul>
+                            <li>Data Analyst · BT, Adastral Park</li>
+                            <li>Since September 2022</li>
+                            <li>Python ETL · BigQuery · GCP</li>
+                            <li>Upskilling in AWS AI/ML</li>
+                        </ul>
+                    </div>
+                    <div class="spec" data-aos="fade-up" data-aos-delay="80">
+                        <h4>Education</h4>
+                        <ul>
+                            <li>MRes Machine Learning (Pass)</li>
+                            <li>BSc (Hons) Computer Science (2:1)</li>
+                            <li>University of Lincoln, UK</li>
+                            <li>Research: ML/DL intrusion detection, 95 - 99% accuracy</li>
+                        </ul>
+                    </div>
+                    <div class="spec" data-aos="fade-up" data-aos-delay="160">
+                        <h4>Certifications</h4>
+                        <ul>
+                            <li>Microsoft Azure AI Fundamentals</li>
+                            <li>MTA Database Administration Fundamentals</li>
+                            <li>NLP with Python for ML - Essential Training</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tag-list" data-aos="fade-up">
+                    <span class="tag">Python</span>
+                    <span class="tag">Swift</span>
+                    <span class="tag">C#</span>
+                    <span class="tag">SQL</span>
+                    <span class="tag">TensorFlow</span>
+                    <span class="tag">Keras</span>
+                    <span class="tag">scikit-learn</span>
+                    <span class="tag">Pandas</span>
+                    <span class="tag">OpenCV</span>
+                    <span class="tag">SwiftUI</span>
+                    <span class="tag">Django</span>
+                    <span class="tag">FastAPI</span>
+                    <span class="tag">MySQL</span>
+                    <span class="tag">AWS</span>
+                    <span class="tag">GCP</span>
+                    <span class="tag">Git · CI/CD</span>
+                </div>
             </div>
         </div>
-        <!-- Row 2 Portfolio Header E -->
+    </section>
 
-        <!-- Row 3 Umbriel S -->
-        <div class="row" id="my-portfolio">
-
-            <div class="col-lg-1 col-md-1 col-sm-1">
-                <!-- Left gutter -->
+    <!-- ---------------- PORTFOLIO ---------------- -->
+    <section class="section" id="my-portfolio">
+        <div class="app-wrap">
+            <div class="section-head" data-aos="fade-up">
+                <div class="eyebrow">Portfolio</div>
+                <h2>Things I've built</h2>
+                <p>A few of the projects I've worked on, take a look and make your own opinion.</p>
             </div>
 
-            <div class="col-lg-10 col-md-10 col-sm-10" style="text-align: center;">
-
-                <a href="./umbriel.html" class="hvr-grow"><img data-aos="fade" data-aos-delay="100" src="./assets/umbriel-sm.png" alt="umbriel logo" class="rounded-circle"></a>
-                <h1 data-aos="fade" data-aos-delay="100" class="project-title">Umbriel</h1>
-                <p data-aos="fade-left" data-aos-delay="100" class="portfolio-text">This was a little summer project after completing my third year of University to ease the boredom of the summer break.
-                    The inspiration for the project was for one it took a feature from my University project into a more sophisticated version and also my password manager subscription was coming to an end so I could use this as a free alternative.
-                </p>
-                <br><br>
-
-            </div>
-
-            <div class="col-lg-1 col-md-1 col-sm-1">
-                <!-- right gutter -->
-            </div>
-
-        </div>
-        <!-- Row 3 Umbriel E -->
-
-        <!-- Row 4 Umbriel cont. S -->
-        <div class="row">
-
-            <div class="col-lg-1 col-md-1 col-sm-1">
-                <!-- left gutter -->
-            </div>
-
-            <div class="col-lg-5 col-md-5 col-sm-5">
-
-                <div data-aos="fade-right" data-aos-delay="100" class="carousel slide" data-ride="carousel" data-interval="3000">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img class="w-75" src="./assets/umbriel-sc-1.png" alt="First slide">
+            <!-- Umbriel -->
+            <div class="project">
+                <div class="split">
+                    <div class="shots" data-aos="fade-right">
+                        <img src="./assets/juicebox/juicebox-sessions.PNG" alt="JuiceBox Sessions View">
+                        <img src="./assets/juicebox/juicebox-stats.PNG" alt="JuiceBox Stats View">
+                        <img src="./assets/juicebox/juicebox-charts.PNG" alt="JuiceBox Charts View">
+                        <img src="./assets/juicebox/juicebox-juicelog.PNG" alt="JuiceBox JuiceLog View">
+                        <img src="./assets/juicebox/juicebox-import.PNG" alt="JuiceBox Import View">
+                        <img src="./assets/juicebox/juicebox-csv-mapping.PNG" alt="JuiceBox CSV Mapping View">
+                        <img src="./assets/juicebox/juicebox-json-mapping.PNG" alt="JuiceBox JSON Mapping View">
+                        <img src="./assets/juicebox/juicebox-prediction.PNG" alt="JuiceBox Prediction View">
+                        <img src="./assets/juicebox/juicebox-widgets.PNG" alt="JuiceBox Widgets View">
+                    </div>
+                    <div data-aos="fade-left">
+                        <h3 class="project-title-lg">JuiceBox</h3>
+                        <p class="project-lead">My most ambitious side project to date. After buying my first EV the nerd inside of me
+                            wanted to keep track of the running costs and compare them to my old fuel car. I started off using a spreadsheet
+                            but eventually that became tedious and difficult to keep updating especially as I mainly did it on my phone.
+                        </p>
+                        <br>
+                            <p class="project-lead">
+                                So I decided to build JuiceBox, to start just for personal use but after I developed some interesting features, 
+                                used the app formyself for a while and the app itself became more polished, I decided I would publish it to the
+                                Apple App Store as I assumed many other EV owners would make good use of it. 
+                            </p>
+                             <br>
+                            <p class="project-lead">
+                                JuiceBox currently has nearly 200 downloads, 5 paying users and already on version 1.2 that added several new features
+                                including a way to scan public charger screens to automatically add charging session values to a new charging log,
+                                csv and json file mapping for importing charging data from other sources and a calculable way of estimating battery
+                                health and usable capacity for the vehicle. 
+                            </p>
+                        <div class="spec-grid">
+                            <div class="spec">
+                                <h4>Technologies</h4>
+                                <ul>
+                                    <li>Xcode</li>
+                                    <li>SwiftUI</li>
+                                    <li>SwiftData</li>
+                                    <li>Core ML</li>
+                                    <li>CloudKit</li>
+                                    <li>RevenueCat</li>
+                                    <li>FeaturePulse</li>
+                                    <li>PostHog</li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                            <div class="spec">
+                                <h4>Features</h4>
+                                <ul>
+                                    <li>Simple and clean UI</li>
+                                    <li>Suite of tools to help EV owners estimate charge times and costs</li>
+                                    <li>Charts and graphs to track usages and costs overtime</li>
+                                    <li>Custom light and dark themes</li>
+                                    <li>Live news section to deliver development updates to users</li>
+                                    <li>iCloud sync and backup across Apple devices</li>
+                                    <li>Apple Watch companion app</li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="carousel-item">
-                            <img class="w-75" src="./assets/umbriel-sc-2.png" alt="Second slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="w-75" src="./assets/umbriel-sc-3.png" alt="Third slide">
+                        <div class="project-cta">
+                            <a class="store-badge" href="https://apps.apple.com/app/id6773839547" target="_blank" rel="noopener"><img src="./assets/app-store.svg" alt="Download on the App Store"></a>
+                            <a class="btn-ghost" href="./umbriel.html"><i class="fas fa-circle-info"></i> App page</a>
                         </div>
                     </div>
-                    <a class="carousel-control-prev"  role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next"  role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
-
-            </div>
-
-            <div class="col-lg-5 col-md-5 col-sm-5">
-                <div data-aos="fade-left" data-aos-delay="100">
-                    <h1 class="subtitles">Technologies Used</h1>
-                    <p class="portfolio-text">// Xcode</p>
-                    <p class="portfolio-text">// SwiftUI</p>
-                    <p class="portfolio-text">// CoreData</p>
-                    <p class="portfolio-text">// CloudKit</p>
-                    <br>
-                    <h1 class="subtitles">Features</h1>
-                    <p class="portfolio-text">// Modern UI built in 100% SwiftUI</p>
-                    <p class="portfolio-text">// Password strength tester with precise and helpful UI and UX</p>
-                    <p class="portfolio-text">// Password generator with controls for password flexibility</p>
-                    <p class="portfolio-text">// Secured vault using biometrics to store passwords</p>
-                    <br>
-                    <a href="https://apps.apple.com/gb/app/umbriel/id1520674335" target="_blank" rel="noopener noreferrer"><img id="app-store-badge" src="/assets/app-store.svg" alt="download on app store"></a>
                 </div>
             </div>
 
-            <div class="col-lg-1 col-md-1 col-sm-1">
-                <!-- right gutter -->
-            </div>
-
-        </div>
-        <!-- Row 4 Umbriel cont. E -->
-
-        <!-- Row 5 Uni Project S -->
-        <div class="row" id="my-portfolio">
-
-            <div class="col-lg-1 col-md-1 col-sm-1">
-                <!-- Left gutter -->
-            </div>
-
-            <div class="col-lg-10 col-md-10 col-sm-10" style="text-align: center;">
-                <br><br><br><br>
-
-                <img data-aos="fade" data-aos-delay="100" src="./assets/project-sc-2.png" id="uni-proj-sc" alt="uni project screenshot">
-                <h1 data-aos="fade" data-aos-delay="100" class="project-title">University Project</h1>
-                <p data-aos="fade-left" data-aos-delay="100" class="portfolio-text">I chose my final year project to be an application that can identify mobile vulnerabilities and output the results to the user. This combined two of my interests in technology; mobile app development and cyber security. <br><br>I chose the kind of vulnerabilities the app would identify which included weak passwords, un-secure WiFi, file checker and connected Bluetooth devices. A password would be classified weak by using pre-determined attributes such as lengt1h, use of uppercase and lowercase letters, numbers and symbols. The WiFi scanner checks for the kind of ports that are open and would instruct the user if any unnecessary ports were open that could cause their phone to be hacked. The Bluetooth connection feature would output any connected devices and if a user did not recognise any they can delete it. The file checker allows the user to browse the file system on their device and they can select a document which would be checked if it could contain malicious code that would compromise the device.
-                </p>
-
-            </div>
-
-            <div class="col-lg-1 col-md-1 col-sm-1">
-                <!-- right gutter -->
-            </div>
-
-        </div>
-        <!-- Row 5 Uni Project E -->
-
-        <div class="row">
-
-            <div class="col-lg-1 col-md-1 col-sm-1">
-                <!-- left gutter -->
-            </div>
-
-            <div data-aos="fade-right" class="col-lg-5 col-md-5 col-sm-5">
-                <h1 class="subtitles">Technologies Used</h1>
-                <p class="portfolio-text">// Visual Studio</p>
-                <p class="portfolio-text">// Xamarin.iOS</p>
-                <p class="portfolio-text">// UIKit</p>
-                <p class="portfolio-text">// CloudKit</p>
-                <p class="portfolio-text">// C#</p>
-                <p class="portfolio-text">// CoreBluetooth</p>
-                <p class="portfolio-text">// MobileCoreServices</p>
-            </div>
-
-            <div data-aos="fade-left" class="col-lg-5 col-md-5 col-sm-5">
-                <h1 class="subtitles">Features</h1>
-                <p class="portfolio-text">// Password strength checker</p>
-                <p class="portfolio-text">// Internet port scanner</p>
-                <p class="portfolio-text">// File checker</p>
-                <p class="portfolio-text">// Bluetooth scanner</p>
-                <p class="portfolio-text">// Page to help educate users to stay safe</p>
-            </div>
-
-            <div class="col-lg-1 col-md-1 col-sm-1">
-                <!-- right gutter -->
-            </div>
-
-        </div>
-
-        <!-- Row 6 Uni cont. S -->
-        <div class="row">
-
-            <div class="col-lg-1 col-md-1 col-sm-1">
-                <!-- left gutter -->
-            </div>
-
-            <div class="col-lg-10 col-md-10 col-sm-10">
-                <br><br>
-                <video data-aos="fade-down" data-aos-delay="100" width="100%" height="100%" autoplay loop controls muted>
-                    <source src="./assets/Project-Demo.m4v" type="video/mp4" />
-                    Your browser does not support the video tag.
-                </video>
-
-            </div>
-
-            <div class="col-lg-1 col-md-1 col-sm-1">
-                <!-- right gutter -->
-            </div>
-
-        </div>
-        <!-- Row 6 Uni cont E -->
-
-        <!-- Row 7 Wally S -->
-        <div class="row" id="my-portfolio">
-
-            <div class="col-lg-1 col-md-1 col-sm-1">
-                <!-- Left gutter -->
-            </div>
-
-            <div class="col-lg-10 col-md-10 col-sm-10" style="text-align: center;">
-                <br><br><br><br>
-                <img data-aos="fade" data-aos-delay="100" src="./assets/wally-sc-2.png" id="uni-proj-sc" alt="uni project screenshot">
-                <h1 data-aos="fade" data-aos-delay="100" class="project-title">Where's Wally?</h1>
-                <p data-aos="fade-left" data-aos-delay="100" class="portfolio-text">Where's Wally or for you Americans out there, Waldo! Was my second year assignment in the Objective Oriented Programming (OOP) module at University. The aim of the assignment was to use OOP principles to programatically find Wally in a black and white image. <br><br>
-                    The program consisted of importing the original black and white image, a reference image of Wally also in black and white and the algorithms in the program would cross reference the pixel values of Wally to the scene image to try and identify the closest relating values. After the algorithm has finished the cross referencing, the program would output a second scene image with the area of where the program thought Wally was hiding shaded slightly darker. More can be seen in the demo video.
-                </p>
-
-            </div>
-
-            <div class="col-lg-1 col-md-1 col-sm-1">
-                <!-- right gutter -->
-            </div>
-
-        </div>
-        <!-- Row 7 Wally E -->
-
-        <div class="row" id="my-portfolio">
-
-            <div class="col-lg-1 col-md-1 col-sm-1">
-                <!-- left gutter -->
-            </div>
-
-            <div data-aos="fade-right" class="col-lg-5 col-md-5 col-sm-5">
-                <h1 class="subtitles">Technologies Used</h1>
-                <p class="portfolio-text">// Visual Studio</p>
-                <p class="portfolio-text">// C++</p>
-                <p class="portfolio-text">// 2D Matrices</p>
-                <p class="portfolio-text">// Polymorphism</p>
-            </div>
-
-            <div data-aos="fade-left" class="col-lg-5 col-md-5 col-sm-5">
-                <h1 class="subtitles">Features</h1>
-                <p class="portfolio-text">// Output image of Wally</p>
-                <p class="portfolio-text">// Where's Wally facts</p>
-            </div>
-
-            <div class="col-lg-1 col-md-1 col-sm-1">
-                <!-- right gutter -->
-            </div>
-
-        </div>
-
-        <!-- Row 8 Wally cont. S -->
-        <div class="row">
-
-            <div class="col-lg-1 col-md-1 col-sm-1">
-                <!-- left gutter -->
-            </div>
-
-            <div class="col-lg-10 col-md-10 col-sm-10">
-                <br><br>
-                <video data-aos="fade-down" data-aos-delay="75" width="100%" height="100%" autoplay loop controls muted>
-                    <source src="./assets/Wally-Project.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                </video>
-
-            </div>
-
-            <div class="col-lg-1 col-md-1 col-sm-1">
-                <!-- right gutter -->
-            </div>
-
-        </div>
-        <!-- Row 8 Wally cont. E -->
-        <br><br><br><br>
-        <!-- Row 9 Other Content S -->
-        <div class="row" id="contact-me">
-
-            <div class="col-lg-12 col-md-12 col-sm-12" style="text-align: center;">
-
-                <div data-aos="fade-down" data-aos-delay="100" class="container">
-                    <p class="about-text">My other projects and work can be found on my GitHub page!
-                        You can get in contact with me using my Instagram or LinkedIn socials.</p>
-
-                        <a  href="https://github.com/RMottram"><i class="hvr-grow fab fa-github"></i></a>
-                        <a href="https://instagram.com/ryan.codesuk"><i class="hvr-grow fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/in/ryan-mottram/"><i class="hvr-grow fab fa-linkedin"></i></a>
-
-                        <br><br>
+            <!-- University Project -->
+            <div class="project">
+                <div class="split">
+                    <video data-aos="fade-right" autoplay loop muted playsinline controls>
+                        <source src="./assets/Project-Demo.m4v" type="video/mp4" />
+                    </video>
+                    <div data-aos="fade-left">
+                        <h3 class="project-title-lg">University Project</h3>
+                        <p class="project-lead">My final-year project: an iOS app that identifies mobile vulnerabilities and reports them to the user - combining mobile development and cyber security. It checks for weak passwords, unsecured WiFi and open ports, connected Bluetooth devices, and scans files for potentially malicious content.</p>
+                        <div class="spec-grid">
+                            <div class="spec">
+                                <h4>Technologies</h4>
+                                <ul>
+                                    <li>Visual Studio</li>
+                                    <li>Xamarin.iOS · C#</li>
+                                    <li>UIKit · CloudKit</li>
+                                    <li>CoreBluetooth</li>
+                                    <li>MobileCoreServices</li>
+                                </ul>
+                            </div>
+                            <div class="spec">
+                                <h4>Features</h4>
+                                <ul>
+                                    <li>Password strength checker</li>
+                                    <li>Internet port scanner</li>
+                                    <li>File checker</li>
+                                    <li>Bluetooth scanner</li>
+                                    <li>Safety education page</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-
                 </div>
-
-            </div>
-            <!-- Row 9 Other content E -->
-
-            <div class="row" id="footer">
-
-                <div class="col-lg-12 col-md-12 col-sm-12">
-                    <br><br><br><br><br><br><br><br><br>
-                    <p class="footer-text">Yes, my website colour scheme is taken from the Monokai IDE theme 🤓</p>
-                    <p style="color: rgb(174, 129, 255);" class="footer-text"> &copy; Ryan Mottram 2020</p>
-                </div>
-
             </div>
 
+            <!-- Where's Wally -->
+            <div class="project">
+                <div class="split">
+                    <video data-aos="fade-right" autoplay loop muted playsinline controls>
+                        <source src="./assets/Wally-Project.mp4" type="video/mp4" />
+                    </video>
+                    <div data-aos="fade-left">
+                        <h3 class="project-title-lg">Where's Wally?</h3>
+                        <p class="project-lead">My second-year Object Oriented Programming assignment: use OOP principles to programmatically find Wally in a black-and-white image. The program cross-references the pixel values of a Wally reference against the scene, then outputs the scene with Wally's likely location shaded.</p>
+                        <div class="spec-grid">
+                            <div class="spec">
+                                <h4>Technologies</h4>
+                                <ul>
+                                    <li>Visual Studio</li>
+                                    <li>C++</li>
+                                    <li>2D Matrices</li>
+                                    <li>Polymorphism</li>
+                                </ul>
+                            </div>
+                            <div class="spec">
+                                <h4>Features</h4>
+                                <ul>
+                                    <li>Outputs image locating Wally</li>
+                                    <li>Where's Wally facts</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- Container E -->
+    </section>
 
+    <!-- ---------------- CONTACT ---------------- -->
+    <section class="section" id="contact-me">
+        <div class="app-wrap">
+            <div class="section-head" data-aos="fade-up">
+                <div class="eyebrow">Contact</div>
+                <h2>Get in touch</h2>
+                <p>My other projects and work are on GitHub. Say hello on Instagram or LinkedIn.</p>
+            </div>
+            <div class="socials" data-aos="fade-up">
+                <a href="https://github.com/RMottram" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://instagram.com/ryan.codesuk" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/ryan-mottram/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </section>
 
+    <!-- ---------------- FOOTER ---------------- -->
+    <footer class="app-footer">
+        <div class="app-wrap">
+            <small>Yes, my website colour scheme is taken from the Monokai IDE theme 🤓</small><br>
+            <small>&copy; Ryan Mottram <span id="year"></span></small>
+        </div>
+    </footer>
 
-
-
-
-
-
-
-        <!-- JS, Popper.js, and jQuery -->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-        <script src="./scripts/script.js"></script>
-        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-        <script>
-        AOS.init();
-    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="./scripts/app.js"></script>
 </body>
 </html>

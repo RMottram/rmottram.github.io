@@ -1,0 +1,23 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Thumbnails
+Thumbs.db
+ehthumbs.db
+
+# VS Code / Kiro
+.vscode/
+.kiro/
+
+# JetBrains IDEs
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Node (if ever used)
+node_modules/

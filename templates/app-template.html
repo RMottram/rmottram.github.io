@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  APP LANDING PAGE TEMPLATE
+  ------------------------------------------------------------
+  To create a new app page:
+    1. Copy this file to the site root as  <appname>.html
+       => it will be served at  https://ryanmottram.github.io/<appname>.html
+    2. Find & replace every  {{PLACEHOLDER}}  below.
+    3. Drop your images in /assets (icon, screenshots, demo video).
+    4. Add a card for the app in  apps.html.
+  Paths are root-relative (no ../) because the page lives at the site root.
+  See templates/README.md for the full checklist.
+  ============================================================
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{APP_NAME}} — {{APP_TAGLINE}}</title>
+    <meta name="description" content="{{APP_META_DESCRIPTION}}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/cd101d4302.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<!-- Theme: add a `.theme-{{APP_SLUG}}` rule with your accent colours in css/app.css -->
+<body class="app-page theme-{{APP_SLUG}}">
+
+    <!-- ---------------- NAV ---------------- -->
+    <nav class="app-nav">
+        <a class="brand" href="index.html">
+            <i class="fas fa-arrow-left"></i>
+            <span>Ryan Mottram</span>
+        </a>
+        <div class="nav-links">
+            <a href="#features">Features</a>
+            <a href="#screens">Screens</a>
+            <a href="#faq">FAQ</a>
+            <a href="{{APP_STORE_URL}}" target="_blank" rel="noopener">Download</a>
+        </div>
+    </nav>
+
+    <!-- ---------------- HERO ---------------- -->
+    <header class="hero">
+        <img class="app-icon" src="assets/{{ICON_IMG}}" alt="{{APP_NAME}} icon" data-aos="zoom-in">
+        <div class="subtag" data-aos="fade-up">{{APP_CATEGORY}}</div>
+        <h1 data-aos="fade-up" data-aos-delay="60">{{APP_NAME}}</h1>
+        <p class="tagline" data-aos="fade-up" data-aos-delay="120">{{APP_TAGLINE}}</p>
+        <div class="cta-row" data-aos="fade-up" data-aos-delay="180">
+            <a class="store-badge" href="{{APP_STORE_URL}}" target="_blank" rel="noopener">
+                <img src="assets/app-store.svg" alt="Download on the App Store">
+            </a>
+            <a class="btn-ghost" href="#features"><i class="fas fa-circle-info"></i> Learn more</a>
+        </div>
+    </header>
+
+    <!-- ---------------- FEATURES ---------------- -->
+    <section class="section" id="features">
+        <div class="app-wrap">
+            <div class="section-head" data-aos="fade-up">
+                <div class="eyebrow">Features</div>
+                <h2>{{FEATURES_HEADLINE}}</h2>
+                <p>{{FEATURES_SUBHEAD}}</p>
+            </div>
+            <div class="feature-grid">
+                <!-- Repeat a feature-card block per feature -->
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="icon"><i class="fas fa-{{FEATURE_1_ICON}}"></i></div>
+                    <h3>{{FEATURE_1_TITLE}}</h3>
+                    <p>{{FEATURE_1_TEXT}}</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="80">
+                    <div class="icon"><i class="fas fa-{{FEATURE_2_ICON}}"></i></div>
+                    <h3>{{FEATURE_2_TITLE}}</h3>
+                    <p>{{FEATURE_2_TEXT}}</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="160">
+                    <div class="icon"><i class="fas fa-{{FEATURE_3_ICON}}"></i></div>
+                    <h3>{{FEATURE_3_TITLE}}</h3>
+                    <p>{{FEATURE_3_TEXT}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ---------------- SCREENSHOTS ---------------- -->
+    <section class="section" id="screens">
+        <div class="app-wrap">
+            <div class="section-head" data-aos="fade-up">
+                <div class="eyebrow">A closer look</div>
+                <h2>{{SCREENS_HEADLINE}}</h2>
+            </div>
+        </div>
+        <div class="app-wrap">
+            <div class="shots" data-aos="fade-up">
+                <!-- Add one <img> per screenshot -->
+                <img src="assets/{{SCREEN_1}}" alt="{{APP_NAME}} screenshot 1">
+                <img src="assets/{{SCREEN_2}}" alt="{{APP_NAME}} screenshot 2">
+                <img src="assets/{{SCREEN_3}}" alt="{{APP_NAME}} screenshot 3">
+            </div>
+        </div>
+    </section>
+
+    <!-- ---------------- DEMO / SPLIT (optional — delete if unused) ---------------- -->
+    <section class="section">
+        <div class="app-wrap">
+            <div class="split">
+                <video data-aos="fade-right" autoplay loop muted playsinline controls>
+                    <source src="assets/{{DEMO_VIDEO}}" type="video/mp4" />
+                </video>
+                <div data-aos="fade-left">
+                    <h3>{{DEMO_HEADLINE}}</h3>
+                    <ul>
+                        <li>{{DEMO_POINT_1}}</li>
+                        <li>{{DEMO_POINT_2}}</li>
+                        <li>{{DEMO_POINT_3}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ---------------- FAQ ---------------- -->
+    <section class="section" id="faq">
+        <div class="app-wrap">
+            <div class="section-head" data-aos="fade-up">
+                <div class="eyebrow">Questions</div>
+                <h2>Frequently asked</h2>
+            </div>
+            <div class="faq">
+                <!-- Repeat a faq-item block per question -->
+                <div class="faq-item">
+                    <button class="faq-q">{{FAQ_1_Q}} <i class="fas fa-chevron-down chev"></i></button>
+                    <div class="faq-a"><div>{{FAQ_1_A}}</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q">{{FAQ_2_Q}} <i class="fas fa-chevron-down chev"></i></button>
+                    <div class="faq-a"><div>{{FAQ_2_A}}</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q">{{FAQ_3_Q}} <i class="fas fa-chevron-down chev"></i></button>
+                    <div class="faq-a"><div>{{FAQ_3_A}}</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ---------------- FOOTER ---------------- -->
+    <footer class="app-footer">
+        <div class="app-wrap">
+            <a class="store-badge" href="{{APP_STORE_URL}}" target="_blank" rel="noopener">
+                <img src="assets/app-store.svg" alt="Download on the App Store">
+            </a>
+            <div class="socials">
+                <a href="https://github.com/RMottram" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://instagram.com/ryan.codesuk" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/ryan-mottram/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <small>&copy; {{APP_NAME}} <span id="year"></span> · Made by Ryan Mottram · <a href="apps.html">All apps</a></small>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html>

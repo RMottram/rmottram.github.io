@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!--
+  WORKED EXAMPLE built from templates/app-template.html
+  Served at: https://ryanmottram.github.io/juicebox
+  NOTE: copy/images below are placeholders (reusing Umbriel assets so the
+  page renders). Swap the {{...}}-style content and /assets/* files for the
+  real Juicebox details, then delete this comment.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juicebox — Your day, squeezed into focus</title>
+    <meta name="description" content="Juicebox is an iOS app that turns your tasks and habits into simple, satisfying daily momentum.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/cd101d4302.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body class="app-page theme-juicebox">
+
+    <!-- NAV -->
+    <nav class="app-nav">
+        <a class="brand" href="index.html">
+            <i class="fas fa-arrow-left"></i>
+            <span>Ryan Mottram</span>
+        </a>
+        <div class="nav-links">
+            <a href="#features">Features</a>
+            <a href="#screens">Screens</a>
+            <a href="#faq">FAQ</a>
+            <a href="#" target="_blank" rel="noopener">Download</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+        <img class="app-icon" src="assets/umbriel-md.png" alt="Juicebox icon" data-aos="zoom-in">
+        <div class="subtag" data-aos="fade-up">iOS · Productivity</div>
+        <h1 data-aos="fade-up" data-aos-delay="60">Juicebox</h1>
+        <p class="tagline" data-aos="fade-up" data-aos-delay="120">Your day, squeezed into focus. Turn tasks and habits into simple, satisfying daily momentum.</p>
+        <div class="cta-row" data-aos="fade-up" data-aos-delay="180">
+            <a class="store-badge" href="#" target="_blank" rel="noopener">
+                <img src="assets/app-store.svg" alt="Download on the App Store">
+            </a>
+            <a class="btn-ghost" href="#features"><i class="fas fa-circle-info"></i> Learn more</a>
+        </div>
+    </header>
+
+    <!-- FEATURES -->
+    <section class="section" id="features">
+        <div class="app-wrap">
+            <div class="section-head" data-aos="fade-up">
+                <div class="eyebrow">Features</div>
+                <h2>Everything you need, nothing you don't</h2>
+                <p>Built to get out of your way so you can actually get things done.</p>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="icon"><i class="fas fa-bolt"></i></div>
+                    <h3>Quick capture</h3>
+                    <p>Add a task in one tap and get back to what matters. No forms, no friction.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="80">
+                    <div class="icon"><i class="fas fa-fire"></i></div>
+                    <h3>Habit streaks</h3>
+                    <p>Build momentum with visual streaks that make consistency feel rewarding.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="160">
+                    <div class="icon"><i class="fas fa-cloud"></i></div>
+                    <h3>iCloud sync</h3>
+                    <p>Your day stays in sync across iPhone and iPad, automatically and privately.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="icon"><i class="fas fa-moon"></i></div>
+                    <h3>Beautiful dark mode</h3>
+                    <p>A calm, focused interface that looks great morning to midnight.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="80">
+                    <div class="icon"><i class="fas fa-bell"></i></div>
+                    <h3>Gentle reminders</h3>
+                    <p>Nudges that respect your attention and never nag.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="160">
+                    <div class="icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Weekly insights</h3>
+                    <p>See how your week went and where your focus really went.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCREENSHOTS -->
+    <section class="section" id="screens">
+        <div class="app-wrap">
+            <div class="section-head" data-aos="fade-up">
+                <div class="eyebrow">A closer look</div>
+                <h2>Designed to feel effortless</h2>
+            </div>
+        </div>
+        <div class="app-wrap">
+            <div class="shots" data-aos="fade-up">
+                <img src="assets/umbriel-sc-1.png" alt="Juicebox screenshot 1">
+                <img src="assets/umbriel-sc-2.png" alt="Juicebox screenshot 2">
+                <img src="assets/umbriel-sc-3.png" alt="Juicebox screenshot 3">
+            </div>
+        </div>
+    </section>
+
+    <!-- DEMO / SPLIT -->
+    <section class="section">
+        <div class="app-wrap">
+            <div class="split">
+                <video data-aos="fade-right" autoplay loop muted playsinline controls>
+                    <source src="assets/umbriel-demo.mp4" type="video/mp4" />
+                </video>
+                <div data-aos="fade-left">
+                    <h3>See it in action</h3>
+                    <ul>
+                        <li>Plan your day in seconds with quick capture</li>
+                        <li>Check off habits and watch your streak grow</li>
+                        <li>Everything syncs privately through iCloud</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+        <div class="app-wrap">
+            <div class="section-head" data-aos="fade-up">
+                <div class="eyebrow">Questions</div>
+                <h2>Frequently asked</h2>
+            </div>
+            <div class="faq">
+                <div class="faq-item">
+                    <button class="faq-q">Which devices does Juicebox support? <i class="fas fa-chevron-down chev"></i></button>
+                    <div class="faq-a"><div>Juicebox runs on iPhone and iPad with iOS 16 or later.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q">Is my data private? <i class="fas fa-chevron-down chev"></i></button>
+                    <div class="faq-a"><div>Yes. Your data is stored on your device and synced only through your private iCloud account. No third-party servers, no ads, no tracking.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q">Does it cost anything? <i class="fas fa-chevron-down chev"></i></button>
+                    <div class="faq-a"><div>Juicebox is free to download with an optional premium upgrade for advanced insights.</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="app-footer">
+        <div class="app-wrap">
+            <a class="store-badge" href="#" target="_blank" rel="noopener">
+                <img src="assets/app-store.svg" alt="Download on the App Store">
+            </a>
+            <div class="socials">
+                <a href="https://github.com/RMottram" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://instagram.com/ryan.codesuk" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/ryan-mottram/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <small>&copy; Juicebox <span id="year"></span> · Made by Ryan Mottram · <a href="apps.html">All apps</a></small>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html>

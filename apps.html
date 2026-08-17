@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--
+  Apps directory — served at https://ryanmottram.github.io/apps
+  Add a new .app-card block for each app you ship.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apps — Ryan Mottram</title>
+    <meta name="description" content="Apps designed and built by Ryan Mottram.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/cd101d4302.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body class="app-page theme-apps">
+
+    <nav class="app-nav">
+        <a class="brand" href="index.html">
+            <i class="fas fa-arrow-left"></i>
+            <span>Ryan Mottram</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html#about-me">About</a>
+            <a href="index.html#my-portfolio">Portfolio</a>
+            <a href="index.html#contact-me">Contact</a>
+        </div>
+    </nav>
+
+    <header class="hero hero--flush">
+        <div class="subtag" data-aos="fade-up">Made by Ryan Mottram</div>
+        <h1 data-aos="fade-up" data-aos-delay="60">Apps</h1>
+        <p class="tagline" data-aos="fade-up" data-aos-delay="120">Things I've designed and built. Tap any app to see what it does.</p>
+    </header>
+
+    <section class="section section--tight">
+        <div class="app-wrap">
+            <div class="apps-grid">
+
+                <!-- Umbriel -->
+                <a class="app-card theme-umbriel" href="umbriel.html" data-aos="fade-up">
+                    <img src="assets/umbriel-md.png" alt="Umbriel icon">
+                    <span class="app-cat">iOS · Security</span>
+                    <h3>Umbriel</h3>
+                    <p>A password strength tester, generator and biometric-secured vault, built 100% in SwiftUI.</p>
+                    <span class="go">View app <i class="fas fa-arrow-right"></i></span>
+                </a>
+
+                <!-- Juicebox -->
+                <a class="app-card theme-juicebox" href="juicebox.html" data-aos="fade-up" data-aos-delay="80">
+                    <img src="assets/app_icon.png" alt="Juicebox icon">
+                    <span class="app-cat">iOS · Productivity</span>
+                    <h3>Juicebox</h3>
+                    <p>Log all your EV charging and see your costs, metrics and stats all in one app.</p>
+                    <span class="go">View app <i class="fas fa-arrow-right"></i></span>
+                </a>
+
+                <!-- Duplicate a block above to add the next app -->
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="app-footer">
+        <div class="app-wrap">
+            <div class="socials">
+                <a href="https://github.com/RMottram" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://instagram.com/ryan.codesuk" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/ryan-mottram/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <small>&copy; Ryan Mottram <span id="year"></span></small>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html>
