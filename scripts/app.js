@@ -40,9 +40,8 @@
     wrapper.appendChild(prev);
     wrapper.appendChild(next);
 
-    var STEP = 260;       // px per button click
-    var INTERVAL = 3000;  // ms between auto-scrolls
-    var RESUME_DELAY = 4000; // ms after interaction before resuming
+    var INTERVAL = 2000;    // ms between auto-scrolls
+    var RESUME_DELAY = 2000; // ms after interaction before resuming
     var paused = false;
     var resumeTimer = null;
 
@@ -52,26 +51,28 @@
       resumeTimer = setTimeout(function () { paused = false; }, RESUME_DELAY);
     }
 
-    // Auto-scroll: nudge by 1px steps until one image width is covered, then repeat
+    // Calculate scroll step: container width (shows 2 images at a time)
+    var scrollStep = shots.clientWidth;
+
+    // Auto-scroll: nudge by scrollStep px, loop back to start at end
     var autoTimer = setInterval(function () {
       if (paused) return;
       var maxScroll = shots.scrollWidth - shots.clientWidth;
       if (shots.scrollLeft >= maxScroll - 1) {
-        // reached end — scroll back to start
         shots.scrollTo({ left: 0, behavior: 'smooth' });
       } else {
-        shots.scrollBy({ left: STEP, behavior: 'smooth' });
+        shots.scrollBy({ left: scrollStep, behavior: 'smooth' });
       }
     }, INTERVAL);
 
     // Manual buttons
     prev.addEventListener('click', function () {
       pause();
-      shots.scrollBy({ left: -STEP, behavior: 'smooth' });
+      shots.scrollBy({ left: -scrollStep, behavior: 'smooth' });
     });
     next.addEventListener('click', function () {
       pause();
-      shots.scrollBy({ left: STEP, behavior: 'smooth' });
+      shots.scrollBy({ left: scrollStep, behavior: 'smooth' });
     });
 
     // Pause on hover / touch

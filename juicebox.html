@@ -1,21 +1,14 @@
 <!DOCTYPE html>
-<!--
-  WORKED EXAMPLE built from templates/app-template.html
-  Served at: https://ryanmottram.github.io/juicebox
-  NOTE: copy/images below are placeholders (reusing Umbriel assets so the
-  page renders). Swap the {{...}}-style content and /assets/* files for the
-  real Juicebox details, then delete this comment.
--->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juicebox — Your day, squeezed into focus</title>
-    <meta name="description" content="Juicebox is an iOS app that turns your tasks and habits into simple, satisfying daily momentum.">
+    <title>JuiceBox - Your EV's Favourite Charging App</title>
+    <meta name="description" content="Log sessions, monitor costs, and actually understand what you're spending on EV charging. Free to start, upgrade when you're ready.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/cd101d4302.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="css/app.css">
@@ -30,65 +23,137 @@
             <span>Ryan Mottram</span>
         </a>
         <div class="nav-links">
+            <a href="#how-it-works">How it works</a>
             <a href="#features">Features</a>
             <a href="#screens">Screens</a>
-            <a href="#faq">FAQ</a>
-            <a href="#" target="_blank" rel="noopener">Download</a>
+            <a href="#pricing">Pricing</a>
         </div>
     </nav>
 
     <!-- HERO -->
     <header class="hero">
-        <img class="app-icon" src="assets/umbriel-md.png" alt="Juicebox icon" data-aos="zoom-in">
-        <div class="subtag" data-aos="fade-up">iOS · Productivity</div>
-        <h1 data-aos="fade-up" data-aos-delay="60">Juicebox</h1>
-        <p class="tagline" data-aos="fade-up" data-aos-delay="120">Your day, squeezed into focus. Turn tasks and habits into simple, satisfying daily momentum.</p>
+        <img class="app-icon" src="assets/juicebox/juicebox-icon.png" alt="JuiceBox icon" data-aos="zoom-in">
+        <h1 data-aos="fade-up" data-aos-delay="60">JuiceBox</h1>
+        <p class="tagline" data-aos="fade-up" data-aos-delay="120">
+            Your EV's favourite charging app. Log sessions, monitor costs,
+            and actually understand what you're spending. All from your pocket in one app.
+        </p>
         <div class="cta-row" data-aos="fade-up" data-aos-delay="180">
-            <a class="store-badge" href="#" target="_blank" rel="noopener">
+            <a class="store-badge" href="https://apps.apple.com/app/id6773839547" target="_blank" rel="noopener">
                 <img src="assets/app-store.svg" alt="Download on the App Store">
             </a>
-            <a class="btn-ghost" href="#features"><i class="fas fa-circle-info"></i> Learn more</a>
+            <a class="btn-ghost" href="#how-it-works"><i class="fas fa-bolt"></i> See how it works</a>
         </div>
     </header>
 
-    <!-- FEATURES -->
-    <section class="section" id="features">
+    <!-- HOW IT WORKS -->
+    <section class="section" id="how-it-works">
         <div class="app-wrap">
             <div class="section-head" data-aos="fade-up">
-                <div class="eyebrow">Features</div>
-                <h2>Everything you need, nothing you don't</h2>
-                <p>Built to get out of your way so you can actually get things done.</p>
+                <div class="eyebrow">Watt's it all about</div>
+                <h2>Simple. Honest. No faff.</h2>
             </div>
             <div class="feature-grid">
                 <div class="feature-card" data-aos="fade-up">
-                    <div class="icon"><i class="fas fa-bolt"></i></div>
-                    <h3>Quick capture</h3>
-                    <p>Add a task in one tap and get back to what matters. No forms, no friction.</p>
+                    <div class="icon"><i class="fas fa-plug"></i></div>
+                    <h3>Plug in your EV</h3>
+                    <p>Let it charge overnight after a long day. No need to open the app yet.</p>
                 </div>
                 <div class="feature-card" data-aos="fade-up" data-aos-delay="80">
-                    <div class="icon"><i class="fas fa-fire"></i></div>
-                    <h3>Habit streaks</h3>
-                    <p>Build momentum with visual streaks that make consistency feel rewarding.</p>
+                    <div class="icon"><i class="fas fa-mug-hot"></i></div>
+                    <h3>Open over breakfast</h3>
+                    <p>Log your session in seconds. kWh added, charge percentage, cost per kWh. Done.</p>
                 </div>
                 <div class="feature-card" data-aos="fade-up" data-aos-delay="160">
-                    <div class="icon"><i class="fas fa-cloud"></i></div>
-                    <h3>iCloud sync</h3>
-                    <p>Your day stays in sync across iPhone and iPad, automatically and privately.</p>
+                    <div class="icon"><i class="fas fa-calculator"></i></div>
+                    <h3>JuiceBox does the maths</h3>
+                    <p>Cost per charge, charging time, cost per mile, and how it all adds up over time.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FREE FEATURES -->
+    <section class="section" id="features">
+        <div class="app-wrap">
+            <div class="section-head" data-aos="fade-up">
+                <div class="eyebrow">Out of the box</div>
+                <h2>Start free, always free</h2>
+                <p>No subscription needed to get started. These features are yours, forever.</p>
+            </div>
+            <div class="feature-grid">
                 <div class="feature-card" data-aos="fade-up">
-                    <div class="icon"><i class="fas fa-moon"></i></div>
-                    <h3>Beautiful dark mode</h3>
-                    <p>A calm, focused interface that looks great morning to midnight.</p>
+                    <div class="icon"><i class="fas fa-car"></i></div>
+                    <h3>One vehicle monitoring</h3>
+                    <p>Track one EV for free. Upgrade anytime for more.</p>
                 </div>
                 <div class="feature-card" data-aos="fade-up" data-aos-delay="80">
-                    <div class="icon"><i class="fas fa-bell"></i></div>
-                    <h3>Gentle reminders</h3>
-                    <p>Nudges that respect your attention and never nag.</p>
+                    <div class="icon"><i class="fas fa-bolt"></i></div>
+                    <h3>Charge time calculator</h3>
+                    <p>Estimate charge time using your battery size, speed, and target percentage.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="160">
+                    <div class="icon"><i class="fas fa-calendar"></i></div>
+                    <h3>One month's worth of logging</h3>
+                    <p>Log up to 10 sessions and start spotting your charging habits.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="icon"><i class="fas fa-th-large"></i></div>
+                    <h3>Widgets</h3>
+                    <p>Home screen and lock screen widgets for easy glanceable charging history.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="80">
+                    <div class="icon"><i class="fas fa-chart-pie"></i></div>
+                    <h3>Simple stats</h3>
+                    <p>Average session cost, total charging time, and total kWh, right from day one.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="160">
+                    <div class="icon"><i class="fas fa-clock"></i></div>
+                    <h3>Apple Watch companion app</h3>
+                    <p>Check your charging history right from your wrist.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRO FEATURES -->
+    <section class="section">
+        <div class="app-wrap">
+            <div class="section-head" data-aos="fade-up">
+                <div class="eyebrow">Squeeze a little more juice</div>
+                <h2>More power. More insight.</h2>
+                <p>Unlock the full JuiceBox experience with Pro.</p>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="icon"><i class="fas fa-car-side"></i></div>
+                    <h3>Multiple vehicle monitoring</h3>
+                    <p>Track up to four EVs, each with their own stats and history.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="80">
+                    <div class="icon"><i class="fas fa-calculator"></i></div>
+                    <h3>Journey &amp; cost calculator</h3>
+                    <p>Estimate trip costs and see how you compare to petrol and diesel.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="160">
+                    <div class="icon"><i class="fas fa-brain"></i></div>
+                    <h3>AI predictions</h3>
+                    <p>On-device AI predicts your next charge date, cost, and power needed.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="icon"><i class="fas fa-database"></i></div>
+                    <h3>Your data, anywhere</h3>
+                    <p>Import and export existing charging data instantly.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="80">
+                    <div class="icon"><i class="fas fa-infinity"></i></div>
+                    <h3>Unlimited logging</h3>
+                    <p>Log as many charging sessions as you like, across all your vehicles.</p>
                 </div>
                 <div class="feature-card" data-aos="fade-up" data-aos-delay="160">
                     <div class="icon"><i class="fas fa-chart-line"></i></div>
-                    <h3>Weekly insights</h3>
-                    <p>See how your week went and where your focus really went.</p>
+                    <h3>Advanced stats</h3>
+                    <p>Unlock deeper stats including miles per kWh and cost per mile.</p>
                 </div>
             </div>
         </div>
@@ -98,57 +163,58 @@
     <section class="section" id="screens">
         <div class="app-wrap">
             <div class="section-head" data-aos="fade-up">
-                <div class="eyebrow">A closer look</div>
-                <h2>Designed to feel effortless</h2>
+                <div class="eyebrow">Inside the JuiceBox</div>
+                <h2>Clean, fast, and actually useful</h2>
             </div>
-        </div>
-        <div class="app-wrap">
             <div class="shots" data-aos="fade-up">
-                <img src="assets/umbriel-sc-1.png" alt="Juicebox screenshot 1">
-                <img src="assets/umbriel-sc-2.png" alt="Juicebox screenshot 2">
-                <img src="assets/umbriel-sc-3.png" alt="Juicebox screenshot 3">
+                <img src="assets/juicebox/Sessions.png" alt="JuiceBox session history">
+                <img src="assets/juicebox/Stats.png" alt="JuiceBox stats and metrics">
+                <img src="assets/juicebox/charts.png" alt="JuiceBox charts and graphs">
+                <img src="assets/juicebox/import.png" alt="JuiceBox import">
+                <img src="assets/juicebox/csv.png" alt="JuiceBox import csv">
+                <img src="assets/juicebox/json.png" alt="JuiceBox import json">
+                <img src="assets/juicebox/prediction.png" alt="JuiceBox prediction">
+                <img src="assets/juicebox/juicelog.png" alt="JuiceBox JuiceLog">
+                <img src="assets/juicebox/widgets.png" alt="JuiceBox widgets">
             </div>
         </div>
     </section>
 
-    <!-- DEMO / SPLIT -->
-    <section class="section">
-        <div class="app-wrap">
-            <div class="split">
-                <video data-aos="fade-right" autoplay loop muted playsinline controls>
-                    <source src="assets/umbriel-demo.mp4" type="video/mp4" />
-                </video>
-                <div data-aos="fade-left">
-                    <h3>See it in action</h3>
-                    <ul>
-                        <li>Plan your day in seconds with quick capture</li>
-                        <li>Check off habits and watch your streak grow</li>
-                        <li>Everything syncs privately through iCloud</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="section" id="faq">
+    <!-- PRICING -->
+    <section class="section" id="pricing">
         <div class="app-wrap">
             <div class="section-head" data-aos="fade-up">
-                <div class="eyebrow">Questions</div>
-                <h2>Frequently asked</h2>
+                <div class="eyebrow">How much for some juice?</div>
+                <h2>Start free. Upgrade when you're ready.</h2>
             </div>
-            <div class="faq">
-                <div class="faq-item">
-                    <button class="faq-q">Which devices does Juicebox support? <i class="fas fa-chevron-down chev"></i></button>
-                    <div class="faq-a"><div>Juicebox runs on iPhone and iPad with iOS 16 or later.</div></div>
+            <div class="split">
+                <div class="pricing-card" data-aos="fade-up">
+                    <h3>JuiceBox</h3>
+                    <div class="price">Free</div>
+                    <p class="price-note">Always will be. Ad-free as well, always.</p>
+                    <ul>
+                        <li>One vehicle</li>
+                        <li>10 sessions per month</li>
+                        <li>Simple stats</li>
+                        <li>Charge calculator</li>
+                        <li>Widgets</li>
+                        <li>Apple Watch app</li>
+                    </ul>
                 </div>
-                <div class="faq-item">
-                    <button class="faq-q">Is my data private? <i class="fas fa-chevron-down chev"></i></button>
-                    <div class="faq-a"><div>Yes. Your data is stored on your device and synced only through your private iCloud account. No third-party servers, no ads, no tracking.</div></div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-q">Does it cost anything? <i class="fas fa-chevron-down chev"></i></button>
-                    <div class="faq-a"><div>Juicebox is free to download with an optional premium upgrade for advanced insights.</div></div>
+                <div class="pricing-card pricing-card--pro" data-aos="fade-up" data-aos-delay="80">
+                    <h3>JuiceBox Pro</h3>
+                    <div class="price">£2.99<span>/month</span></div>
+                    <p class="price-note">Less than the average home charge</p>
+                    <div class="price-alt">or £12.99/year (save over 50%)</div>
+                    <ul>
+                        <li>Everything in Free</li>
+                        <li>Up to 4 vehicles</li>
+                        <li>Unlimited session logging</li>
+                        <li>AI predictions</li>
+                        <li>Journey &amp; cost calculator</li>
+                        <li>Advanced stats</li>
+                        <li>Import/export data</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -157,7 +223,7 @@
     <!-- FOOTER -->
     <footer class="app-footer">
         <div class="app-wrap">
-            <a class="store-badge" href="#" target="_blank" rel="noopener">
+            <a class="store-badge" href="https://apps.apple.com/app/id6773839547" target="_blank" rel="noopener">
                 <img src="assets/app-store.svg" alt="Download on the App Store">
             </a>
             <div class="socials">
@@ -165,7 +231,7 @@
                 <a href="https://instagram.com/ryan.codesuk" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.linkedin.com/in/ryan-mottram/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
             </div>
-            <small>&copy; Juicebox <span id="year"></span> · Made by Ryan Mottram · <a href="apps.html">All apps</a></small>
+            <small>&copy; JuiceBox <span id="year"></span> · Made by Ryan Mottram · <a href="apps.html">All apps</a></small>
         </div>
     </footer>
 

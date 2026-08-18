@@ -85,20 +85,6 @@ a:hover { text-decoration: underline; }
     padding: 96px 24px 88px;
     overflow: hidden;
 }
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: -40% 0 auto 50%;
-    transform: translateX(-50%);
-    width: 900px;
-    height: 900px;
-    background: radial-gradient(closest-side,
-        color-mix(in srgb, var(--accent) 26%, transparent),
-        transparent 70%);
-    filter: blur(10px);
-    z-index: 0;
-    pointer-events: none;
-}
 .hero > * { position: relative; z-index: 1; }
 .app-icon {
     width: 118px; height: 118px;
@@ -135,8 +121,14 @@ a:hover { text-decoration: underline; }
     margin-bottom: 26px;
 }
 .cta-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; align-items: center; }
-.store-badge img { height: 60px; width: auto; border-radius: 0; }
-.split .store-badge img { border-radius: 0; width: auto; }
+.store-badge {
+    display: inline-flex;
+    align-items: center;
+    transition: opacity .2s, transform .2s;
+}
+.store-badge:hover { opacity: 0.8; transform: translateY(-2px); text-decoration: none; }
+.store-badge img { height: 48px; width: auto; border-radius: 0; }
+.split .store-badge img { height: 48px; border-radius: 0; width: auto; }
 .btn-ghost {
     display: inline-flex; align-items: center; gap: 8px;
     padding: 14px 24px;
@@ -153,7 +145,7 @@ a:hover { text-decoration: underline; }
 .section { padding: 72px 0; }
 .section-head { text-align: center; max-width: 680px; margin: 0 auto 48px; }
 .section-head .eyebrow {
-    font-size: .8rem; font-weight: 800; letter-spacing: .16em;
+    font-size: 2rem; font-weight: 800; letter-spacing: .16em;
     text-transform: uppercase; color: var(--accent); margin-bottom: 10px;
 }
 .section-head h2 {
@@ -192,46 +184,24 @@ a:hover { text-decoration: underline; }
 .shots-wrapper {
     position: relative;
     min-width: 0;
-    overflow: hidden;
+    background: transparent;
 }
 .shots {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 22px;
-    overflow-x: auto;
     padding: 8px 4px 22px;
-    scroll-snap-type: x mandatory;
+    background: transparent;
 }
-.shots::-webkit-scrollbar { height: 8px; }
-.shots::-webkit-scrollbar-thumb { background: var(--border); border-radius: 999px; }
 .shots img {
-    height: 520px;
-    width: auto;
+    /* mix-blend-mode: lighten; */
+    width: 100%;
+    height: auto;
     border-radius: 28px;
-    scroll-snap-align: center;
-    box-shadow: 0 20px 50px rgba(0,0,0,.5), 0 0 0 1px var(--border);
-    flex: 0 0 auto;
 }
 .shots-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-60%);
-    z-index: 2;
-    background: rgba(31, 31, 28, 0.82);
-    border: 1px solid var(--border);
-    color: var(--text);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    cursor: pointer;
-    transition: background .2s, border-color .2s, opacity .2s;
-    opacity: 0;
+    display: none;
 }
-.shots-wrapper:hover .shots-btn { opacity: 1; }
-.shots-btn:hover { background: var(--bg-3); border-color: var(--accent); color: var(--accent); }
-.shots-btn--prev { left: 6px; }
-.shots-btn--next { right: 6px; }
 
 /* ---------------- SPLIT (video + copy) ---------------- */
 .split {
@@ -305,8 +275,14 @@ a:hover { text-decoration: underline; }
    Give <body> (or any element) one of these classes to set its accent.
    Add a new theme here when you add a new app. */
 .theme-apps     { --accent: #66d9ef; --accent-2: #f92672; }
-.theme-umbriel  { --accent: #ff6565; --accent-2: #f92672; }
-.theme-juicebox { --accent: #ff9f1c; --accent-2: #f92672; }
+.theme-wisppad  { --accent: #89A5D6; --accent-2: #8CF5C1; --font: 'Playpen Sans', cursive, system-ui, sans-serif; }
+.theme-juicebox { --accent: #3DAF6E; --accent-2: #F0B429; --font: 'Quicksand', system-ui, sans-serif; --bg: #F6F4EF; --bg-2: #EEEAE3; --bg-3: #E6E1D8; --text: #2a2820; --text-dim: #6b6458; --heading: #1a1612; --border: #d4cfc5; }
+
+/* JuiceBox light nav override */
+.theme-juicebox .app-nav {
+    background: rgba(246, 244, 239, 0.92);
+    border-bottom: none;
+}
 
 /* ---------------- APPS DIRECTORY (apps.html) ---------------- */
 .apps-grid {
@@ -415,10 +391,71 @@ a:hover { text-decoration: underline; }
     .hero { padding: 68px 20px 60px; }
     .app-icon { width: 92px; height: 92px; border-radius: 20px; }
     .split { grid-template-columns: 1fr; gap: 28px; }
-    .shots img { height: 420px; }
+    .shots { grid-template-columns: repeat(2, 1fr); }
     .section { padding: 56px 0; }
 }
 @media (max-width: 480px) {
     .app-nav .brand span { display: none; }
-    .shots img { height: 360px; }
+    .shots { grid-template-columns: 1fr; }
+}
+
+/* ---------------- PRICING CARDS ---------------- */
+.pricing-card {
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 40px 32px;
+    text-align: center;
+}
+.pricing-card h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 0 0 16px;
+}
+.pricing-card .price {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--accent);
+    margin: 0 0 8px;
+}
+.pricing-card .price span {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-dim);
+}
+.pricing-card .price-note {
+    font-size: .9rem;
+    color: var(--text-dim);
+    margin: 0 0 12px;
+}
+.pricing-card .price-alt {
+    font-size: .95rem;
+    font-weight: 600;
+    color: var(--accent-2);
+    margin: 0 0 24px;
+}
+.pricing-card ul {
+    list-style: none;
+    margin: 24px 0 0;
+    padding: 0;
+    text-align: left;
+}
+.pricing-card li {
+    padding: 10px 0 10px 32px;
+    position: relative;
+    color: var(--text);
+    font-weight: 400;
+}
+.pricing-card li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    color: var(--accent);
+    font-weight: 800;
+}
+.pricing-card--pro {
+    border-color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 8%, var(--bg-2));
 }
