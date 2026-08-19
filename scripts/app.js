@@ -20,10 +20,10 @@
   if (y) y.textContent = new Date().getFullYear();
 
   // ---- Screenshot carousel auto-scroll + manual controls ----
-  document.querySelectorAll('.shots').forEach(function (shots) {
+  document.querySelectorAll('.shots--carousel').forEach(function (shots) {
     // Wrap in a relative container and inject prev/next buttons
     var wrapper = document.createElement('div');
-    wrapper.className = 'shots-wrapper';
+    wrapper.className = 'shots-wrapper shots-wrapper--carousel';
     shots.parentNode.insertBefore(wrapper, shots);
     wrapper.appendChild(shots);
 
@@ -51,28 +51,41 @@
       resumeTimer = setTimeout(function () { paused = false; }, RESUME_DELAY);
     }
 
-    // Calculate scroll step: container width (shows 2 images at a time)
-    var scrollStep = shots.clientWidth;
+    // Advance by a full page of shots, so each move reveals an entirely
+    // new set rather than sliding along by one. Measured at call time so
+    // it stays correct after images load and across breakpoints.
+    function step() {
+      var first = shots.querySelector('img');
+      if (!first) return shots.clientWidth;
+      var gap = parseFloat(getComputedStyle(shots).columnGap) || 0;
+      var unit = first.getBoundingClientRect().width + gap;
+      // how many fit in the visible track (1 at the mobile breakpoint)
+      var perView = Math.max(1, Math.round((shots.clientWidth + gap) / unit));
+      return unit * perView;
+    }
 
-    // Auto-scroll: nudge by scrollStep px, loop back to start at end
+    // Auto-scroll: advance one page, loop back to start at the end.
+    // Skipped under reduced-motion; the buttons below still work.
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     var autoTimer = setInterval(function () {
-      if (paused) return;
+      if (paused || reduceMotion) return;
       var maxScroll = shots.scrollWidth - shots.clientWidth;
       if (shots.scrollLeft >= maxScroll - 1) {
         shots.scrollTo({ left: 0, behavior: 'smooth' });
       } else {
-        shots.scrollBy({ left: scrollStep, behavior: 'smooth' });
+        shots.scrollBy({ left: step(), behavior: 'smooth' });
       }
     }, INTERVAL);
 
     // Manual buttons
     prev.addEventListener('click', function () {
       pause();
-      shots.scrollBy({ left: -scrollStep, behavior: 'smooth' });
+      shots.scrollBy({ left: -step(), behavior: 'smooth' });
     });
     next.addEventListener('click', function () {
       pause();
-      shots.scrollBy({ left: scrollStep, behavior: 'smooth' });
+      shots.scrollBy({ left: step(), behavior: 'smooth' });
     });
 
     // Pause on hover / touch

@@ -21,6 +21,7 @@
     --radius:    18px;
     --radius-sm: 12px;
     --maxw:      1120px;
+    --carousel-w: 400px;  /* visible carousel track (one screenshot) */
     --font:      'Nunito', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
 }
 
@@ -87,7 +88,7 @@ a:hover { text-decoration: underline; }
 }
 .hero > * { position: relative; z-index: 1; }
 .app-icon {
-    width: 118px; height: 118px;
+    width: 256px; height: 256px;
     border-radius: 26px;
     box-shadow: 0 18px 50px rgba(0,0,0,.45),
                 0 0 0 1px var(--border);
@@ -199,9 +200,57 @@ a:hover { text-decoration: underline; }
     height: auto;
     border-radius: 28px;
 }
-.shots-btn {
-    display: none;
+/* ---- Carousel variant (index.html project rows) ---- */
+.shots--carousel {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+    /* No side padding: flex-basis resolves against the content box, so
+       inherited padding would pull the next shot into view. */
+    padding: 8px 0 22px;
+    /* Track width == one shot, so only one is ever on show. */
+    max-width: var(--carousel-w);
+    margin-inline: auto;
 }
+.shots--carousel::-webkit-scrollbar { height: 8px; }
+.shots--carousel::-webkit-scrollbar-thumb { background: var(--border); border-radius: 999px; }
+.shots--carousel img {
+    /* one on show: each shot fills the visible track */
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+}
+.shots-wrapper { overflow: hidden; }
+/* Match the carousel track so the prev/next buttons hug the image
+   rather than the full grid column. */
+.shots-wrapper--carousel {
+    max-width: var(--carousel-w);
+    margin-inline: auto;
+}
+.shots-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    background: color-mix(in srgb, var(--bg) 82%, transparent);
+    border: 1px solid var(--border);
+    color: var(--text);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: background .2s, border-color .2s, color .2s, opacity .2s;
+}
+.shots-wrapper:hover .shots-btn,
+.shots-btn:focus-visible { opacity: 1; }
+.shots-btn:hover { background: var(--bg-3); border-color: var(--accent); color: var(--accent); }
+.shots-btn--prev { left: 6px; }
+.shots-btn--next { right: 6px; }
 
 /* ---------------- SPLIT (video + copy) ---------------- */
 .split {
@@ -211,6 +260,11 @@ a:hover { text-decoration: underline; }
     align-items: center;
 }
 .split video, .split > img { width: 100%; border-radius: var(--radius); }
+/* Portfolio rows: top-align the copy with the screenshots instead of
+   centring, and match .shots' 8px top padding so the title lines up. */
+.project .split { align-items: start; }
+.project .split > .shots + div,
+.project .split > .shots-wrapper + div { padding-top: 8px; }
 .split h3 { color: var(--accent-2); font-size: 1.6rem; font-weight: 700; margin: 0 0 14px; }
 .split ul { list-style: none; padding: 0; margin: 0; }
 .split li { padding: 8px 0 8px 28px; position: relative; color: var(--text-dim); }
@@ -276,13 +330,184 @@ a:hover { text-decoration: underline; }
    Add a new theme here when you add a new app. */
 .theme-apps     { --accent: #66d9ef; --accent-2: #f92672; }
 .theme-wisppad  { --accent: #89A5D6; --accent-2: #8CF5C1; --font: 'Playpen Sans', cursive, system-ui, sans-serif; }
-.theme-juicebox { --accent: #3DAF6E; --accent-2: #F0B429; --font: 'Quicksand', system-ui, sans-serif; --bg: #F6F4EF; --bg-2: #EEEAE3; --bg-3: #E6E1D8; --text: #2a2820; --text-dim: #6b6458; --heading: #1a1612; --border: #d4cfc5; }
+/* Palette sampled from the JuiceBox app UI (see assets/juicebox/*.png):
+   warm off-white canvas, white cards, a single green brand colour, and
+   a set of soft pastel chip tints used for metric accents. */
+.theme-juicebox {
+    /* --- JuiceBox brand palette (supplied) --- */
+    --jb-ember: #E8604A;
+    --jb-green: #3DAF6E;
+    --jb-plum:  #A855C8;
+    --jb-sage:  #79C9A0;
+    --jb-sky:   #3B9EE8;
+    --jb-teal:  #007A6C;
+    --jb-volt:  #F0B429;
+
+    /* Text-safe counterparts. The brand colours are tuned for fills and
+       fail WCAG AA as text on a light canvas (green 2.44, volt 1.64);
+       these keep each hue but darken it to >=4.5. Teal already passes,
+       so it is unchanged. */
+    --jb-ember-ink: #CC331A;
+    --jb-green-ink: #29774B;
+    --jb-plum-ink:  #953BB7;
+    --jb-sage-ink:  #2E7350;
+    --jb-sky-ink:   #156EB1;
+    --jb-teal-ink:  #007A6C;
+    --jb-volt-ink:  #835E09;
+
+    /* Pale fills for icon badges and chips, derived from the same hues */
+    --jb-ember-tint: #F0DEDB;
+    --jb-green-tint: #DFECE5;
+    --jb-plum-tint:  #E9DEED;
+    --jb-sage-tint:  #E0EBE5;
+    --jb-sky-tint:   #DAE7F1;
+    --jb-teal-tint:  #D7F4F0;
+    --jb-volt-tint:  #F2EAD9;
+
+    --accent:     var(--jb-green);
+    --accent-2:   var(--jb-volt);
+    --accent-ink: var(--jb-green-ink);
+
+    --font: 'Quicksand', system-ui, sans-serif;
+
+    --bg:        #F2F0EB;   /* app canvas */
+    --bg-2:      #FFFFFF;   /* cards sit white on the canvas */
+    --bg-3:      #F4F3EF;   /* inset metric tiles inside cards */
+    --text:      #2B2B2B;
+    --text-dim:  #6B665C;
+    --heading:   #1A1A1A;
+    --border:    #E4E1DA;
+
+    /* the app uses generous, very round corners */
+    --radius:    22px;
+    --radius-sm: 16px;
+}
 
 /* JuiceBox light nav override */
 .theme-juicebox .app-nav {
-    background: rgba(246, 244, 239, 0.92);
+    background: color-mix(in srgb, var(--bg) 92%, transparent);
     border-bottom: none;
 }
+
+.theme-juicebox a { color: var(--accent-ink); }
+.theme-juicebox .app-nav .nav-links a:hover { color: var(--accent-ink); }
+
+/* ---------------- JUICEBOX: APP-MATCHED UI ----------------
+   Mirrors the visual language of the app itself: white cards on a warm
+   canvas, a solid green header bar, inset tiles for paired metrics, and
+   soft pastel pill chips along the bottom. */
+
+/* Cards: white, soft-shadowed, no hairline border (as in the app) */
+.theme-juicebox .feature-card,
+.theme-juicebox .pricing-card {
+    background: var(--bg-2);
+    border: none;
+    box-shadow: 0 1px 2px rgba(26,26,26,.04), 0 8px 24px rgba(26,26,26,.06);
+}
+.theme-juicebox .feature-card { padding: 26px 24px; }
+.theme-juicebox .feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 1px 2px rgba(26,26,26,.05), 0 14px 34px rgba(26,26,26,.10);
+}
+
+/* Icon tiles: the app uses a filled circular glyph, not a rounded square */
+.theme-juicebox .feature-card .icon {
+    width: 46px; height: 46px;
+    border-radius: 50%;
+    background: var(--jb-green-tint);
+    color: var(--accent-ink);
+    font-size: 1.15rem;
+}
+
+/* Rotate the brand hues across the grid, as the app does across its
+   metric chips: pale tint as the badge fill, ink shade for the glyph.
+   (Fill and glyph must differ or the icon disappears into its badge.) */
+.theme-juicebox .feature-card:nth-child(6n+2) .icon { background: var(--jb-volt-tint);  color: var(--jb-volt-ink); }
+.theme-juicebox .feature-card:nth-child(6n+3) .icon { background: var(--jb-sky-tint);   color: var(--jb-sky-ink); }
+.theme-juicebox .feature-card:nth-child(6n+4) .icon { background: var(--jb-teal-tint);  color: var(--jb-teal-ink); }
+.theme-juicebox .feature-card:nth-child(6n+5) .icon { background: var(--jb-plum-tint);  color: var(--jb-plum-ink); }
+.theme-juicebox .feature-card:nth-child(6n+6) .icon { background: var(--jb-ember-tint); color: var(--jb-ember-ink); }
+
+/* Section eyebrow -> the app's muted caption above a title */
+.theme-juicebox .section-head .eyebrow {
+    font-size: 1.6rem;
+    letter-spacing: .12em;
+    color: var(--accent-ink);
+}
+.theme-juicebox .section-head h2 { letter-spacing: -.01em; }
+
+/* Pricing cards mirror the app's session card: solid green header bar
+   with the title reversed out, details on white below. */
+.theme-juicebox .pricing-card {
+    padding: 0;
+    overflow: hidden;
+    text-align: left;
+}
+.theme-juicebox .pricing-card h3 {
+    background: var(--accent-ink);
+    color: #fff;
+    margin: 0;
+    padding: 22px 26px;
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+.theme-juicebox .pricing-card .price {
+    color: var(--heading);
+    font-size: 2.6rem;
+    margin: 24px 26px 4px;
+}
+.theme-juicebox .pricing-card .price span { color: var(--text-dim); }
+.theme-juicebox .pricing-card .price-note,
+.theme-juicebox .pricing-card .price-alt { margin-left: 26px; margin-right: 26px; }
+.theme-juicebox .pricing-card .price-alt { color: var(--jb-volt-ink); }
+.theme-juicebox .pricing-card ul { margin: 8px 0 26px; padding: 0 26px; }
+
+/* Feature ticks: the app pairs a small green circle with the label */
+.theme-juicebox .pricing-card li { padding-left: 30px; color: var(--text); }
+.theme-juicebox .pricing-card li::before {
+    /* The kit (kit.fontawesome.com/cd101d4302.js) is FA 5.15.4 running in
+       method:css, so the icon webfont IS loaded - under the v5 family name.
+       font-weight:900 is required: FA registers separate 400 (regular) and
+       900 (solid) faces, and fa-check lives in the solid one. */
+    content: "\f0e7";                       /* fa-check */
+    font-family: "Font Awesome 5 Free", "Font Awesome 6 Free", sans-serif;
+    font-weight: 900;
+    font-size: .68rem;
+    line-height: 1;
+    top: 12px;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    background: var(--jb-green-tint);
+    color: var(--accent-ink);
+    display: grid;
+    place-items: center;
+}
+
+/* Pro card: the app marks the upgraded tier with a bordered highlight */
+.theme-juicebox .pricing-card--pro {
+    background: var(--bg-2);
+    border: 2px solid var(--accent-ink);
+}
+.theme-juicebox .pricing-card--pro h3 {
+    background: linear-gradient(135deg, var(--accent-ink), var(--jb-teal));
+}
+
+/* Buttons: fully-rounded, solid green — the app's primary action */
+.theme-juicebox .btn-ghost {
+    background: var(--accent-ink);
+    border-color: var(--accent-ink);
+    color: #fff;
+    border-radius: 999px;
+    font-weight: 700;
+}
+.theme-juicebox .btn-ghost:hover {
+    background: color-mix(in srgb, var(--jb-green-ink) 85%, #000);
+    border-color: color-mix(in srgb, var(--jb-green-ink) 85%, #000);
+    text-decoration: none;
+}
+
+/* Screenshots sit directly on the canvas in the app's own frames */
+.theme-juicebox .shots img { border-radius: 28px; }
 
 /* ---------------- APPS DIRECTORY (apps.html) ---------------- */
 .apps-grid {
