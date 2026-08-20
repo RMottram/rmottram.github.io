@@ -311,7 +311,6 @@ a:hover { text-decoration: underline; }
 
 /* ---------------- FOOTER ---------------- */
 .app-footer {
-    border-top: 1px solid var(--border);
     padding: 48px 24px;
     text-align: center;
     color: var(--text-dim);
@@ -341,7 +340,7 @@ a:hover { text-decoration: underline; }
     --jb-sage:  #79C9A0;
     --jb-sky:   #3B9EE8;
     --jb-teal:  #007A6C;
-    --jb-volt:  #F0B429;
+    --jb-volt:  #FCD12B;   /* sampled from the app icon's bolt */
 
     /* Text-safe counterparts. The brand colours are tuned for fills and
        fail WCAG AA as text on a light canvas (green 2.44, volt 1.64);
@@ -353,7 +352,7 @@ a:hover { text-decoration: underline; }
     --jb-sage-ink:  #2E7350;
     --jb-sky-ink:   #156EB1;
     --jb-teal-ink:  #007A6C;
-    --jb-volt-ink:  #835E09;
+    --jb-volt-ink:  #7D6300;
 
     /* Pale fills for icon badges and chips, derived from the same hues */
     --jb-ember-tint: #F0DEDB;
@@ -362,7 +361,7 @@ a:hover { text-decoration: underline; }
     --jb-sage-tint:  #E0EBE5;
     --jb-sky-tint:   #DAE7F1;
     --jb-teal-tint:  #D7F4F0;
-    --jb-volt-tint:  #F2EAD9;
+    --jb-volt-tint:  #F3EED8;
 
     --accent:     var(--jb-green);
     --accent-2:   var(--jb-volt);
@@ -411,22 +410,38 @@ a:hover { text-decoration: underline; }
 }
 
 /* Icon tiles: the app uses a filled circular glyph, not a rounded square */
+/* ---- MANUAL ICON COLOURS ----------------------------------------
+   Every coloured circle (feature-card icon badges, pricing ticks) reads
+   two variables: --ic-fill and --ic-glyph. The default below is volt.
+
+   To recolour one, add a modifier class in the HTML:
+       <div class="icon ic-sky"><i class="fas fa-bolt"></i></div>
+       <li class="ic-plum">Unlimited logging</li>
+
+   Available: ic-volt ic-green ic-sky ic-teal ic-plum ic-ember ic-sage
+   Or set the pair inline for a one-off:
+       <div class="icon" style="--ic-fill:#EEE; --ic-glyph:#333">
+   ------------------------------------------------------------------ */
+.theme-juicebox {
+    --ic-fill:  var(--jb-volt-tint);
+    --ic-glyph: var(--jb-volt-ink);
+}
+.theme-juicebox .ic-volt  { --ic-fill: var(--jb-volt-tint);  --ic-glyph: var(--jb-volt-ink); }
+.theme-juicebox .ic-green { --ic-fill: var(--jb-green-tint); --ic-glyph: var(--jb-green-ink); }
+.theme-juicebox .ic-sky   { --ic-fill: var(--jb-sky-tint);   --ic-glyph: var(--jb-sky-ink); }
+.theme-juicebox .ic-teal  { --ic-fill: var(--jb-teal-tint);  --ic-glyph: var(--jb-teal-ink); }
+.theme-juicebox .ic-plum  { --ic-fill: var(--jb-plum-tint);  --ic-glyph: var(--jb-plum-ink); }
+.theme-juicebox .ic-ember { --ic-fill: var(--jb-ember-tint); --ic-glyph: var(--jb-ember-ink); }
+.theme-juicebox .ic-sage  { --ic-fill: var(--jb-sage-tint);  --ic-glyph: var(--jb-sage-ink); }
+
 .theme-juicebox .feature-card .icon {
     width: 46px; height: 46px;
     border-radius: 50%;
-    background: var(--jb-green-tint);
-    color: var(--accent-ink);
+    background: var(--ic-fill);
+    color: var(--ic-glyph);
     font-size: 1.15rem;
 }
 
-/* Rotate the brand hues across the grid, as the app does across its
-   metric chips: pale tint as the badge fill, ink shade for the glyph.
-   (Fill and glyph must differ or the icon disappears into its badge.) */
-.theme-juicebox .feature-card:nth-child(6n+2) .icon { background: var(--jb-volt-tint);  color: var(--jb-volt-ink); }
-.theme-juicebox .feature-card:nth-child(6n+3) .icon { background: var(--jb-sky-tint);   color: var(--jb-sky-ink); }
-.theme-juicebox .feature-card:nth-child(6n+4) .icon { background: var(--jb-teal-tint);  color: var(--jb-teal-ink); }
-.theme-juicebox .feature-card:nth-child(6n+5) .icon { background: var(--jb-plum-tint);  color: var(--jb-plum-ink); }
-.theme-juicebox .feature-card:nth-child(6n+6) .icon { background: var(--jb-ember-tint); color: var(--jb-ember-ink); }
 
 /* Section eyebrow -> the app's muted caption above a title */
 .theme-juicebox .section-head .eyebrow {
@@ -477,19 +492,108 @@ a:hover { text-decoration: underline; }
     top: 12px;
     width: 24px; height: 24px;
     border-radius: 50%;
-    background: var(--jb-green-tint);
-    color: var(--accent-ink);
+    background: var(--ic-fill);
+    color: var(--ic-glyph);
     display: grid;
     place-items: center;
 }
 
 /* Pro card: the app marks the upgraded tier with a bordered highlight */
+/* @property makes the angle a real animatable type. Without this
+   registration the browser treats --jb-angle as a plain string and the
+   rotation snaps from 0 to 360 instead of sweeping. */
+@property --jb-angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
+/* Border and glow must share one duration or they visibly drift apart. */
+.theme-juicebox { --jb-spin: 7s; }
+
 .theme-juicebox .pricing-card--pro {
-    background: var(--bg-2);
-    border: 2px solid var(--accent-ink);
+    position: relative;
+    /* The base card clips to its rounded corners so the green header bar
+       stays inside them. The glow lives OUTSIDE the card, so this variant
+       must not clip - the header keeps its corners via its own radius. */
+    overflow: visible;
+    border-radius: var(--radius);
+    /* Gradient border: the card paints its own background over a conic
+       gradient layer, leaving the border width showing at the edge.
+       (border-color cannot take a gradient.) A conic gradient rotated
+       through --jb-angle travels *around* the card; a linear one would
+       only slide across it. */
+    border: 6px solid transparent;
+    background:
+        linear-gradient(var(--bg-2), var(--bg-2)) padding-box,
+        conic-gradient(from var(--jb-angle),
+            var(--jb-green-ink),
+            var(--jb-teal),
+            var(--jb-sky-ink),
+            var(--jb-plum-ink),
+            var(--jb-volt),
+            var(--jb-ember),
+            var(--jb-sage),
+            var(--jb-green-ink)) border-box;
+    animation: jb-rotate var(--jb-spin) linear infinite;
+}
+
+/* The glow: a blurred copy of the same rotating gradient sitting behind
+   the card, sharing --jb-spin so the colour under each edge always
+   matches the border above it as they travel round together. */
+.theme-juicebox .pricing-card--pro::before {
+    content: "";
+    position: absolute;
+    /* Spill further past the edge so the travelling colour is legible
+       as a halo rather than a thin rim. */
+    inset: -10px;
+    z-index: -1;
+    border-radius: inherit;
+    /* Same stops and same angle as the border, so the glow under any
+       given edge is always the colour of the border directly above it.
+       The brighter base hues (not the -ink shades) are used here: the
+       glow carries no text, and they read far better through a blur. */
+    /* background: conic-gradient(from var(--jb-angle),
+        var(--jb-green),
+        var(--jb-teal),
+        var(--jb-sky),
+        var(--jb-plum),
+        var(--jb-volt),
+        var(--jb-ember),
+        var(--jb-sage),
+        var(--jb-green));
+    filter: blur(18px) saturate(140%);
+    opacity: 0.35;
+    animation: jb-rotate var(--jb-spin) linear infinite;
+    pointer-events: none; */
+}
+
+@keyframes jb-rotate {
+    to { --jb-angle: 360deg; }
+}
+
+/* The card sits above its own glow; without a stacking context the
+   z-index:-1 pseudo-element would fall behind the page background. */
+.theme-juicebox .pricing-card--pro > * { position: relative; }
+
+@media (prefers-reduced-motion: reduce) {
+    .theme-juicebox .pricing-card--pro,
+    .theme-juicebox .pricing-card--pro::before { animation: none; }
 }
 .theme-juicebox .pricing-card--pro h3 {
-    background: linear-gradient(135deg, var(--accent-ink), var(--jb-teal));
+    /* rounds its own top corners now the parent no longer clips */
+    border-radius: calc(var(--radius) - 6px) calc(var(--radius) - 6px) 0 0;
+    /* Multi-colour sweep across the brand palette. Every stop is an -ink
+       shade: the header text is white, and the base hues (volt 1.47,
+       green 2.78, sky 2.90) are far too light to carry it. */
+    background: linear-gradient(
+        120deg,
+        var(--jb-teal) 0%,
+        var(--jb-green) 25%,
+        var(--jb-sage)  50%,
+        var(--jb-green) 75%,
+        var(--jb-teal) 100%
+    );
 }
 
 /* Buttons: fully-rounded, solid green — the app's primary action */
