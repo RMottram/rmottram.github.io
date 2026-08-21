@@ -798,6 +798,10 @@ a:hover { text-decoration: underline; }
     gap: 24px;
 }
 .app-card {
+    /* Cards carry a .theme-* class, which redefines --font. font-family is
+       only declared on body, so without re-reading it here the card would
+       inherit the page font instead of the app's own. */
+    font-family: var(--font);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
