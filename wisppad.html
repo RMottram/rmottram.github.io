@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wisppad - Impermanent Notes</title>
+    <title>Wisppad | Impermanent Notes</title>
     <meta name="description" content="Wisppad is an iOS notes app where notes automatically delete after a set time, with maths, code, voice, handwriting, and more.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/png" href="/assets/wisppad/wisppad-icon.png">
     <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/cd101d4302.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -31,73 +32,133 @@
 
     <!-- HERO -->
     <header class="hero">
-        <img class="app-icon" src="./assets/wisppad-md.png" alt="Wisppad app icon" data-aos="zoom-in">
-        <div class="subtag" data-aos="fade-up">iOS · Productivity</div>
+        <img class="app-icon" src="./assets/wisppad/wisppad-icon.png" alt="Wisppad app icon" data-aos="zoom-in">
         <h1 data-aos="fade-up" data-aos-delay="60">Wisppad</h1>
         <p class="tagline" data-aos="fade-up" data-aos-delay="120">
-            Notes that automatically delete after a set time, keeping your quick thoughts from piling up forever.
+            Wisp is your new note taking companion. His Wisppad will help you manage your notes by keeping them short, useful and remind you about them before he "wisps" them away to prevent clutter.
         </p>
         <div class="cta-row" data-aos="fade-up" data-aos-delay="180">
             <a class="store-badge" href="#" target="_blank" rel="noopener">
                 <img src="./assets/app-store.svg" alt="Download on the App Store">
             </a>
-            <a class="btn-ghost" href="#features"><i class="fas fa-circle-info"></i> Learn more</a>
+            <a class="btn-ghost" href="#features"><i class="fas fa-ghost"></i> Learn more</a>
         </div>
     </header>
 
-    <!-- FEATURES -->
+    <!-- NOTE TYPES -->
     <section class="section" id="features">
         <div class="app-wrap">
             <div class="section-head" data-aos="fade-up">
                 <div class="eyebrow">Features</div>
-                <h2>Notes that know when to disappear</h2>
+                <h2>Keywords activate special notes with added features</h2>
                 <p>Designed around the idea of impermanence. Notes fade out and wisp away after their time is up.</p>
             </div>
             <div class="feature-grid">
-                <div class="feature-card" data-aos="fade-up">
-                    <div class="icon"><i class="fas fa-clock"></i></div>
-                    <h3>Auto-deletion</h3>
-                    <p>Set a default time for notes to delete automatically. Notes reset their timer when edited.</p>
-                </div>
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="80">
+                <div class="feature-card" data-aos="fade-right">
                     <div class="icon"><i class="fas fa-calculator"></i></div>
-                    <h3>Maths notes</h3>
+                    <h3>Maths</h3>
                     <p>Type expressions and get instant results, perfect for quick calculations on the go.</p>
                 </div>
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="160">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon"><i class="fas fa-exchange-alt"></i></div>
+                    <h3>Conversions</h3>
+                    <p>Convert units of measurement, distance, volume and currency all in the same maths note.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-left" data-aos-delay="180">
                     <div class="icon"><i class="fas fa-code"></i></div>
                     <h3>Code snippets</h3>
                     <p>Store syntax-highlighted code snippets with support for multiple languages.</p>
                 </div>
-                <div class="feature-card" data-aos="fade-up">
+                <div class="feature-card" data-aos="fade-right">
                     <div class="icon"><i class="fas fa-microphone"></i></div>
-                    <h3>Voice notes</h3>
+                    <h3>Voice</h3>
                     <p>Record quick voice memos without leaving the app or switching contexts.</p>
                 </div>
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="80">
-                    <div class="icon"><i class="fas fa-list-check"></i></div>
-                    <h3>Checklists &amp; lists</h3>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon"><i class="fas fa-tasks"></i></div>
+                    <h3>Checklists</h3>
                     <p>Create simple checklists or numbered lists for quick task tracking.</p>
                 </div>
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="160">
-                    <div class="icon"><i class="fas fa-camera"></i></div>
-                    <h3>Camera OCR &amp; handwriting</h3>
-                    <p>Scan text with your camera or write naturally with your finger or Apple Pencil.</p>
+                <div class="feature-card" data-aos="fade-left" data-aos-delay="180">
+                    <div class="icon"><i class="fas fa-list-ol"></i></div>
+                    <h3>Numbered lists</h3>
+                    <p>Create numbered lists for order and sequential tasks. Indentation to show hierarchy and sublevel tasks.</p>
                 </div>
-                <div class="feature-card" data-aos="fade-up">
-                    <div class="icon"><i class="fas fa-hand-fist"></i></div>
+                <div class="feature-card" data-aos="fade-right">
+                    <div class="icon"><i class="fas fa-camera"></i></div>
+                    <h3>Camera OCR</h3>
+                    <p>Scan text with your camera or from an image saved on your device.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon"><i class="fas fa-pencil-alt"></i></div>
+                    <h3>Handwriting (iPad Only)</h3>
+                    <p>Write naturally with your finger or better with Apple Pencil.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-left" data-aos-delay="180">
+                    <div class="icon"><i class="fas fa-photo-video"></i></div>
+                    <h3>Photo & Video</h3>
+                    <p>Add photos and videos and write your notes along side them.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="features">
+        <div class="app-wrap">
+            <div class="section-head" data-aos="fade-up">
+                <h2>Wisp makes sure your note taking is simple yet powerful</h2>
+                <!-- <p>Designed around the idea of impermanence. Notes fade out and wisp away after their time is up.</p> -->
+            </div>
+            <div class="feature-grid">
+                <!-- <video class="wisp-video" data-aos="fade-up"
+                       autoplay loop muted playsinline
+                       aria-label="A Wisppad note fading away">
+                    <source src="./assets/wisppad/wisppad-fading.webm" type="video/webm">
+                </video> -->
+                <div class="feature-card" data-aos="fade-right">
+                    <div class="icon"><i class="fas fa-clock"></i></div>
+                    <h3>Auto deletion</h3>
+                    <p>Set a default time for notes to delete automatically. Notes reset their timer when edited.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon"><i class="fas fa-bell"></i></div>
+                    <h3>Deletion reminders</h3>
+                    <p>Get Wisp to remind you before he wisps away your notes.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-left" data-aos-delay="180">
+                    <div class="icon"><i class="fas fa-hand-scissors"></i></div>
                     <h3>Pinch to keep</h3>
                     <p>Scrunch a note with two fingers to keep it indefinitely, though Wisp won't be happy.</p>
                 </div>
+                <div class="feature-card" data-aos="fade-right">
+                    <div class="icon"><i class="fas fa-keyboard"></i></div>
+                    <h3>Keyboard toolbar</h3>
+                    <p>Quick and easy access to note types, text formatting and note specific inputs.</p>
+                </div>
                 <div class="feature-card" data-aos="fade-up" data-aos-delay="80">
-                    <div class="icon"><i class="fas fa-wand-sparkles"></i></div>
+                    <div class="icon"><i class="fas fa-arrows-alt"></i></div>
+                    <h3>Swipe gestures</h3>
+                    <p>Swipe left or right for easy note navigation. Swipe down to view scrunched notes.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-left" data-aos-delay="180">
+                    <div class="icon"><i class="fas fa-ghost"></i></div>
                     <h3>Wisp away</h3>
                     <p>Watch notes fade out and disappear in a puff of smoke when their time runs out.</p>
                 </div>
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="160">
+                <div class="feature-card" data-aos="fade-right">
                     <div class="icon"><i class="fas fa-cloud"></i></div>
                     <h3>iCloud sync</h3>
                     <p>Notes sync privately across all your devices through your iCloud account.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon"><i class="fas fa-lock"></i></div>
+                    <h3>Secured notes</h3>
+                    <p>Keep your notes secured by using a passcode to enter Wisppad. Use FaceID or TouchID for extra security.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-left" data-aos-delay="180">
+                    <div class="icon"><i class="fas fa-code"></i></div>
+                    <h3>Code syntax themes</h3>
+                    <p>Choose from several popular IDE themes for code syntax highlighting.</p>
                 </div>
             </div>
         </div>
@@ -108,37 +169,18 @@
         <div class="app-wrap">
             <div class="section-head" data-aos="fade-up">
                 <div class="eyebrow">A closer look</div>
-                <h2>Simple, focused, ephemeral</h2>
+                <h2>Simple, focused, gone</h2>
             </div>
             <div class="shots" data-aos="fade-up">
-                <img src="./assets/wisppad/wisppad-maths.PNG" alt="Wisppad maths note">
-                <img src="./assets/wisppad/wisppad-checklist.PNG" alt="Wisppad checklist">
-                <img src="./assets/wisppad/wisppad-scan.PNG" alt="Wisppad scanner">
-                <img src="./assets/wisppad/wisppad-scanned.PNG" alt="Wisppad scanned text">
-                <img src="./assets/wisppad/wisppad-scrunched.PNG" alt="Wisppad scrunched notes">
-                <img src="./assets/wisppad/wisppad-voice.PNG" alt="Wisppad voice note">
-                <img src="./assets/wisppad/wisppad-code.PNG" alt="Wisppad code snippet">
-            </div>
-        </div>
-    </section>
-
-    <!-- DEMO / SPLIT -->
-    <section class="section">
-        <div class="app-wrap">
-            <div class="split">
-                <video data-aos="fade-right" autoplay loop muted playsinline controls>
-                    <source src="./assets/wisppad/wisppad-demo.mp4" type="video/mp4" />
-                </video>
-                <div data-aos="fade-left">
-                    <h3>See it in action</h3>
-                    <ul>
-                        <li>Create notes that auto-delete after a chosen time</li>
-                        <li>Use special note types like maths, code, voice, and handwriting</li>
-                        <li>Watch notes fade and wisp away when their time is up</li>
-                        <li>Scrunch notes with two fingers to keep them forever</li>
-                        <li>Sync privately across all your Apple devices</li>
-                    </ul>
-                </div>
+                <img data-aos="fade-right" src="./assets/wisppad/maths.png" alt="Wisppad maths note">
+                <img data-aos="fade-up" data-aos-delay="100" src="./assets/wisppad/checklist.png" alt="Wisppad checklist">
+                <img data-aos="fade-left" data-aos-delay="180" src="./assets/wisppad/scan.png" alt="Wisppad scanner">
+                <img data-aos="fade-right" src="./assets/wisppad/scanned.png" alt="Wisppad scanned text">
+                <img data-aos="fade-up" data-aos-delay="100" src="./assets/wisppad/code.png" alt="Wisppad scrunched notes">
+                <img data-aos="fade-left" data-aos-delay="180" src="./assets/wisppad/voice.png" alt="Wisppad voice note">
+                <img data-aos="fade-right" src="./assets/wisppad/conversion.png" alt="Wisppad code snippet">
+                <img data-aos="fade-up" data-aos-delay="100" src="./assets/wisppad/scrunched.png" alt="Wisppad scrunched notes">
+                <img data-aos="fade-left" data-aos-delay="180" src="./assets/wisppad/notes.png" alt="Wisppad notes list">
             </div>
         </div>
     </section>
@@ -153,7 +195,7 @@
             <div class="faq">
                 <div class="faq-item" data-aos="fade-up">
                     <button class="faq-q">Which devices does Wisppad support? <i class="fas fa-chevron-down chev"></i></button>
-                    <div class="faq-a"><div>Wisppad runs on iPhone and iPad with iOS 16 or later. Handwriting notes work best with Apple Pencil on iPad.</div></div>
+                    <div class="faq-a"><div>Wisppad runs on iPhone and iPad with iOS 26 or later. Handwriting notes work best with Apple Pencil on iPad.</div></div>
                 </div>
                 <div class="faq-item" data-aos="fade-up">
                     <button class="faq-q">Can I change how long notes last? <i class="fas fa-chevron-down chev"></i></button>
@@ -161,15 +203,15 @@
                 </div>
                 <div class="faq-item" data-aos="fade-up">
                     <button class="faq-q">What if I want to keep a note forever? <i class="fas fa-chevron-down chev"></i></button>
-                    <div class="faq-a"><div>Pinch the note with two fingers, like scrunching a piece of paper. It'll stay indefinitely, though your companion Wisp won't be pleased.</div></div>
+                    <div class="faq-a"><div>Pinch the note with two fingers, like scrunching a piece of paper. It'll stay indefinitely, though Wisp won't be pleased.</div></div>
                 </div>
                 <div class="faq-item" data-aos="fade-up">
                     <button class="faq-q">Is my data private? <i class="fas fa-chevron-down chev"></i></button>
-                    <div class="faq-a"><div>Yes. Notes are stored on your device and synced only through your private iCloud account. No third-party servers, no ads, no tracking.</div></div>
+                    <div class="faq-a"><div>Yes. Notes are stored on your device and synced only through your private iCloud account. No third party servers.</div></div>
                 </div>
                 <div class="faq-item" data-aos="fade-up">
                     <button class="faq-q">Why build a notes app with auto-deletion? <i class="fas fa-chevron-down chev"></i></button>
-                    <div class="faq-a"><div>While building JuiceBox, I accumulated hundreds of quick notes I never deleted. Wisppad is designed around the idea that most quick thoughts don't need to last forever.</div></div>
+                    <div class="faq-a"><div>We all have notes on our devices that have probably been there for years or you wanted to quickly write something down to come back to later. But never did. Wisppad is designed around the idea that most quick thoughts don't need to last forever but will remind you before they do disappear.</div></div>
                 </div>
             </div>
         </div>

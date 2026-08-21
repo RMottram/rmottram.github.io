@@ -3,6 +3,7 @@
 .AppleDouble
 .LSOverride
 ._*
+*/.DS_Store
 
 # Thumbnails
 Thumbs.db
@@ -21,3 +22,15 @@ npm-debug.log*
 
 # Node (if ever used)
 node_modules/
+
+# Video assets - too large for git; keep them local / use a CDN
+*.mp4
+*.MP4
+*.m4v
+*.M4V
+*.webm
+*.mov
+*.MOV
+
+# Affinity lock files
+*.af~lock~
