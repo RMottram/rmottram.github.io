@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/assets/juicebox/juicebox-logo.png">
+    <title>JuiceBox | Privacy Policy</title>
+    <meta name="description" content="How JuiceBox handles your EV charging data. Your data stays on your device and in your own iCloud account. No selling, no advertisers.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/cd101d4302.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body class="app-page theme-juicebox">
+
+    <!-- NAV -->
+    <nav class="app-nav">
+        <a class="brand" href="juicebox.html">
+            <i class="fas fa-arrow-left"></i>
+            <span>JuiceBox</span>
+        </a>
+        <div class="nav-links">
+            <a href="juicebox.html#features">Features</a>
+            <a href="juicebox.html#pricing">Pricing</a>
+            <a href="juicebox.html#faq">FAQ</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero hero--flush">
+        <h1 data-aos="fade-up">Privacy Policy</h1>
+        <p class="tagline" data-aos="fade-up" data-aos-delay="60">
+            Your charging data is yours. It lives on your device and, optionally, in your own iCloud account.
+        </p>
+        <p class="policy-updated" data-aos="fade-up" data-aos-delay="120">Last updated: 21 August 2026</p>
+    </header>
+
+    <!-- POLICY -->
+    <section class="section section--tight">
+        <div class="app-wrap">
+            <div class="prose policy">
+
+                <h2>Overview</h2>
+                <p>JuiceBox is an EV charging tracker built with your privacy in mind. Your charging data is yours, it lives on your device and, optionally, in your personal iCloud account. We do not sell your data, and we do not share it with advertisers.</p>
+
+                <h2>What data we collect</h2>
+                <h3>Data you provide (stored on device &amp; iCloud)</h3>
+                <p>The following data is entered by you and stored locally using SwiftData. If you are a JuiceBox Pro subscriber, this data is also synced to your personal iCloud account via CloudKit:</p>
+                <ul>
+                    <li><strong>Vehicle information</strong> — make, model, battery capacity, driver name, and an optional photo.</li>
+                    <li><strong>Charging sessions</strong> — date, location type (home or public), starting charge level, charge level reached, energy added (kWh), where you read the energy used data (in-car display, charger's app/screen or energy provider invoice), charging speed, cost per kWh, and optional odometer reading.</li>
+                </ul>
+                <p class="policy-callout">This data never leaves Apple's infrastructure (your device and your iCloud account) and is not accessible to us.</p>
+
+                <h2>Analytics</h2>
+                <p>To understand how the app is used and improve it, we collect anonymous, non-identifiable usage events via PostHog. These events include things like:</p>
+                <ul>
+                    <li>Actions taken in the app (e.g. session logged, vehicle added, tab viewed, tool used).</li>
+                    <li>Feature interactions (e.g. AI prediction tapped, import/export used, paywall viewed).</li>
+                    <li>App settings changes (e.g. appearance preference, notifications toggled).</li>
+                </ul>
+                <p>PostHog is self-hostable and privacy-focused. You can review PostHog's privacy practices at <a href="https://posthog.com/privacy" target="_blank" rel="noopener">posthog.com/privacy</a>.</p>
+
+                <h2>Subscription data</h2>
+                <p>If you purchase JuiceBox Pro, your subscription is managed through Apple's App Store and processed by RevenueCat. RevenueCat handles purchase verification and entitlement management. We do not see or store your payment information. RevenueCat's privacy policy applies to purchase-related data.</p>
+
+                <h2>Notifications</h2>
+                <p>If you grant permission, JuiceBox will send you local notifications reminding you about logging your sessions and when your next charging session is predicted, based on your charging history. These predictions are generated entirely on-device using Core ML. No data is sent to any server to generate them. You can disable notifications at any time in Settings &gt; Notifications.</p>
+
+                <h2>Apple Watch &amp; widgets</h2>
+                <p>JuiceBox syncs a summary of your charging data to the Apple Watch companion app and home screen widgets using shared App Groups (on-device storage only). No data is transmitted externally as part of this sync.</p>
+
+                <h2>iCloud sync (JuiceBox Pro)</h2>
+                <p>Pro subscribers can backup and sync their data across devices using iCloud. Your data is stored in your personal iCloud account. We cannot access this data, it is encrypted and owned by you under Apple's iCloud terms of service.</p>
+
+                <h2>Data import &amp; export</h2>
+                <p>JuiceBox allows you to export your data in the .jbx format (JSON) and import it again later. Exported files are created locally on your device and shared only if you choose to. We have no visibility into exported files.</p>
+
+                <h2>Data retention &amp; deletion</h2>
+                <p>All your charging and vehicle data is stored on your device and in your iCloud account. You can delete individual sessions, vehicles, or all data at any time from within the app. Deleting the app removes all locally stored data but can be retrieved if you are a Pro user and permitted data to be synced to iCloud. To remove iCloud data, delete the app and then remove its data from Settings &gt; [Your Name] &gt; iCloud &gt; Manage Account Storage.</p>
+
+                <h2>Contact</h2>
+                <p>If you have any questions about this policy or how your data is handled, get in touch at <a href="mailto:ryanmottram.dev@gmail.com">ryanmottram.dev@gmail.com</a>.</p>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="app-footer">
+        <div class="app-wrap">
+            <a class="store-badge" href="https://apps.apple.com/app/id6773839547" target="_blank" rel="noopener">
+                <img src="assets/app-store.svg" alt="Download on the App Store">
+            </a>
+            <div class="socials">
+                <a href="https://instagram.com/juicebox.ev" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://tiktok.com/@juiceboxapp" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            </div>
+            <small>&copy; JuiceBox <span id="year"></span> · Made by Ryan Mottram · <a href="juicebox-privacy.html">Privacy</a> · <a href="apps.html">All apps</a></small>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html>

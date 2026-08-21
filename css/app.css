@@ -323,6 +323,58 @@ a:hover { text-decoration: underline; }
 .prose { max-width: 780px; margin: 0 auto; color: var(--text-dim); font-weight: 300; }
 .prose p { margin: 0 0 16px; }
 
+/* ---- Policy / long-form legal page ---- */
+.policy-updated {
+    color: var(--text-dim);
+    font-size: .95rem;
+    font-weight: 600;
+    letter-spacing: .04em;
+    margin: 0;
+}
+.policy h2 {
+    color: var(--heading);
+    font-size: 1.45rem;
+    font-weight: 800;
+    margin: 44px 0 14px;
+}
+.policy h2:first-child { margin-top: 0; }
+.policy h3 {
+    color: var(--text);
+    font-size: 1.08rem;
+    font-weight: 700;
+    margin: 26px 0 10px;
+}
+.policy ul {
+    list-style: none;
+    margin: 0 0 18px;
+    padding: 0;
+}
+.policy li {
+    position: relative;
+    padding: 6px 0 6px 26px;
+    color: var(--text-dim);
+}
+.policy li::before {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 16px;
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+.policy strong { color: var(--text); font-weight: 700; }
+/* Pulled-out statement, styled like an app info box */
+.policy-callout {
+    background: var(--bg-2);
+    border-left: 3px solid var(--accent);
+    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    color: var(--text);
+    font-weight: 400;
+    margin: 22px 0 16px;
+}
+
 /* ---------------- PER-APP THEMES ----------------
    Give <body> (or any element) one of these classes to set its accent.
    Add a new theme here when you add a new app. */
