@@ -774,6 +774,39 @@ a:hover { text-decoration: underline; }
     text-decoration: none;
 }
 
+/* Pricing cards match the page's other surfaces: raised, glowing edge */
+.theme-wisppad .pricing-card {
+    background: var(--wp-surface);
+    border: 1px solid var(--border);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--wp-glow) 8%, transparent),
+                0 10px 30px rgba(0,0,0,.45);
+}
+/* Pro card: rotating gradient border only - no surrounding glow. The
+   card paints its own background over a conic gradient layer, so only
+   the 3px border shows the rotating colour. --jb-angle and
+   @keyframes jb-rotate are declared globally. */
+.theme-wisppad { --jb-spin: 7s; }
+.theme-wisppad .pricing-card--pro {
+    position: relative;
+    overflow: visible;
+    border-radius: var(--radius);
+    border: 3px solid transparent;
+    background:
+        linear-gradient(var(--wp-surface), var(--wp-surface)) padding-box,
+        conic-gradient(from var(--jb-angle),
+            var(--wp-spectre),
+            var(--wp-glow),
+            var(--wp-body),
+            var(--wp-spectre)) border-box;
+    box-shadow: 0 14px 36px rgba(0,0,0,.5);
+    animation: jb-rotate var(--jb-spin) linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+    .theme-wisppad .pricing-card--pro { animation: none; }
+}
+.theme-wisppad .pricing-card .price { color: var(--wp-spectre); }
+.theme-wisppad .pricing-card .price-alt { color: var(--wp-glow); }
+
 /* Feature-section video: sits in .feature-grid, whose auto-fit columns
    are sized for cards, so it would otherwise be squeezed into one track.
    Span the full row and cap it to a sensible width. */
