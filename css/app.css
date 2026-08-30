@@ -539,6 +539,16 @@ a:hover { text-decoration: underline; }
     font-size: 1.35rem;
     font-weight: 700;
 }
+/* Small lead-in above the price, e.g. "Starting from" */
+.theme-juicebox .pricing-card .price-lead {
+    color: var(--text-dim);
+    font-size: .85rem;
+    font-weight: 600;
+    letter-spacing: .04em;
+    margin: 22px 26px 0;
+}
+/* the price tightens up when a lead-in sits above it */
+.theme-juicebox .pricing-card .price-lead + .price { margin-top: 2px; }
 .theme-juicebox .pricing-card .price {
     color: var(--heading);
     font-size: 2.6rem;
@@ -547,7 +557,7 @@ a:hover { text-decoration: underline; }
 .theme-juicebox .pricing-card .price span { color: var(--text-dim); }
 .theme-juicebox .pricing-card .price-note,
 .theme-juicebox .pricing-card .price-alt { margin-left: 26px; margin-right: 26px; }
-.theme-juicebox .pricing-card .price-alt { color: var(--jb-volt-ink); }
+.theme-juicebox .pricing-card .price-alt { color: var(--jb-green-ink); }
 .theme-juicebox .pricing-card ul { margin: 8px 0 26px; padding: 0 26px; }
 
 /* Feature ticks: the app pairs a small green circle with the label */
