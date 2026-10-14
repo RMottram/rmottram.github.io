@@ -180,6 +180,51 @@ a:hover { text-decoration: underline; }
 .feature-card h3 { color: var(--heading); font-size: 1.25rem; font-weight: 700; margin: 0 0 8px; }
 .feature-card p { color: var(--text-dim); font-weight: 300; margin: 0; }
 
+/* Icon row: the card's icon badge with a status pill aligned to its right,
+   so the pill sits on the icon's line rather than against the title. */
+.feature-card .icon-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+/* The icon keeps its own size; its usual bottom margin moves to the row */
+.feature-card .icon-row .icon { margin-bottom: 0; flex: none; }
+.feature-card .icon-row .soon { margin-left: 0; }
+
+/* "Coming soon" badge for features that are built but not yet released.
+   Sits on the icon row of a card, or inline in a pricing list item. */
+.soon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 8px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: .68rem;
+    font-weight: 600;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: var(--accent-ink);
+    background: color-mix(in srgb, var(--accent) 14%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent) 32%, transparent);
+}
+.split li .soon { margin-left: 6px; }
+
+/* Section-level note, for a whole band of unreleased features */
+.section-head .soon-note {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: .9rem;
+    font-weight: 500;
+    color: var(--accent-ink);
+    background: color-mix(in srgb, var(--accent) 12%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
 /* ---------------- SCREENSHOTS ---------------- */
 .shots-wrapper {
     position: relative;
