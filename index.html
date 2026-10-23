@@ -111,7 +111,10 @@
                 <div class="eyebrow">About</div>
             </div>
             <div class="split about-split">
-                <img class="about-photo" src="./assets/me-md.jpg" alt="Ryan Mottram" data-aos="fade-right" width="750" height="800" fetchpriority="high" decoding="async">
+                <!-- Square width/height to match the CSS aspect-ratio: 1 circle.
+                     The file is 750x800, but intrinsic attributes override the
+                     stylesheet's ratio and stretched the photo into a rectangle. -->
+                <img class="about-photo" src="./assets/me-md.jpg" alt="Ryan Mottram" data-aos="fade-right" width="300" height="300" fetchpriority="high" decoding="async">
                 <div data-aos="fade-left">
                     <p class="lead">I'm a Machine Learning and Software Engineering enthusiast from Bradwell, Norfolk, with programming,
                         algorithmic and problem-solving skills across data science, machine learning and software development.
