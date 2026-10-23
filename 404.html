@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/assets/juicebox/juicebox-logo.png">
+    <title>Page not found | Ryan Mottram</title>
+    <meta name="description" content="That page does not exist. Find Ryan Mottram's apps and projects instead.">
+
+    <!-- A 404 should never be indexed or shared as a preview -->
+    <meta name="robots" content="noindex, follow">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/cd101d4302.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/app.css">
+
+    <meta name="theme-color" content="#F2F0EB" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1A2E23" media="(prefers-color-scheme: dark)">
+
+    <!-- Honour a theme chosen elsewhere on the site, before first paint -->
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('jb-theme');
+                if (saved === 'dark' || saved === 'light') {
+                    document.documentElement.setAttribute('data-theme', saved);
+                }
+            } catch (e) { /* private mode: fall back to the system setting */ }
+        })();
+    </script>
+</head>
+
+<body class="app-page theme-juicebox">
+
+    <nav class="app-nav">
+        <a class="brand" href="/">
+            <i class="fas fa-arrow-left"></i>
+            <span>Ryan Mottram</span>
+        </a>
+        <div class="nav-links">
+            <a href="/apps">Apps</a>
+            <a href="/juicebox">JuiceBox</a>
+            <a href="/wisppad">Wisppad</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>404</h1>
+        <p class="tagline">
+            This page has wandered off. It may have been renamed, or the link
+            that brought you here might be out of date.
+        </p>
+        <div class="cta-row">
+            <a class="btn-ghost" href="/"><i class="fas fa-home"></i> Home</a>
+            <a class="btn-ghost" href="/apps"><i class="fas fa-th-large"></i> All apps</a>
+        </div>
+    </header>
+
+    <footer class="app-footer">
+        <div class="app-wrap">
+            <small>&copy; Ryan Mottram <span id="year"></span></small>
+        </div>
+    </footer>
+
+    <script src="/scripts/app.js"></script>
+</body>
+</html>
