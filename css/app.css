@@ -86,12 +86,63 @@ a:hover { text-decoration: underline; }
     overflow: hidden;
 }
 .hero > * { position: relative; z-index: 1; }
+/* Two-tone halo behind the app icon, as on the app's own onboarding and
+   What's New screens: two concentric copies of the icon's rounded-square
+   shape in the accent colour, the outer fainter than the inner.
+   Sizes follow the app's ratios to the icon (1.56x and 1.147x), and the
+   corners use the Home Screen corner ratio so every layer is the same shape. */
+.app-icon-halo {
+    --icon-size: 256px;
+    --icon-corner: 0.2237;
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    /* Room for the outer halo, so it doesn't crowd the title beneath */
+    margin: calc(var(--icon-size) * 0.28) auto calc(var(--icon-size) * 0.34);
+}
+.app-icon-halo::before,
+.app-icon-halo::after {
+    content: "";
+    position: absolute;
+    background: var(--accent);
+    pointer-events: none;
+}
+/* Outer, faintest layer */
+.app-icon-halo::before {
+    width: calc(var(--icon-size) * 1.56);
+    height: calc(var(--icon-size) * 1.56);
+    border-radius: calc(var(--icon-size) * 1.56 * var(--icon-corner));
+    opacity: .08;
+}
+/* Inner layer, sitting just outside the icon */
+.app-icon-halo::after {
+    width: calc(var(--icon-size) * 1.147);
+    height: calc(var(--icon-size) * 1.147);
+    border-radius: calc(var(--icon-size) * 1.147 * var(--icon-corner));
+    opacity: .12;
+}
 .app-icon {
     width: 256px; height: 256px;
     border-radius: 26px;
     box-shadow: 0 18px 50px rgba(0,0,0,.45),
                 0 0 0 1px var(--border);
     margin-bottom: 26px;
+}
+/* Inside a halo the icon is sized by the wrapper, sits above both layers,
+   and takes the Home Screen corner shape so the three agree. The wrapper
+   carries the bottom margin instead. */
+.app-icon-halo .app-icon {
+    position: relative;
+    z-index: 1;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    border-radius: calc(var(--icon-size) * var(--icon-corner));
+    margin-bottom: 0;
+    /* Softer than the standalone icon's: a heavy shadow muddies the halo.
+       Matches the app's own icon shadow. */
+    box-shadow: 0 calc(var(--icon-size) * 0.04) calc(var(--icon-size) * 0.08) rgba(0,0,0,.15);
 }
 .hero h1 {
     font-size: clamp(2.6rem, 6vw, 4.4rem);
@@ -989,6 +1040,7 @@ a:hover { text-decoration: underline; }
     .app-nav .nav-links a { font-size: .9rem; }
     .hero { padding: 68px 20px 60px; }
     .app-icon { width: 92px; height: 92px; border-radius: 20px; }
+    .app-icon-halo { --icon-size: 92px; margin-bottom: 20px; }
     .split { grid-template-columns: 1fr; gap: 28px; }
     .shots { grid-template-columns: repeat(2, 1fr); }
     .section { padding: 56px 0; }
