@@ -6,6 +6,26 @@
     <title>Wisppad | Impermanent Notes</title>
     <meta name="description" content="Wisppad is an iOS notes app where notes automatically delete after a set time, with maths, code, voice, handwriting, and more.">
 
+    <link rel="canonical" href="https://rmottram.github.io/wisppad">
+
+    <!-- Open Graph / social previews -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rmottram.github.io/wisppad">
+    <meta property="og:title" content="Wisppad | Impermanent Notes">
+    <meta property="og:description" content="Wisppad is an iOS notes app where notes automatically delete after a set time, with maths, code, voice, handwriting, and more.">
+    <meta property="og:image" content="https://rmottram.github.io/assets/og/wisppad-og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Wisppad | Impermanent Notes">
+    <meta property="og:site_name" content="Ryan Mottram">
+    <meta property="og:locale" content="en_GB">
+
+    <!-- Twitter / X card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Wisppad | Impermanent Notes">
+    <meta name="twitter:description" content="Wisppad is an iOS notes app where notes automatically delete after a set time, with maths, code, voice, handwriting, and more.">
+    <meta name="twitter:image" content="https://rmottram.github.io/assets/og/wisppad-og.jpg">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" type="image/png" href="/assets/wisppad/wisppad-icon.png">
@@ -13,6 +33,97 @@
     <script src="https://kit.fontawesome.com/cd101d4302.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="./css/app.css">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Wisppad",
+  "operatingSystem": "iOS",
+  "applicationCategory": "ProductivityApplication",
+  "description": "An iOS notes app where notes delete themselves after a set time. Supports maths, code, voice, handwriting and scanning.",
+  "url": "https://rmottram.github.io/wisppad",
+  "installUrl": "https://apps.apple.com/app/id6795243884",
+  "downloadUrl": "https://apps.apple.com/app/id6795243884",
+  "image": "https://rmottram.github.io/assets/og/wisppad-og.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Ryan Mottram",
+    "url": "https://rmottram.github.io/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Ryan Mottram"
+  },
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Wisppad",
+      "price": "0",
+      "priceCurrency": "GBP"
+    },
+    {
+      "@type": "Offer",
+      "name": "Wisppad Pro (monthly)",
+      "price": "4.99",
+      "priceCurrency": "GBP"
+    },
+    {
+      "@type": "Offer",
+      "name": "Wisppad Pro (annual)",
+      "price": "49.99",
+      "priceCurrency": "GBP"
+    }
+  ]
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Which devices does Wisppad support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wisppad runs on iPhone and iPad with iOS 26 or later. Handwriting notes work best with Apple Pencil on iPad."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I change how long notes last?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Set a default deletion time in settings, and each note can have its own custom time if needed. Notes reset their timer whenever you edit them."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I want to keep a note forever?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pinch the note with two fingers, like scrunching a piece of paper. It'll stay indefinitely, though Wisp won't be pleased."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my data private?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Notes are stored on your device and synced only through your private iCloud account. No third party servers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why build a notes app with auto deletion?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We all have notes on our devices that have probably been there for years or you wanted to quickly write something down to come back to later. But never did. Wisppad is designed around the idea that most quick thoughts don't need to last forever but will remind you before they do disappear."
+      }
+    }
+  ]
+}
+    </script>
 </head>
 
 <body class="app-page theme-wisppad">
@@ -33,7 +144,7 @@
 
     <!-- HERO -->
     <header class="hero">
-        <img class="app-icon" src="./assets/wisppad/wisppad-icon.png" alt="Wisppad app icon" data-aos="zoom-in">
+        <img class="app-icon" src="./assets/wisppad/wisppad-icon.png" alt="Wisppad app icon" data-aos="zoom-in" width="512" height="512" fetchpriority="high" decoding="async">
         <h1 data-aos="fade-up" data-aos-delay="60">Wisppad</h1>
         <p class="tagline" data-aos="fade-up" data-aos-delay="120">
             Wisp is your new note taking companion. His Wisppad will help you manage your notes by keeping them short, useful and remind you about them before he "wisps" them away to prevent clutter.
@@ -175,15 +286,15 @@
                 <h2>Simple, focused, gone</h2>
             </div>
             <div class="shots" data-aos="fade-up">
-                <img data-aos="fade-right" src="./assets/wisppad/maths.png" alt="Wisppad maths note">
-                <img data-aos="fade-up" data-aos-delay="100" src="./assets/wisppad/checklist.png" alt="Wisppad checklist">
-                <img data-aos="fade-left" data-aos-delay="180" src="./assets/wisppad/scan.png" alt="Wisppad scanner">
-                <img data-aos="fade-right" src="./assets/wisppad/scanned.png" alt="Wisppad scanned text">
-                <img data-aos="fade-up" data-aos-delay="100" src="./assets/wisppad/code.png" alt="Wisppad scrunched notes">
-                <img data-aos="fade-left" data-aos-delay="180" src="./assets/wisppad/voice.png" alt="Wisppad voice note">
-                <img data-aos="fade-right" src="./assets/wisppad/conversion.png" alt="Wisppad code snippet">
-                <img data-aos="fade-up" data-aos-delay="100" src="./assets/wisppad/scrunched.png" alt="Wisppad scrunched notes">
-                <img data-aos="fade-left" data-aos-delay="180" src="./assets/wisppad/notes.png" alt="Wisppad notes list">
+                <img data-aos="fade-right" src="./assets/wisppad/maths.png" alt="Wisppad maths note" width="387" height="800" loading="lazy" decoding="async">
+                <img data-aos="fade-up" data-aos-delay="100" src="./assets/wisppad/checklist.png" alt="Wisppad checklist" width="387" height="800" loading="lazy" decoding="async">
+                <img data-aos="fade-left" data-aos-delay="180" src="./assets/wisppad/scan.png" alt="Wisppad scanner" width="387" height="800" loading="lazy" decoding="async">
+                <img data-aos="fade-right" src="./assets/wisppad/scanned.png" alt="Wisppad scanned text" width="387" height="800" loading="lazy" decoding="async">
+                <img data-aos="fade-up" data-aos-delay="100" src="./assets/wisppad/code.png" alt="Wisppad scrunched notes" width="387" height="800" loading="lazy" decoding="async">
+                <img data-aos="fade-left" data-aos-delay="180" src="./assets/wisppad/voice.png" alt="Wisppad voice note" width="387" height="800" loading="lazy" decoding="async">
+                <img data-aos="fade-right" src="./assets/wisppad/conversion.png" alt="Wisppad code snippet" width="386" height="800" loading="lazy" decoding="async">
+                <img data-aos="fade-up" data-aos-delay="100" src="./assets/wisppad/scrunched.png" alt="Wisppad scrunched notes" width="386" height="800" loading="lazy" decoding="async">
+                <img data-aos="fade-left" data-aos-delay="180" src="./assets/wisppad/notes.png" alt="Wisppad notes list" width="386" height="800" loading="lazy" decoding="async">
             </div>
         </div>
     </section>

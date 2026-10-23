@@ -7,6 +7,26 @@
     <title>JuiceBox | Your EV's Favourite Charging App</title>
     <meta name="description" content="Log sessions, monitor costs, and actually understand what you're spending on EV charging. Free to start, upgrade when you're ready.">
 
+    <link rel="canonical" href="https://rmottram.github.io/juicebox">
+
+    <!-- Open Graph / social previews -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rmottram.github.io/juicebox">
+    <meta property="og:title" content="JuiceBox | Your EV's Favourite Charging App">
+    <meta property="og:description" content="Log sessions, monitor costs, and actually understand what you're spending on EV charging. Free to start, upgrade when you're ready.">
+    <meta property="og:image" content="https://rmottram.github.io/assets/og/juicebox-og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="JuiceBox | Your EV's Favourite Charging App">
+    <meta property="og:site_name" content="Ryan Mottram">
+    <meta property="og:locale" content="en_GB">
+
+    <!-- Twitter / X card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="JuiceBox | Your EV's Favourite Charging App">
+    <meta name="twitter:description" content="Log sessions, monitor costs, and actually understand what you're spending on EV charging. Free to start, upgrade when you're ready.">
+    <meta name="twitter:image" content="https://rmottram.github.io/assets/og/juicebox-og.jpg">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -30,6 +50,148 @@
                 }
             } catch (e) { /* private mode: fall back to the system setting */ }
         })();
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "JuiceBox: EV Charging Log",
+  "operatingSystem": "iOS 26.0 or later",
+  "applicationCategory": "UtilitiesApplication",
+  "description": "Log EV charging sessions, track real costs per kWh and per mile, and understand your charging habits. Supports peak and off-peak tariffs, solar and home battery, and vehicle running costs.",
+  "url": "https://rmottram.github.io/juicebox",
+  "installUrl": "https://apps.apple.com/app/id6773839547",
+  "downloadUrl": "https://apps.apple.com/app/id6773839547",
+  "image": "https://rmottram.github.io/assets/og/juicebox-og.jpg",
+  "screenshot": [
+    "https://rmottram.github.io/assets/juicebox/sessions.png",
+    "https://rmottram.github.io/assets/juicebox/stats.png",
+    "https://rmottram.github.io/assets/juicebox/charts.png",
+    "https://rmottram.github.io/assets/juicebox/juicelog.png",
+    "https://rmottram.github.io/assets/juicebox/prediction.png",
+    "https://rmottram.github.io/assets/juicebox/widgets.png"
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "Ryan Mottram",
+    "url": "https://rmottram.github.io/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Ryan Mottram"
+  },
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "JuiceBox",
+      "price": "0",
+      "priceCurrency": "GBP",
+      "description": "Free: one vehicle, unlimited session logging, stats, widgets and Apple Watch app."
+    },
+    {
+      "@type": "Offer",
+      "name": "JuiceBox Pro (monthly)",
+      "price": "4.99",
+      "priceCurrency": "GBP",
+      "description": "Pro: multiple vehicles, AI predictions, Expense Log, advanced stats and reimbursement reports."
+    },
+    {
+      "@type": "Offer",
+      "name": "JuiceBox Pro (annual)",
+      "price": "49.99",
+      "priceCurrency": "GBP",
+      "description": "Pro billed annually."
+    }
+  ]
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Which devices does JuiceBox support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "JuiceBox curently runs on iPhone on iOS 26 or later. An iPad enhanced version is in the works and will be available soon."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my data private?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. All charging session data is stored on your device and synced only through your private iCloud account. No third party servers are involved in reading or storing your data."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens to my sessions if I cancel Pro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "From 1.3: nothing is deleted and nothing is hidden. Session logging becomes unlimited on the free tier, so your full history stays visible and your charts, stats, widgets and Apple Watch keep using every session you have logged. You go back to tracking one vehicle, and the Pro-only extras like AI predictions, the Expense Log and import/export are paused until you resubscribe."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I bring charging data in from another app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, and from 1.3 it is free for everyone. JuiceBox imports .jbx, CSV and JSON files and lets you map the columns to the right fields, so exports from other trackers or your own spreadsheet come across without retyping. You can export your data back out the same way."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to log sessions while charging?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. JuiceBox is built around logging after the fact. Plug in, leave it overnight, and add the session whenever suits you. If you would rather start it there and then, from 1.3 you can tap Start Charge & Finish Later on a new session and your charge appears on the Lock Screen, Dynamic Island, Apple Watch and CarPlay while it runs. JuiceBox reminds you to add the kWh when the charge should be finished, and it waits on your Driveway until you do."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How accurate are the cost and prediction figures?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Costs are calculated from the rates and figures you enter, so they are as accurate as your inputs. Predictions are estimates from your own charging patterns and get better the more sessions you log. Treat them as a guide rather than a guarantee."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "I charge on an off-peak or smart tariff. Does JuiceBox handle that?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, from 1.3. Save your peak and off-peak rates in Settings under Electric Tariff and they turn into quick fill buttons when you log a session. Start a Pending Charge and JuiceBox works out when your charge actually starts and finishes from your off-peak hours, or from your ready-by time if you are on a smart EV tariff. If a home charge straddled both rates, turn on Split Tariff to divide the kWh between them and get the true cost."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can JuiceBox track more than just charging costs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, from 1.3. Open a vehicle in Driveway and choose Running Costs to add your MOT, service, road tax and insurance dates. You get reminders 30 and 7 days before each is due, and the next one shows on your Driveway card. Services can be set by date, by distance, or whichever comes first. With Pro, the Expense Log also tracks services, repairs, tax, insurance and finance, recording your monthly payments so you can see what your EV really costs to run with charging included."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I claim my home charging back from my employer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, from 1.3 with Pro. If you charge a company or salary sacrifice car at home, JuiceBox generates a monthly PDF or CSV reimbursement report for your employer. You can claim either the electricity cost or your business mileage, plus any other expenses. Each report carries its own reference and checks your readings and rates, so the numbers stand up to scrutiny."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it work with my specific EV?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. JuiceBox does not connect to your car, so it is not tied to a particular make or model. You enter your battery size and charging details once, which means any EV or plug-in hybrid works, including one your manufacturer's own app does not support well."
+      }
+    }
+  ]
+}
     </script>
 </head>
 
@@ -57,7 +219,7 @@
     <!-- HERO -->
     <header class="hero">
         <div class="app-icon-halo" data-aos="zoom-in">
-            <img class="app-icon" src="assets/juicebox/juicebox-icon.png" alt="JuiceBox icon">
+            <img class="app-icon" src="assets/juicebox/juicebox-icon.png" alt="JuiceBox icon" width="512" height="512" fetchpriority="high" decoding="async">
         </div>
         <h1 data-aos="fade-up" data-aos-delay="60">JuiceBox</h1>
         <p class="tagline" data-aos="fade-up" data-aos-delay="120">
@@ -255,15 +417,15 @@
                 <h2>Clean, fast, and actually useful</h2>
             </div>
             <div class="shots" data-aos="fade-up">
-                <img data-aos="slide-right" src="assets/juicebox/sessions.png" alt="JuiceBox session history">
-                <img data-aos="slide-up" data-aos-delay="100" src="assets/juicebox/stats.png" alt="JuiceBox stats and metrics">
-                <img data-aos="slide-left" data-aos-delay="180" src="assets/juicebox/charts.png" alt="JuiceBox charts and graphs">
-                <img data-aos="slide-right" src="assets/juicebox/import.png" alt="JuiceBox import">
-                <img data-aos="slide-up" data-aos-delay="100" src="assets/juicebox/csv.png" alt="JuiceBox import csv">
-                <img data-aos="slide-left" data-aos-delay="180" src="assets/juicebox/json.png" alt="JuiceBox import json">
-                <img data-aos="slide-right" src="assets/juicebox/prediction.png" alt="JuiceBox prediction">
-                <img data-aos="slide-up" data-aos-delay="100" src="assets/juicebox/juicelog.png" alt="JuiceBox JuiceLog">
-                <img data-aos="slide-left" data-aos-delay="180" src="assets/juicebox/widgets.png" alt="JuiceBox widgets">
+                <img data-aos="slide-right" src="assets/juicebox/sessions.png" alt="JuiceBox session history" width="387" height="800" loading="lazy" decoding="async">
+                <img data-aos="slide-up" data-aos-delay="100" src="assets/juicebox/stats.png" alt="JuiceBox stats and metrics" width="387" height="800" loading="lazy" decoding="async">
+                <img data-aos="slide-left" data-aos-delay="180" src="assets/juicebox/charts.png" alt="JuiceBox charts and graphs" width="386" height="800" loading="lazy" decoding="async">
+                <img data-aos="slide-right" src="assets/juicebox/import.png" alt="JuiceBox import" width="386" height="800" loading="lazy" decoding="async">
+                <img data-aos="slide-up" data-aos-delay="100" src="assets/juicebox/csv.png" alt="JuiceBox import csv" width="386" height="800" loading="lazy" decoding="async">
+                <img data-aos="slide-left" data-aos-delay="180" src="assets/juicebox/json.png" alt="JuiceBox import json" width="386" height="800" loading="lazy" decoding="async">
+                <img data-aos="slide-right" src="assets/juicebox/prediction.png" alt="JuiceBox prediction" width="386" height="800" loading="lazy" decoding="async">
+                <img data-aos="slide-up" data-aos-delay="100" src="assets/juicebox/juicelog.png" alt="JuiceBox JuiceLog" width="387" height="800" loading="lazy" decoding="async">
+                <img data-aos="slide-left" data-aos-delay="180" src="assets/juicebox/widgets.png" alt="JuiceBox widgets" width="386" height="800" loading="lazy" decoding="async">
             </div>
         </div>
     </section>

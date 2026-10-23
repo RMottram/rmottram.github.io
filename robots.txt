@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Templates and mail handler are not content
+Disallow: /templates/
+Disallow: /mail.php
+
+Sitemap: https://rmottram.github.io/sitemap.xml

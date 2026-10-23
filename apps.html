@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-  Apps directory (served at https://ryanmottram.github.io/apps)
+  Apps directory (served at https://rmottram.github.io/apps)
   Add a new .app-card block for each app you ship.
 -->
 <html lang="en">
@@ -10,6 +10,26 @@
     <title>Apps - Ryan Mottram</title>
     <meta name="description" content="Apps designed and built by Ryan Mottram.">
 
+    <link rel="canonical" href="https://rmottram.github.io/apps">
+
+    <!-- Open Graph / social previews -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rmottram.github.io/apps">
+    <meta property="og:title" content="Apps - Ryan Mottram">
+    <meta property="og:description" content="Apps designed and built by Ryan Mottram.">
+    <meta property="og:image" content="https://rmottram.github.io/assets/og/site-og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Apps - Ryan Mottram">
+    <meta property="og:site_name" content="Ryan Mottram">
+    <meta property="og:locale" content="en_GB">
+
+    <!-- Twitter / X card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Apps - Ryan Mottram">
+    <meta name="twitter:description" content="Apps designed and built by Ryan Mottram.">
+    <meta name="twitter:image" content="https://rmottram.github.io/assets/og/site-og.jpg">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Nunito for the page; Quicksand and Playpen Sans so each app card
@@ -18,6 +38,27 @@
     <script src="https://kit.fontawesome.com/cd101d4302.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="css/app.css">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Apps by Ryan Mottram",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "url": "https://rmottram.github.io/juicebox",
+      "name": "JuiceBox: EV Charging Log"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "url": "https://rmottram.github.io/wisppad",
+      "name": "Wisppad"
+    }
+  ]
+}
+    </script>
 </head>
 
 <body class="app-page theme-apps">
@@ -46,7 +87,7 @@
 
                 <!-- Juicebox -->
                 <a class="app-card theme-juicebox" href="juicebox.html" data-aos="fade-up" data-aos-delay="80">
-                    <img src="assets/juicebox/juicebox-icon.png" alt="Juicebox icon">
+                    <img src="assets/juicebox/juicebox-icon.png" alt="Juicebox icon" width="512" height="512" fetchpriority="high" decoding="async">
                     <span class="app-cat">iOS · Utility</span>
                     <h3>Juicebox</h3>
                     <p>Log all your EV charging and see your costs, metrics and stats all in one app.</p>
@@ -55,7 +96,7 @@
 
                 <!-- Wisppad -->
                 <a class="app-card theme-wisppad" href="wisppad.html" data-aos="fade-up">
-                    <img src="assets/wisppad/wisppad-icon.png" alt="Wisppad icon">
+                    <img src="assets/wisppad/wisppad-icon.png" alt="Wisppad icon" width="512" height="512" loading="lazy" decoding="async">
                     <span class="app-cat">iOS · Productivity</span>
                     <h3>Wisppad</h3>
                     <p>Impermanent notes that automatically delete after a set time, with maths, code, voice, and more.</p>
