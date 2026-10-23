@@ -15,6 +15,48 @@
     });
   });
 
+  // ---- Light/dark toggle ----
+  // Only runs on pages carrying the button. The saved choice is applied
+  // pre-paint by an inline script in the head; this keeps the icon, the
+  // browser chrome and localStorage in step from then on.
+  var themeToggle = document.querySelector('[data-theme-toggle]');
+  if (themeToggle) {
+    var root = document.documentElement;
+    var systemDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+    function isDark() {
+      var set = root.getAttribute('data-theme');
+      return set ? set === 'dark' : systemDark.matches;
+    }
+
+    function syncToggle() {
+      var dark = isDark();
+      var icon = themeToggle.querySelector('i');
+      if (icon) icon.className = dark ? 'fas fa-sun' : 'fas fa-moon';
+      themeToggle.setAttribute('aria-pressed', String(dark));
+      themeToggle.title = dark ? 'Switch to light' : 'Switch to dark';
+      // Keep the address bar in step with the canvas.
+      document.querySelectorAll('meta[name="theme-color"]').forEach(function (m) {
+        m.setAttribute('content', dark ? '#1A2E23' : '#F2F0EB');
+        m.removeAttribute('media');
+      });
+    }
+
+    themeToggle.addEventListener('click', function () {
+      var next = isDark() ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('jb-theme', next); } catch (e) { /* private mode */ }
+      syncToggle();
+    });
+
+    // Follow the system while the visitor has not chosen a side.
+    systemDark.addEventListener('change', function () {
+      if (!root.getAttribute('data-theme')) syncToggle();
+    });
+
+    syncToggle();
+  }
+
   // Current year in footer
   var y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();

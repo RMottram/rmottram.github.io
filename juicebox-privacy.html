@@ -13,6 +13,22 @@
     <script src="https://kit.fontawesome.com/cd101d4302.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="css/app.css">
+
+    <!-- Browser chrome follows the canvas, as the app's does -->
+    <meta name="theme-color" content="#F2F0EB" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1A2E23" media="(prefers-color-scheme: dark)">
+
+    <!-- Honour the choice made on the main page, before first paint -->
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('jb-theme');
+                if (saved === 'dark' || saved === 'light') {
+                    document.documentElement.setAttribute('data-theme', saved);
+                }
+            } catch (e) { /* private mode: fall back to the system setting */ }
+        })();
+    </script>
 </head>
 
 <body class="app-page theme-juicebox">

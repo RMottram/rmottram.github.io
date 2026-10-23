@@ -13,6 +13,24 @@
     <script src="https://kit.fontawesome.com/cd101d4302.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="css/app.css">
+
+    <!-- Browser chrome follows the canvas, as the app's does -->
+    <meta name="theme-color" content="#F2F0EB" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1A2E23" media="(prefers-color-scheme: dark)">
+
+    <!-- Apply a saved choice before first paint, so the page never flashes
+         the wrong theme. Kept inline and tiny for that reason. The class is
+         added here rather than in the body tag for the same reason. -->
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('jb-theme');
+                if (saved === 'dark' || saved === 'light') {
+                    document.documentElement.setAttribute('data-theme', saved);
+                }
+            } catch (e) { /* private mode: fall back to the system setting */ }
+        })();
+    </script>
 </head>
 
 <body class="app-page theme-juicebox">
@@ -29,6 +47,10 @@
             <a href="#screens">Screens</a>
             <a href="#pricing">Pricing</a>
             <a href="#faq">FAQ</a>
+            <button class="theme-toggle" type="button" data-theme-toggle
+                    aria-label="Switch between light and dark">
+                <i class="fas fa-moon" aria-hidden="true"></i>
+            </button>
         </div>
     </nav>
 

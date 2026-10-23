@@ -78,6 +78,32 @@ a:hover { text-decoration: underline; }
 }
 .app-nav .nav-links a:hover { color: var(--accent); text-decoration: none; }
 
+/* Light/dark switch in the nav. Only shown on pages that opt in by
+   including the button, so the other app pages are unaffected. */
+.theme-toggle {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-dim);
+    font-size: .95rem;
+    cursor: pointer;
+    transition: color .2s, border-color .2s, background .2s;
+}
+.theme-toggle:hover {
+    color: var(--accent-ink);
+    border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+    background: color-mix(in srgb, var(--accent) 10%, transparent);
+}
+.theme-toggle:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
 /* ---------------- HERO ---------------- */
 .hero {
     position: relative;
@@ -129,6 +155,16 @@ a:hover { text-decoration: underline; }
     box-shadow: 0 18px 50px rgba(0,0,0,.45),
                 0 0 0 1px var(--border);
     margin-bottom: 26px;
+}
+/* On JuiceBox's dark canvas the hairline ring reads as a hard edge around
+   the icon, so the halo's own soft shadow carries it instead. */
+:root[data-theme="dark"] .theme-juicebox .app-icon-halo .app-icon {
+    box-shadow: 0 calc(var(--icon-size) * 0.04) calc(var(--icon-size) * 0.09) rgba(0,0,0,.45);
+}
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .theme-juicebox .app-icon-halo .app-icon {
+        box-shadow: 0 calc(var(--icon-size) * 0.04) calc(var(--icon-size) * 0.09) rgba(0,0,0,.45);
+    }
 }
 /* Inside a halo the icon is sized by the wrapper, sits above both layers,
    and takes the Home Screen corner shape so the three agree. The wrapper
@@ -549,6 +585,16 @@ a:hover { text-decoration: underline; }
     /* the app uses generous, very round corners */
     --radius:    22px;
     --radius-sm: 16px;
+
+    /* Card lift. Dark mode deepens these, since a faint dark shadow is
+       invisible on a dark canvas. */
+    --card-shadow:       0 1px 2px rgba(26,26,26,.04), 0 8px 24px rgba(26,26,26,.06);
+    --card-shadow-hover: 0 1px 2px rgba(26,26,26,.05), 0 14px 34px rgba(26,26,26,.10);
+
+    /* The pricing card's solid header bar, which carries white text. Kept
+       separate from --accent-ink: in dark mode that becomes the lighter
+       brand green, which white text cannot sit on (2.78:1). */
+    --pricing-header: var(--jb-green-ink);
 }
 
 /* JuiceBox light nav override */
@@ -570,12 +616,12 @@ a:hover { text-decoration: underline; }
 .theme-juicebox .pricing-card {
     background: var(--bg-2);
     border: none;
-    box-shadow: 0 1px 2px rgba(26,26,26,.04), 0 8px 24px rgba(26,26,26,.06);
+    box-shadow: var(--card-shadow);
 }
 .theme-juicebox .feature-card { padding: 26px 24px; }
 .theme-juicebox .feature-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 1px 2px rgba(26,26,26,.05), 0 14px 34px rgba(26,26,26,.10);
+    box-shadow: var(--card-shadow-hover);
 }
 
 /* Icon tiles: the app uses a filled circular glyph, not a rounded square */
@@ -628,7 +674,7 @@ a:hover { text-decoration: underline; }
     text-align: left;
 }
 .theme-juicebox .pricing-card h3 {
-    background: var(--accent-ink);
+    background: var(--pricing-header);
     color: #fff;
     margin: 0;
     padding: 22px 26px;
@@ -689,6 +735,96 @@ a:hover { text-decoration: underline; }
 
 /* Border and glow must share one duration or they visibly drift apart. */
 .theme-juicebox { --jb-spin: 7s; }
+
+/* ---------------- JUICEBOX: DARK MODE ----------------
+   The app's own dark appearance, taken from its asset catalogue: a deep
+   green canvas (juiceboxBackground #1A2E23) with lighter green cards
+   (juiceboxSurface #243C2E), not a neutral grey. Text follows
+   juiceboxPrimaryText / juiceboxSecondaryText.
+
+   The brand hues are unchanged in the app's dark variants, so they stay
+   as they are here. The -ink text colours, however, were darkened for a
+   light canvas and become unreadable on this one, so each is replaced by
+   the hue itself where that already clears WCAG AA on #1A2E23, and by a
+   lightened version where it does not (ember 4.25 and plum 3.29 fail).
+   The -tint badge fills are rebuilt as translucent washes of each hue, so
+   they read as a tinted well on a dark card rather than a pale block.
+
+   One declaration block serves both triggers: the visitor's system
+   setting, and [data-theme="dark"] when they pick a side with the
+   toggle. [data-theme="light"] opts back out of the system preference. */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .theme-juicebox {
+        /* the app lifts sky and teal for the dark appearance */
+        --jb-sky:  #6DB8EE;
+        --jb-teal: #67CBA6;
+
+        --jb-ember-ink: #EB725E;
+        --jb-green-ink: #3DAF6E;
+        --jb-plum-ink:  #BD7DD5;
+        --jb-sage-ink:  #79C9A0;
+        --jb-sky-ink:   #6DB8EE;
+        --jb-teal-ink:  #67CBA6;
+        --jb-volt-ink:  #F0B429;
+
+        --jb-ember-tint: rgba(232, 96, 74, .20);
+        --jb-green-tint: rgba(61, 175, 110, .20);
+        --jb-plum-tint:  rgba(168, 85, 200, .22);
+        --jb-sage-tint:  rgba(121, 201, 160, .18);
+        --jb-sky-tint:   rgba(109, 184, 238, .18);
+        --jb-teal-tint:  rgba(103, 203, 166, .18);
+        --jb-volt-tint:  rgba(240, 180, 41, .20);
+
+        --bg:       #1A2E23;   /* juiceboxBackground (dark) */
+        --bg-2:     #243C2E;   /* juiceboxSurface (dark) */
+        --bg-3:     #1F3528;   /* inset tiles, between the two */
+        --text:     #E8F5EE;   /* juiceboxPrimaryText (dark) */
+        --text-dim: #A8C6B5;   /* secondary, muted against the canvas */
+        --heading:  #E8F5EE;
+        --border:   #31513E;   /* a lift from the surface, not a grey line */
+
+        --card-shadow:       0 1px 2px rgba(0,0,0,.30), 0 8px 24px rgba(0,0,0,.34);
+        --card-shadow-hover: 0 1px 2px rgba(0,0,0,.34), 0 14px 34px rgba(0,0,0,.44);
+
+        /* White on the lighter brand green fails, so the header keeps a
+           deeper green here (white 5.48:1). */
+        --pricing-header: #29774B;
+    }
+}
+:root[data-theme="dark"] .theme-juicebox {
+    --jb-sky:  #6DB8EE;
+    --jb-teal: #67CBA6;
+
+    --jb-ember-ink: #EB725E;
+    --jb-green-ink: #3DAF6E;
+    --jb-plum-ink:  #BD7DD5;
+    --jb-sage-ink:  #79C9A0;
+    --jb-sky-ink:   #6DB8EE;
+    --jb-teal-ink:  #67CBA6;
+    --jb-volt-ink:  #F0B429;
+
+    --jb-ember-tint: rgba(232, 96, 74, .20);
+    --jb-green-tint: rgba(61, 175, 110, .20);
+    --jb-plum-tint:  rgba(168, 85, 200, .22);
+    --jb-sage-tint:  rgba(121, 201, 160, .18);
+    --jb-sky-tint:   rgba(109, 184, 238, .18);
+    --jb-teal-tint:  rgba(103, 203, 166, .18);
+    --jb-volt-tint:  rgba(240, 180, 41, .20);
+
+    --bg:       #1A2E23;
+    --bg-2:     #243C2E;
+    --bg-3:     #1F3528;
+    --text:     #E8F5EE;
+    --text-dim: #A8C6B5;
+    --heading:  #E8F5EE;
+    --border:   #31513E;
+
+    --card-shadow:       0 1px 2px rgba(0,0,0,.30), 0 8px 24px rgba(0,0,0,.34);
+    --card-shadow-hover: 0 1px 2px rgba(0,0,0,.34), 0 14px 34px rgba(0,0,0,.44);
+
+    --pricing-header: #29774B;
+}
+
 
 .theme-juicebox .pricing-card--pro {
     position: relative;
