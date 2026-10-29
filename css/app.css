@@ -276,6 +276,45 @@ a:hover { text-decoration: underline; }
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 20px;
 }
+/* Long feature lists swipe sideways instead of running down the page:
+   two rows, filled column by column, with 3 / 2 / 1 columns on show.
+   An even card count keeps every column full. Paging and edge fades
+   come from the .gallery-viewport script and styles. */
+.feature-swipe {
+    --cols: 3;
+    grid-template-columns: none;
+    grid-template-rows: repeat(2, auto);
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% - (var(--cols) - 1) * 20px) / var(--cols));
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    /* A scroller clips whatever spills out of it, which would cut off
+       the cards' shadows (up to ~34px blur, ~48px below on hover) and
+       hover lift. Pad by that much and pull back out with matching
+       negative margins, so the cards stay put and the shadows have room. */
+    --spill: 36px;
+    padding: 24px var(--spill) 52px;
+    margin: -24px calc(var(--spill) * -1) -52px;
+    scroll-padding-inline: var(--spill);
+    --fade-l: 0px;
+    --fade-r: 0px;
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 var(--fade-l), #000 calc(100% - var(--fade-r)), transparent);
+    mask-image: linear-gradient(to right, transparent, #000 var(--fade-l), #000 calc(100% - var(--fade-r)), transparent);
+}
+.feature-swipe::-webkit-scrollbar { display: none; }
+.feature-swipe > * { scroll-snap-align: start; }
+.feature-swipe:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: var(--radius); }
+/* The fade covers the padding plus a little of the next card */
+.gallery-viewport.can-prev .feature-swipe { --fade-l: calc(var(--spill) + 32px); }
+.gallery-viewport.can-next .feature-swipe { --fade-r: calc(var(--spill) + 32px); }
+.gallery-viewport--cards .gallery-btn { top: 50%; }
+/* Narrower screens: the spill stays inside the page's side gutter */
+@media (max-width: 900px) { .feature-swipe { --cols: 2; --spill: 24px; } }
+/* Phones: a single row, one card at a time with the next peeking in.
+   Two rows would stretch every card to the tallest one twice over. */
+@media (max-width: 560px) { .feature-swipe { --spill: 20px; grid-template-rows: auto; grid-auto-columns: 85%; gap: 14px; } }
 .feature-card {
     background: var(--bg-2);
     border: 1px solid var(--border);
@@ -786,13 +825,36 @@ a:hover { text-decoration: underline; }
 .theme-juicebox .ic-ember { --ic-fill: var(--jb-ember-tint); --ic-glyph: var(--jb-ember-ink); }
 .theme-juicebox .ic-sage  { --ic-fill: var(--jb-sage-tint);  --ic-glyph: var(--jb-sage-ink); }
 
-.theme-juicebox .feature-card .icon {
-    width: 46px; height: 46px;
-    border-radius: 50%;
-    background: var(--ic-fill);
-    color: var(--ic-glyph);
-    font-size: 1.15rem;
+/* Feature cards follow the app's own tiles. From the Pro perk cells: a
+   rounded-square symbol tile filled with the colour's gradient and a white
+   glyph. From the Stats "Key Metrics" tiles: a 2px border in the same
+   colour at 22%, and 16px corners. Each card takes its colour from the
+   ic-* class on its icon. */
+.theme-juicebox .feature-card {
+    --fc: var(--jb-volt);
+    border: 2px solid color-mix(in srgb, var(--fc) 22%, transparent);
+    border-radius: var(--radius-sm);
+    transition: transform .25s, box-shadow .25s, border-color .25s;
 }
+.theme-juicebox .feature-card:has(.ic-green) { --fc: var(--jb-green); }
+.theme-juicebox .feature-card:has(.ic-sky)   { --fc: var(--jb-sky); }
+.theme-juicebox .feature-card:has(.ic-teal)  { --fc: var(--jb-teal); }
+.theme-juicebox .feature-card:has(.ic-plum)  { --fc: var(--jb-plum); }
+.theme-juicebox .feature-card:has(.ic-ember) { --fc: var(--jb-ember); }
+.theme-juicebox .feature-card:has(.ic-sage)  { --fc: var(--jb-sage); }
+.theme-juicebox .feature-card:hover { border-color: color-mix(in srgb, var(--fc) 45%, transparent); }
+.theme-juicebox .feature-card .icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;                    /* the app's 0.26 x size */
+    font-size: 1.15rem;
+    color: #fff;
+    /* SwiftUI's color.gradient: a touch lighter at the top */
+    background: linear-gradient(to bottom, color-mix(in srgb, var(--fc) 72%, #fff), var(--fc));
+    box-shadow: 0 4px 10px color-mix(in srgb, var(--fc) 30%, transparent);
+}
+.theme-juicebox .feature-card .icon i { filter: drop-shadow(0 1px 1px rgba(0,0,0,.18)); }
+.theme-juicebox .feature-card h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 6px; }
 
 
 /* Section eyebrow -> the app's muted caption above a title */
@@ -803,63 +865,123 @@ a:hover { text-decoration: underline; }
 }
 .theme-juicebox .section-head h2 { letter-spacing: -.01em; }
 
-/* Pricing cards mirror the app's session card: solid green header bar
-   with the title reversed out, details on white below. */
-.theme-juicebox .pricing-card {
+/* Tier cards follow the app's header cards ("Amount to Claim", "Monthly
+   JuiceLog"): a coloured band with the name and price reversed out and a
+   translucent icon tile on the right, then an inset panel of rows like
+   "What It Costs to Run", and a full-width rounded button at the foot. */
+.theme-juicebox #pricing .split { align-items: stretch; }
+.theme-juicebox .tier {
+    display: flex;
+    flex-direction: column;
     padding: 0;
     overflow: hidden;
     text-align: left;
 }
-.theme-juicebox .pricing-card h3 {
-    background: var(--pricing-header);
+.theme-juicebox .tier-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 24px 26px;
     color: #fff;
+    background: var(--pricing-header);
+}
+.theme-juicebox .tier-head h3 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     margin: 0;
-    padding: 22px 26px;
-    font-size: 1.35rem;
+    font-size: 1.25rem;
     font-weight: 700;
+    color: #fff;
 }
-/* Small lead-in above the price, e.g. "Starting from" */
-.theme-juicebox .pricing-card .price-lead {
-    color: var(--text-dim);
-    font-size: .85rem;
-    font-weight: 600;
-    letter-spacing: .04em;
-    margin: 22px 26px 0;
-}
-/* the price tightens up when a lead-in sits above it */
-.theme-juicebox .pricing-card .price-lead + .price { margin-top: 2px; }
-.theme-juicebox .pricing-card .price {
-    color: var(--heading);
+.theme-juicebox .tier-head .price {
+    margin: 10px 0 4px;
     font-size: 2.6rem;
-    margin: 24px 26px 4px;
+    font-weight: 800;
+    line-height: 1.05;
+    color: #fff;
 }
-.theme-juicebox .pricing-card .price span { color: var(--text-dim); }
-.theme-juicebox .pricing-card .price-note,
-.theme-juicebox .pricing-card .price-alt { margin-left: 26px; margin-right: 26px; }
-.theme-juicebox .pricing-card .price-alt { color: var(--jb-green-ink); }
-.theme-juicebox .pricing-card ul { margin: 8px 0 26px; padding: 0 26px; }
-
-/* Feature ticks: the app pairs a small green circle with the label */
-.theme-juicebox .pricing-card li { padding-left: 30px; color: var(--text); }
-.theme-juicebox .pricing-card li::before {
+.theme-juicebox .tier-head .price span { font-size: 1.05rem; color: rgba(255,255,255,.85); }
+.theme-juicebox .tier-sub { margin: 0; font-size: .92rem; color: rgba(255,255,255,.9); }
+.theme-juicebox .tier-icon {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    font-size: 1.6rem;
+    color: #fff;
+    background: rgba(255,255,255,.18);
+    border: 1.5px solid rgba(255,255,255,.4);
+}
+.theme-juicebox .tier-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 22px 26px 26px;
+}
+.theme-juicebox .tier-label {
+    margin: 0 0 10px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-dim);
+}
+.theme-juicebox .tier-list {
+    list-style: none;
+    margin: 0 0 22px;
+    padding: 4px 16px;
+    background: var(--bg-3);
+    border-radius: var(--radius-sm);
+}
+.theme-juicebox .tier-list li {
+    position: relative;
+    padding: 9px 0 9px 34px;
+    color: var(--text);
+}
+.theme-juicebox .tier-list li + li { border-top: 1px solid var(--border); }
+/* The app pairs each row with a small tinted circle and bolt */
+.theme-juicebox .tier-list li::before {
     /* The kit (kit.fontawesome.com/cd101d4302.js) is FA 5.15.4 running in
        method:css, so the icon webfont IS loaded - under the v5 family name.
        font-weight:900 is required: FA registers separate 400 (regular) and
-       900 (solid) faces, and fa-check lives in the solid one. */
-    content: "\f0e7";                       /* fa-check */
+       900 (solid) faces, and fa-bolt lives in the solid one. */
+    content: "\f0e7";                       /* fa-bolt */
     font-family: "Font Awesome 5 Free", "Font Awesome 6 Free", sans-serif;
     font-weight: 900;
     font-size: .68rem;
     line-height: 1;
-    top: 12px;
-    width: 24px; height: 24px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
     background: var(--ic-fill);
     color: var(--ic-glyph);
     display: grid;
     place-items: center;
 }
-
+.theme-juicebox .tier-cta {
+    display: block;
+    margin-top: auto;
+    padding: 14px 20px;
+    border-radius: 999px;
+    text-align: center;
+    font-weight: 700;
+    color: var(--jb-green-ink);
+    background: var(--jb-green-tint);
+    transition: filter .2s;
+}
+.theme-juicebox .tier-cta:hover { filter: brightness(.95); text-decoration: none; }
+/* In dark mode the tint is see-through green over the card, which leaves
+   green text at about 3:1, so the label takes the light heading colour */
+:root[data-theme="dark"] .theme-juicebox .tier-cta { color: var(--heading); }
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .theme-juicebox .tier-cta { color: var(--heading); }
+}
 /* Pro card: the app marks the upgraded tier with a bordered highlight */
 /* @property makes the angle a real animatable type. Without this
    registration the browser treats --jb-angle as a plain string and the
@@ -963,19 +1085,17 @@ a:hover { text-decoration: underline; }
 }
 
 
-.theme-juicebox .pricing-card--pro {
+/* Pro carries the app's own Pro banner treatment: the ember, plum and
+   green sweep, a rotating rainbow border and a green glow. The card sits
+   a little forward of Free, and comes first when they stack. */
+.theme-juicebox .tier--pro {
     position: relative;
-    /* The base card clips to its rounded corners so the green header bar
-       stays inside them. The glow lives OUTSIDE the card, so this variant
-       must not clip - the header keeps its corners via its own radius. */
-    overflow: visible;
-    border-radius: var(--radius);
+    z-index: 1;
     /* Gradient border: the card paints its own background over a conic
        gradient layer, leaving the border width showing at the edge.
        (border-color cannot take a gradient.) A conic gradient rotated
-       through --jb-angle travels *around* the card; a linear one would
-       only slide across it. */
-    border: 6px solid transparent;
+       through --jb-angle travels *around* the card. */
+    border: 5px solid transparent;
     background:
         linear-gradient(var(--bg-2), var(--bg-2)) padding-box,
         conic-gradient(from var(--jb-angle),
@@ -987,66 +1107,195 @@ a:hover { text-decoration: underline; }
             var(--jb-ember),
             var(--jb-sage),
             var(--jb-green-ink)) border-box;
+    box-shadow: 0 14px 40px color-mix(in srgb, var(--jb-green) 35%, transparent), var(--card-shadow);
     animation: jb-rotate var(--jb-spin) linear infinite;
 }
-
-/* The glow: a blurred copy of the same rotating gradient sitting behind
-   the card, sharing --jb-spin so the colour under each edge always
-   matches the border above it as they travel round together. */
-.theme-juicebox .pricing-card--pro::before {
-    content: "";
-    position: absolute;
-    /* Spill further past the edge so the travelling colour is legible
-       as a halo rather than a thin rim. */
-    inset: -10px;
-    z-index: -1;
-    border-radius: inherit;
-    /* Same stops and same angle as the border, so the glow under any
-       given edge is always the colour of the border directly above it.
-       The brighter base hues (not the -ink shades) are used here: the
-       glow carries no text, and they read far better through a blur. */
-    /* background: conic-gradient(from var(--jb-angle),
-        var(--jb-green),
-        var(--jb-teal),
-        var(--jb-sky),
-        var(--jb-plum),
-        var(--jb-volt),
-        var(--jb-ember),
-        var(--jb-sage),
-        var(--jb-green));
-    filter: blur(18px) saturate(140%);
-    opacity: 0.35;
-    animation: jb-rotate var(--jb-spin) linear infinite;
-    pointer-events: none; */
+/* Margins, not a transform: the scroll animations set their own transform */
+@media (min-width: 769px) {
+    .theme-juicebox .tier--pro { margin-block: -14px; }
 }
+@media (max-width: 768px) {
+    .theme-juicebox .tier--pro { order: -1; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .theme-juicebox .tier--pro { animation: none; }
+}
+/* The app's Pro banner gradient in the light-mode -ink shades, fixed for
+   both themes like --pricing-header: white text needs these darker stops,
+   and dark mode lightens the -ink variables. */
+.theme-juicebox .tier--pro .tier-head {
+    background: linear-gradient(to top right, #CC331A, #953BB7 50%, #29774B);
+}
+.theme-juicebox .tier-chip {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--jb-plum-ink);
+    background: #fff;
+}
+.theme-juicebox .tier-note { margin: 0 0 14px; font-size: .92rem; color: var(--text-dim); }
+.theme-juicebox .tier--pro .tier-cta { color: #fff; background: var(--pricing-header); }
 
 @keyframes jb-rotate {
     to { --jb-angle: 360deg; }
 }
 
-/* The card sits above its own glow; without a stacking context the
-   z-index:-1 pseudo-element would fall behind the page background. */
-.theme-juicebox .pricing-card--pro > * { position: relative; }
+/* Section heads follow an app screen's top: Watt, a large bold title,
+   then the coloured header card ("Settings", "Electric Tariff") with a
+   line of description and a translucent icon tile. The card colours are
+   the light-mode -ink shades, fixed for both themes so white text keeps
+   its contrast (dark mode lightens the -ink variables). */
+.theme-juicebox .page-head { max-width: 760px; }
+.theme-juicebox .page-head .watt {
+    display: block;
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 6px;
+}
+.theme-juicebox .page-head h2 { margin-bottom: 18px; }
+.theme-juicebox .head-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 20px 22px;
+    border-radius: var(--radius);
+    text-align: left;
+    color: #fff;
+    background: var(--hc, #29774B);
+    box-shadow: 0 10px 26px color-mix(in srgb, var(--hc, #29774B) 28%, transparent);
+}
+.theme-juicebox .hc-green { --hc: #29774B; }
+.theme-juicebox .hc-sage  { --hc: #2E7350; }
+.theme-juicebox .hc-plum  { --hc: #953BB7; }
+.theme-juicebox .hc-sky   { --hc: #156EB1; }
+.theme-juicebox .hc-teal  { --hc: #007A6C; }
+.theme-juicebox .hc-ember { --hc: #CC331A; }
+.theme-juicebox .head-card-title { font-size: 1.3rem; font-weight: 700; }
+.theme-juicebox .section-head .head-card p {
+    margin: 4px 0 0;
+    font-size: .95rem;
+    font-weight: 400;
+    color: rgba(255,255,255,.9);
+}
+.theme-juicebox .head-card-icon {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    font-size: 1.45rem;
+    background: rgba(255,255,255,.18);
+    border: 1.5px solid rgba(255,255,255,.4);
+}
+.theme-juicebox .page-head .soon-note { margin-top: 16px; }
 
-@media (prefers-reduced-motion: reduce) {
-    .theme-juicebox .pricing-card--pro,
-    .theme-juicebox .pricing-card--pro::before { animation: none; }
+/* Nav links sit in a floating glass capsule like the app's tab bar, with
+   the section in view picked out in green. Phones show icons only. */
+.theme-juicebox .app-nav .nav-links {
+    gap: 2px;
+    padding: 5px;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--bg-2) 78%, transparent);
+    backdrop-filter: saturate(160%) blur(14px);
+    -webkit-backdrop-filter: saturate(160%) blur(14px);
+    box-shadow: var(--card-shadow);
 }
-.theme-juicebox .pricing-card--pro h3 {
-    /* rounds its own top corners now the parent no longer clips */
-    border-radius: calc(var(--radius) - 6px) calc(var(--radius) - 6px) 0 0;
-    /* Multi-colour sweep across the brand palette. Every stop is an -ink
-       shade: the header text is white, and the base hues (volt 1.47,
-       green 2.78, sky 2.90) are far too light to carry it. */
-    background: linear-gradient(
-        120deg,
-        var(--jb-teal) 0%,
-        var(--jb-green) 25%,
-        var(--jb-sage)  50%,
-        var(--jb-green) 75%,
-        var(--jb-teal) 100%
-    );
+.theme-juicebox .app-nav .nav-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: .92rem;
+    color: var(--text-dim);
+    transition: background .2s, color .2s;
 }
+.theme-juicebox .app-nav .nav-links a i { font-size: .95em; }
+.theme-juicebox .app-nav .nav-links a:hover {
+    color: var(--accent-ink);
+    background: color-mix(in srgb, var(--jb-green) 12%, transparent);
+}
+.theme-juicebox .app-nav .nav-links a.is-active { color: #fff; background: var(--pricing-header); }
+@media (max-width: 768px) {
+    .theme-juicebox .app-nav .nav-links a { padding: 9px 12px; font-size: 1.05rem; }
+    .theme-juicebox .app-nav .nav-links a span {
+        position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+    }
+}
+
+/* Screenshot filters become the app's segmented control: a recessed
+   track with the chosen option as a solid green pill */
+.theme-juicebox .gallery-filters {
+    width: fit-content;
+    max-width: 100%;
+    margin-inline: auto;
+    gap: 2px;
+    padding: 4px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    border-radius: 999px;
+    background: var(--bg-3);
+    box-shadow: inset 0 0 0 1px var(--border);
+}
+.theme-juicebox .gallery-filters::-webkit-scrollbar { display: none; }
+.theme-juicebox .gallery-filter {
+    flex: none;
+    border: none;
+    background: transparent;
+    padding: 8px 16px;
+}
+.theme-juicebox .gallery-filter.is-active,
+.theme-juicebox .gallery-filter.is-active:hover {
+    color: #fff;
+    background: var(--pricing-header);
+    box-shadow: 0 2px 6px rgba(0,0,0,.12);
+}
+
+/* FAQ as one grouped list, like the app's Settings: a single white card
+   with divided rows, each led by a tinted icon circle */
+.theme-juicebox .faq {
+    padding: 4px 0;
+    border-radius: var(--radius);
+    background: var(--bg-2);
+    box-shadow: var(--card-shadow);
+}
+.theme-juicebox .faq-item {
+    margin: 0 22px;
+    border: none;
+    border-radius: 0;
+    background: none;
+}
+.theme-juicebox .faq-item + .faq-item { border-top: 1px solid var(--border); }
+.theme-juicebox .faq-q {
+    padding: 18px 0;
+    font-size: 1.02rem;
+    font-weight: 600;
+    justify-content: flex-start;
+}
+.theme-juicebox .faq-q::before {
+    content: "\f128";                       /* fa-question */
+    font-family: "Font Awesome 5 Free", "Font Awesome 6 Free", sans-serif;
+    font-weight: 900;
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: .78rem;
+    color: var(--jb-sky-ink);
+    background: var(--jb-sky-tint);
+}
+.theme-juicebox .faq-q .chev { margin-left: auto; color: var(--text-dim); }
+.theme-juicebox .faq-a > div { padding: 0 0 18px 46px; }
 
 /* Buttons: fully-rounded, solid green — the app's primary action */
 .theme-juicebox .btn-ghost {

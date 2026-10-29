@@ -135,13 +135,11 @@
     wrapper.addEventListener('touchstart', pause, { passive: true });
   });
 
-  // ---- Screenshot gallery: filters + prev/next paging ----
-  document.querySelectorAll('.gallery').forEach(function (gallery) {
-    var track = gallery.querySelector('.gallery-track');
-    var items = Array.prototype.slice.call(gallery.querySelectorAll('.gallery-item'));
-    var filters = gallery.querySelectorAll('.gallery-filter');
-    var prev = gallery.querySelector('.gallery-btn--prev');
-    var next = gallery.querySelector('.gallery-btn--next');
+  // ---- Swipeable strips (screenshot gallery, feature cards): prev/next paging ----
+  document.querySelectorAll('.gallery-viewport').forEach(function (viewport) {
+    var track = viewport.querySelector('.gallery-track, .feature-swipe');
+    var prev = viewport.querySelector('.gallery-btn--prev');
+    var next = viewport.querySelector('.gallery-btn--next');
     if (!track) return;
 
     // Hide a button at its end of the strip, or both when nothing overflows
@@ -156,14 +154,47 @@
       track.parentNode.classList.toggle('can-next', canNext);
     }
 
-    // A page is as many whole screens as are fully on show
+    // A page is as many whole columns as are fully on show
     function step() {
-      var first = items.filter(function (item) { return !item.hidden; })[0];
+      var first = Array.prototype.filter.call(track.children, function (item) { return !item.hidden; })[0];
       if (!first) return track.clientWidth;
       var gap = parseFloat(getComputedStyle(track).columnGap) || 0;
       var unit = first.getBoundingClientRect().width + gap;
       return unit * Math.max(1, Math.floor((track.clientWidth + gap) / unit));
     }
+
+    if (prev) prev.addEventListener('click', function () { track.scrollBy({ left: -step(), behavior: 'smooth' }); });
+    if (next) next.addEventListener('click', function () { track.scrollBy({ left: step(), behavior: 'smooth' }); });
+    track.addEventListener('scroll', updateButtons, { passive: true });
+    window.addEventListener('resize', updateButtons);
+    window.addEventListener('load', updateButtons);
+    updateButtons();
+  });
+
+  // ---- Nav: mark the section in view, like the app's selected tab ----
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.app-nav .nav-links a[href^="#"]'));
+  var navTargets = navLinks.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+  if (navLinks.length && 'IntersectionObserver' in window) {
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var i = navTargets.indexOf(entry.target);
+        navLinks.forEach(function (a, j) {
+          a.classList.toggle('is-active', j === i);
+          if (j === i) a.setAttribute('aria-current', 'location'); else a.removeAttribute('aria-current');
+        });
+      });
+    // A section counts as current once it fills the middle of the screen
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    navTargets.forEach(function (t) { if (t) spy.observe(t); });
+  }
+
+  // ---- Screenshot gallery filters ----
+  document.querySelectorAll('.gallery').forEach(function (gallery) {
+    var track = gallery.querySelector('.gallery-track');
+    var items = Array.prototype.slice.call(gallery.querySelectorAll('.gallery-item'));
+    var filters = gallery.querySelectorAll('.gallery-filter');
+    if (!track) return;
 
     filters.forEach(function (button) {
       button.addEventListener('click', function () {
@@ -178,16 +209,10 @@
           item.hidden = tag !== 'all' && tags.indexOf(tag) === -1;
         });
         track.scrollTo({ left: 0 });
-        updateButtons();
+        // Refresh the arrows and fades for the new set of screens
+        track.dispatchEvent(new Event('scroll'));
       });
     });
-
-    if (prev) prev.addEventListener('click', function () { track.scrollBy({ left: -step(), behavior: 'smooth' }); });
-    if (next) next.addEventListener('click', function () { track.scrollBy({ left: step(), behavior: 'smooth' }); });
-    track.addEventListener('scroll', updateButtons, { passive: true });
-    window.addEventListener('resize', updateButtons);
-    window.addEventListener('load', updateButtons);
-    updateButtons();
   });
 
 })();

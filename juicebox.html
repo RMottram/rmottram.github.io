@@ -207,11 +207,11 @@
             <span>Ryan Mottram</span>
         </a>
         <div class="nav-links">
-            <a href="#how-it-works">How it works</a>
-            <a href="#features">Features</a>
-            <a href="#screens">Screens</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#faq">FAQ</a>
+            <a href="#how-it-works"><i class="fas fa-plug" aria-hidden="true"></i><span>How it works</span></a>
+            <a href="#features"><i class="fas fa-th-large" aria-hidden="true"></i><span>Features</span></a>
+            <a href="#screens"><i class="fas fa-mobile-alt" aria-hidden="true"></i><span>Screens</span></a>
+            <a href="#pricing"><i class="fas fa-tag" aria-hidden="true"></i><span>Pricing</span></a>
+            <a href="#faq"><i class="fas fa-question-circle" aria-hidden="true"></i><span>FAQ</span></a>
             <button class="theme-toggle" type="button" data-theme-toggle
                     aria-label="Switch between light and dark">
                 <i class="fas fa-moon" aria-hidden="true"></i>
@@ -246,9 +246,16 @@
     <!-- HOW IT WORKS -->
     <section class="section" id="how-it-works">
         <div class="app-wrap">
-            <div class="section-head" data-aos="fade-up">
-                <div class="eyebrow">Watt's it all about</div>
+            <div class="section-head page-head" data-aos="fade-up">
+                <img class="watt" src="assets/juicebox/watt/watt.png" alt="" width="240" height="240" loading="lazy" decoding="async">
                 <h2>Simple. Honest. No faff.</h2>
+                <div class="head-card hc-green">
+                    <div>
+                        <div class="head-card-title">Watt's it all about</div>
+                        <p>Three steps from plugging in to knowing what it cost.</p>
+                    </div>
+                    <div class="head-card-icon" aria-hidden="true"><i class="fas fa-bolt"></i></div>
+                </div>
             </div>
             <div class="feature-grid">
                 <div class="feature-card" data-aos="fade-right">
@@ -273,98 +280,113 @@
     <!-- FREE FEATURES -->
     <section class="section" id="features">
         <div class="app-wrap">
-            <div class="section-head" data-aos="fade-up">
-                <div class="eyebrow">Out of the box</div>
+            <div class="section-head page-head" data-aos="fade-up">
+                <img class="watt" src="assets/juicebox/watt/watt-car.png" alt="" width="240" height="240" loading="lazy" decoding="async">
                 <h2>Start free, always free</h2>
-                <p>No subscription needed, and no cap on what you log. These features are yours, forever.</p>
+                <div class="head-card hc-sage">
+                    <div>
+                        <div class="head-card-title">Out of the box</div>
+                        <p>No subscription needed, and no cap on what you log. These features are yours, forever.</p>
+                    </div>
+                    <div class="head-card-icon" aria-hidden="true"><i class="fas fa-gift"></i></div>
+                </div>
                 <div class="soon-note"><i class="fas fa-wrench"></i> Features marked <b>30 October</b> arrive in JuiceBox 1.3</div>
             </div>
-            <div class="feature-grid">
-                <div class="feature-card" data-aos="fade-right">
-                    <div class="icon ic-green"><i class="fas fa-car"></i></div>
-                    <h3>One vehicle monitoring</h3>
-                    <p>Track one EV for free. Upgrade anytime for more.</p>
+            <div class="gallery-viewport gallery-viewport--cards">
+                <button type="button" class="gallery-btn gallery-btn--prev" aria-label="Previous features"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+                <div class="feature-grid feature-swipe" tabindex="0" aria-label="Features, scroll sideways for more">
+                    <div class="feature-card" data-aos="fade-up">
+                        <div class="icon ic-green"><i class="fas fa-car"></i></div>
+                        <h3>One vehicle monitoring</h3>
+                        <p>Track one EV for free. Upgrade anytime for more.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon ic-volt"><i class="fas fa-bolt"></i></div>
+                        <h3>Charge time calculator</h3>
+                        <p>Estimate charge time using your battery size, speed, and target percentage.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="180">
+                        <div class="icon-row"><div class="icon ic-ember"><i class="fas fa-infinity"></i></div><span class="soon">30 October</span></div>
+                        <h3>Unlimited session logging</h3>
+                        <p>Log as many charging sessions as you like. Your whole history stays visible, and your stats, widgets and Apple Watch use every single one.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up">
+                        <div class="icon-row"><div class="icon ic-sage"><i class="fas fa-th-large"></i></div><span class="soon">30 October</span></div>
+                        <h3>Widgets</h3>
+                        <p>Home screen and lock screen widgets for glanceable charging history, all redesigned to match the app. Two new ones in 1.3: Recent Sessions, with a button to log a charge, and Running Costs, showing what's due next.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon ic-teal"><i class="fas fa-chart-pie"></i></div>
+                        <h3>Simple stats</h3>
+                        <p>Average session cost, total charging time, and total kWh, right from day one.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="180">
+                        <div class="icon ic-sky"><i class="fas fa-clock"></i></div>
+                        <h3>Apple Watch companion app</h3>
+                        <p>Check your charging history right from your wrist, with freshly redesigned complications.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up">
+                        <div class="icon-row"><div class="icon ic-plum"><i class="fas fa-hourglass-half"></i></div><span class="soon">30 October</span></div>
+                        <h3>Pending Charge</h3>
+                        <p>Log a session the moment you plug in and add the kWh when it's done. Your charge lives on the Lock Screen, Dynamic Island, Apple Watch and CarPlay while it runs.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon-row"><div class="icon ic-ember"><i class="fas fa-bell"></i></div><span class="soon">30 October</span></div>
+                        <h3>Running cost reminders</h3>
+                        <p>Add your MOT, service, road tax and insurance dates. JuiceBox reminds you 30 and 7 days before each one is due.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="180">
+                        <div class="icon-row"><div class="icon ic-volt"><i class="fas fa-moon"></i></div><span class="soon">30 October</span></div>
+                        <h3>Peak &amp; off-peak rates</h3>
+                        <p>Save both your electricity rates and tap to fill them when logging. Split Tariff divides a charge that ran across both.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up">
+                        <div class="icon-row"><div class="icon ic-sage"><i class="fas fa-calendar-alt"></i></div><span class="soon">30 October</span></div>
+                        <h3>Find sessions by date</h3>
+                        <p>Filter a vehicle's sessions to any date range. The calendar dots each day you charged for home or public.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon-row"><div class="icon ic-green"><i class="fas fa-road"></i></div><span class="soon">30 October</span></div>
+                        <h3>Total distance tracked</h3>
+                        <p>Worked out from your first and last odometer readings, now free for everyone.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="180">
+                        <div class="icon-row"><div class="icon ic-teal"><i class="fas fa-comments"></i></div><span class="soon">30 October</span></div>
+                        <h3>Have your say</h3>
+                        <p>Suggest features you want to see in JuiceBox and vote on everyone else's.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up">
+                        <div class="icon-row"><div class="icon ic-volt"><i class="fas fa-sun"></i></div><span class="soon">30 October</span></div>
+                        <h3>Solar &amp; home battery</h3>
+                        <p>Say how much of a home charge came from your panels or battery. JuiceBox works out what it really cost, with solar free or at your export rate, and Stats shows how much came from the sun.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon-row"><div class="icon ic-green"><i class="fas fa-gas-pump"></i></div><span class="soon">30 October</span></div>
+                        <h3>Fuel savings</h3>
+                        <p>See what charging has saved you against a typical petrol or diesel car. Set your local fuel prices for a closer comparison.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="180">
+                        <div class="icon-row"><div class="icon ic-sage"><i class="fas fa-tachometer-alt"></i></div><span class="soon">30 October</span></div>
+                        <h3>Update your odometer</h3>
+                        <p>Update a reading any time without logging a charge. JuiceBox spots a mistyped one, and can nudge you when it has not seen a reading for a while.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up">
+                        <div class="icon-row"><div class="icon ic-sky"><i class="fas fa-clock"></i></div><span class="soon">30 October</span></div>
+                        <h3>When you plugged in</h3>
+                        <p>Sessions keep the time a charge started. Drag round a 24-hour dial that shows your peak and off-peak hours, and home charges start at your off-peak time for you.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon-row"><div class="icon ic-teal"><i class="fas fa-database"></i></div><span class="soon">30 October</span></div>
+                        <h3>Your data, anywhere</h3>
+                        <p>Import and export your charging history from a .jbx, CSV or JSON file. Now free for everyone.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="180">
+                        <div class="icon ic-plum"><i class="fas fa-heartbeat"></i></div>
+                        <h3>Battery health</h3>
+                        <p>Log a few charges with their starting %, and JuiceBox estimates your battery's health and real usable capacity.</p>
+                    </div>
                 </div>
-                <div class="feature-card" data-aos="fade-down" data-aos-delay="100">
-                    <div class="icon ic-volt"><i class="fas fa-bolt"></i></div>
-                    <h3>Charge time calculator</h3>
-                    <p>Estimate charge time using your battery size, speed, and target percentage.</p>
-                </div>
-                <div class="feature-card" data-aos="fade-left" data-aos-delay="180">
-                    <div class="icon-row"><div class="icon ic-ember"><i class="fas fa-infinity"></i></div><span class="soon">30 October</span></div>
-                    <h3>Unlimited session logging</h3>
-                    <p>Log as many charging sessions as you like. Your whole history stays visible, and your stats, widgets and Apple Watch use every single one.</p>
-                </div>
-                <div class="feature-card" data-aos="fade-right">
-                    <div class="icon-row"><div class="icon ic-sage"><i class="fas fa-th-large"></i></div><span class="soon">30 October</span></div>
-                    <h3>Widgets</h3>
-                    <p>Home screen and lock screen widgets for glanceable charging history, all redesigned to match the app. Two new ones in 1.3: Recent Sessions, with a button to log a charge, and Running Costs, showing what's due next.</p>
-                </div>
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="icon ic-teal"><i class="fas fa-chart-pie"></i></div>
-                    <h3>Simple stats</h3>
-                    <p>Average session cost, total charging time, and total kWh, right from day one.</p>
-                </div>
-                <div class="feature-card" data-aos="fade-left" data-aos-delay="180">
-                    <div class="icon ic-sky"><i class="fas fa-clock"></i></div>
-                    <h3>Apple Watch companion app</h3>
-                    <p>Check your charging history right from your wrist, with freshly redesigned complications.</p>
-                </div>
-                <div class="feature-card" data-aos="fade-right">
-                    <div class="icon-row"><div class="icon ic-plum"><i class="fas fa-hourglass-half"></i></div><span class="soon">30 October</span></div>
-                    <h3>Pending Charge</h3>
-                    <p>Log a session the moment you plug in and add the kWh when it's done. Your charge lives on the Lock Screen, Dynamic Island, Apple Watch and CarPlay while it runs.</p>
-                </div>
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="icon-row"><div class="icon ic-ember"><i class="fas fa-bell"></i></div><span class="soon">30 October</span></div>
-                    <h3>Running cost reminders</h3>
-                    <p>Add your MOT, service, road tax and insurance dates. JuiceBox reminds you 30 and 7 days before each one is due.</p>
-                </div>
-                <div class="feature-card" data-aos="fade-left" data-aos-delay="180">
-                    <div class="icon-row"><div class="icon ic-volt"><i class="fas fa-moon"></i></div><span class="soon">30 October</span></div>
-                    <h3>Peak &amp; off-peak rates</h3>
-                    <p>Save both your electricity rates and tap to fill them when logging. Split Tariff divides a charge that ran across both.</p>
-                </div>
-                <div class="feature-card" data-aos="fade-right">
-                    <div class="icon-row"><div class="icon ic-sage"><i class="fas fa-calendar-alt"></i></div><span class="soon">30 October</span></div>
-                    <h3>Find sessions by date</h3>
-                    <p>Filter a vehicle's sessions to any date range. The calendar dots each day you charged for home or public.</p>
-                </div>
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="icon-row"><div class="icon ic-green"><i class="fas fa-road"></i></div><span class="soon">30 October</span></div>
-                    <h3>Total distance tracked</h3>
-                    <p>Worked out from your first and last odometer readings, now free for everyone.</p>
-                </div>
-                <div class="feature-card" data-aos="fade-left" data-aos-delay="180">
-                    <div class="icon-row"><div class="icon ic-teal"><i class="fas fa-comments"></i></div><span class="soon">30 October</span></div>
-                    <h3>Have your say</h3>
-                    <p>Suggest features you want to see in JuiceBox and vote on everyone else's.</p>
-                </div>
-                <div class="feature-card" data-aos="fade-right">
-                    <div class="icon-row"><div class="icon ic-volt"><i class="fas fa-sun"></i></div><span class="soon">30 October</span></div>
-                    <h3>Solar &amp; home battery</h3>
-                    <p>Say how much of a home charge came from your panels or battery. JuiceBox works out what it really cost, with solar free or at your export rate, and Stats shows how much came from the sun.</p>
-                </div>
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="icon-row"><div class="icon ic-green"><i class="fas fa-gas-pump"></i></div><span class="soon">30 October</span></div>
-                    <h3>Fuel savings</h3>
-                    <p>See what charging has saved you against a typical petrol or diesel car. Set your local fuel prices for a closer comparison.</p>
-                </div>
-                <div class="feature-card" data-aos="fade-left" data-aos-delay="180">
-                    <div class="icon-row"><div class="icon ic-sage"><i class="fas fa-tachometer-alt"></i></div><span class="soon">30 October</span></div>
-                    <h3>Update your odometer</h3>
-                    <p>Update a reading any time without logging a charge. JuiceBox spots a mistyped one, and can nudge you when it has not seen a reading for a while.</p>
-                </div>
-                <div class="feature-card" data-aos="fade-right">
-                    <div class="icon-row"><div class="icon ic-sky"><i class="fas fa-clock"></i></div><span class="soon">30 October</span></div>
-                    <h3>When you plugged in</h3>
-                    <p>Sessions keep the time a charge started. Drag round a 24-hour dial that shows your peak and off-peak hours, and home charges start at your off-peak time for you.</p>
-                </div>
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="icon-row"><div class="icon ic-teal"><i class="fas fa-database"></i></div><span class="soon">30 October</span></div>
-                    <h3>Your data, anywhere</h3>
-                    <p>Import and export your charging history from a .jbx, CSV or JSON file. Now free for everyone.</p>
-                </div>
+                <button type="button" class="gallery-btn gallery-btn--next" aria-label="Next features"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
             </div>
         </div>
     </section>
@@ -372,48 +394,83 @@
     <!-- PRO FEATURES -->
     <section class="section">
         <div class="app-wrap">
-            <div class="section-head" data-aos="fade-up">
-                <div class="eyebrow">Squeeze a little more juice</div>
+            <div class="section-head page-head" data-aos="fade-up">
+                <img class="watt" src="assets/juicebox/watt/watt-chart.png" alt="" width="240" height="240" loading="lazy" decoding="async">
                 <h2>More power. More insight.</h2>
-                <p>Unlock the full JuiceBox experience with Pro.</p>
+                <div class="head-card hc-plum">
+                    <div>
+                        <div class="head-card-title">Squeeze a little more juice</div>
+                        <p>Unlock the full JuiceBox experience with Pro.</p>
+                    </div>
+                    <div class="head-card-icon" aria-hidden="true"><i class="fas fa-crown"></i></div>
+                </div>
                 <div class="soon-note"><i class="fas fa-wrench"></i> Features marked <b>30 October</b> arrive in JuiceBox 1.3</div>
             </div>
-            <div class="feature-grid">
-                <div class="feature-card" data-aos="fade-right">
-                    <div class="icon ic-green"><i class="fas fa-car-side"></i></div>
-                    <h3>Multiple vehicle monitoring</h3>
-                    <p>Track up to three EVs, each with their own stats and history.</p>
+            <div class="gallery-viewport gallery-viewport--cards">
+                <button type="button" class="gallery-btn gallery-btn--prev" aria-label="Previous features"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+                <div class="feature-grid feature-swipe" tabindex="0" aria-label="Features, scroll sideways for more">
+                    <div class="feature-card" data-aos="fade-up">
+                        <div class="icon ic-green"><i class="fas fa-car-side"></i></div>
+                        <h3>Multiple vehicle monitoring</h3>
+                        <p>Track up to three EVs, each with their own stats and history.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon ic-sky"><i class="fas fa-calculator"></i></div>
+                        <h3>Journey &amp; cost calculator</h3>
+                        <p>Estimate trip costs and see how you compare to petrol and diesel.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="180">
+                        <div class="icon ic-volt"><i class="fas fa-battery-half"></i></div>
+                        <h3>Battery depletion tool</h3>
+                        <p>See how much charge a trip will use before you set off.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up">
+                        <div class="icon ic-plum"><i class="fas fa-brain"></i></div>
+                        <h3>AI predictions</h3>
+                        <p>On-device AI predicts your next charge date, cost, and power needed.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon ic-teal"><i class="fas fa-camera"></i></div>
+                        <h3>Charger screen scanning</h3>
+                        <p>Point your camera at a charger's screen. JuiceBox reads the kWh, charge %, speed and price for you to confirm.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="180">
+                        <div class="icon ic-sage"><i class="fas fa-chart-line"></i></div>
+                        <h3>Advanced stats</h3>
+                        <p>Unlock deeper stats including miles per kWh and cost per mile.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up">
+                        <div class="icon ic-sky"><i class="fas fa-chart-bar"></i></div>
+                        <h3>Full charts</h3>
+                        <p>Every chart in Stats: kWh per session, sessions per month, efficiency, and your total, per-session and monthly spend.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon ic-green"><i class="fas fa-calendar-check"></i></div>
+                        <h3>Monthly &amp; annual JuiceLog</h3>
+                        <p>A round-up of every month and year you charge, with spend, energy, time and fuel savings.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="180">
+                        <div class="icon-row"><div class="icon ic-ember"><i class="fas fa-sliders-h"></i></div><span class="soon">30 October</span></div>
+                        <h3>Flexi JuiceLog</h3>
+                        <p>See your stats and trends for any date range you choose, not just by month or year.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up">
+                        <div class="icon-row"><div class="icon ic-volt"><i class="fas fa-receipt"></i></div><span class="soon">30 October</span></div>
+                        <h3>Expense Log</h3>
+                        <p>Track services, repairs, road tax, insurance and finance. Monthly payments are recorded for you, so you see what your EV really costs to run, charging included.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon-row"><div class="icon ic-teal"><i class="fas fa-file-invoice"></i></div><span class="soon">30 October</span></div>
+                        <h3>Reimbursement reports</h3>
+                        <p>Charging a company or salary sacrifice car at home? Generate a monthly PDF or CSV report for your employer, claiming the electricity cost or business mileage. Every report has its own reference and checks your readings and rates.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="180">
+                        <div class="icon ic-plum"><i class="fas fa-th-large"></i></div>
+                        <h3>More in widgets</h3>
+                        <p>Your widgets add predictions, extra stats and your expenses.</p>
+                    </div>
                 </div>
-                <div class="feature-card" data-aos="fade-down" data-aos-delay="100">
-                    <div class="icon ic-sky"><i class="fas fa-calculator"></i></div>
-                    <h3>Journey &amp; cost calculator</h3>
-                    <p>Estimate trip costs and see how you compare to petrol and diesel.</p>
-                </div>
-                <div class="feature-card" data-aos="fade-left" data-aos-delay="180">
-                    <div class="icon ic-plum"><i class="fas fa-brain"></i></div>
-                    <h3>AI predictions</h3>
-                    <p>On-device AI predicts your next charge date, cost, and power needed.</p>
-                </div>
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="icon-row"><div class="icon ic-volt"><i class="fas fa-receipt"></i></div><span class="soon">30 October</span></div>
-                    <h3>Expense Log</h3>
-                    <p>Track services, repairs, road tax, insurance and finance. Monthly payments are recorded for you, so you see what your EV really costs to run, charging included.</p>
-                </div>
-                <div class="feature-card" data-aos="fade-left" data-aos-delay="180">
-                    <div class="icon ic-sage"><i class="fas fa-chart-line"></i></div>
-                    <h3>Advanced stats</h3>
-                    <p>Unlock deeper stats including miles per kWh and cost per mile.</p>
-                </div>
-                <div class="feature-card" data-aos="fade-up">
-                    <div class="icon-row"><div class="icon ic-ember"><i class="fas fa-sliders-h"></i></div><span class="soon">30 October</span></div>
-                    <h3>Flexi JuiceLog</h3>
-                    <p>See your stats and trends for any date range you choose, not just by month or year.</p>
-                </div>
-                <div class="feature-card" data-aos="fade-right" data-aos-delay="100">
-                    <div class="icon-row"><div class="icon ic-teal"><i class="fas fa-file-invoice"></i></div><span class="soon">30 October</span></div>
-                    <h3>Reimbursement reports</h3>
-                    <p>Charging a company or salary sacrifice car at home? Generate a monthly PDF or CSV report for your employer, claiming the electricity cost or business mileage. Every report has its own reference and checks your readings and rates.</p>
-                </div>
+                <button type="button" class="gallery-btn gallery-btn--next" aria-label="Next features"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
             </div>
         </div>
     </section>
@@ -421,9 +478,16 @@
     <!-- SCREENSHOTS -->
     <section class="section" id="screens">
         <div class="app-wrap">
-            <div class="section-head" data-aos="fade-up">
-                <div class="eyebrow">Inside the JuiceBox</div>
+            <div class="section-head page-head" data-aos="fade-up">
+                <img class="watt" src="assets/juicebox/watt/watt-logging.png" alt="" width="240" height="240" loading="lazy" decoding="async">
                 <h2>Clean, fast, and actually useful</h2>
+                <div class="head-card hc-sky">
+                    <div>
+                        <div class="head-card-title">Inside the JuiceBox</div>
+                        <p>Real screens from the latest version, on iPhone and Apple Watch.</p>
+                    </div>
+                    <div class="head-card-icon" aria-hidden="true"><i class="fas fa-mobile-alt"></i></div>
+                </div>
             </div>
             <div class="gallery" data-aos="fade-up">
                 <div class="gallery-filters" role="group" aria-label="Filter screenshots">
@@ -524,46 +588,74 @@
     <!-- PRICING -->
     <section class="section" id="pricing">
         <div class="app-wrap">
-            <div class="section-head" data-aos="fade-up">
-                <div class="eyebrow">How much for some juice?</div>
+            <div class="section-head page-head" data-aos="fade-up">
+                <img class="watt" src="assets/juicebox/watt/watt-expenses.png" alt="" width="240" height="240" loading="lazy" decoding="async">
                 <h2>Start free. Upgrade when you're ready.</h2>
+                <div class="head-card hc-teal">
+                    <div>
+                        <div class="head-card-title">How much for some juice?</div>
+                        <p>Free forever, with Pro whenever you want more.</p>
+                    </div>
+                    <div class="head-card-icon" aria-hidden="true"><i class="fas fa-tag"></i></div>
+                </div>
             </div>
             <div class="split">
-                <div class="pricing-card" data-aos="slide-right">
-                    <h3>JuiceBox</h3>
-                    <div class="price">Free</div>
-                    <p class="price-note">Always will be. Ad-free as well, always.</p>
-                    <ul class="ic-volt">
-                        <li>One vehicle</li>
-                        <li>Unlimited session logging <span class="soon">30 October</span></li>
-                        <li>Simple stats</li>
-                        <li>Charge calculator</li>
-                        <li>Pending Charge &amp; Live Activity <span class="soon">30 October</span></li>
-                        <li>Running cost reminders <span class="soon">30 October</span></li>
-                        <li>Peak &amp; off-peak rates <span class="soon">30 October</span></li>
-                        <li>Solar &amp; home battery <span class="soon">30 October</span></li>
-                        <li>Fuel savings <span class="soon">30 October</span></li>
-                        <li>Import/export data <span class="soon">30 October</span></li>
-                        <li>Widgets</li>
-                        <li>Apple Watch app</li>
-                    </ul>
+                <div class="pricing-card tier" data-aos="slide-right">
+                    <div class="tier-head">
+                        <div>
+                            <h3>JuiceBox</h3>
+                            <div class="price">Free</div>
+                            <p class="tier-sub">Always will be. Ad-free as well, always.</p>
+                        </div>
+                        <div class="tier-icon" aria-hidden="true"><i class="fas fa-car"></i></div>
+                    </div>
+                    <div class="tier-body">
+                        <p class="tier-label">What's included</p>
+                        <ul class="tier-list ic-volt">
+                            <li>One vehicle</li>
+                            <li>Unlimited session logging <span class="soon">30 October</span></li>
+                            <li>Simple stats</li>
+                            <li>Charge calculator</li>
+                            <li>Pending Charge &amp; Live Activity <span class="soon">30 October</span></li>
+                            <li>Running cost reminders <span class="soon">30 October</span></li>
+                            <li>Peak &amp; off-peak rates <span class="soon">30 October</span></li>
+                            <li>Solar &amp; home battery <span class="soon">30 October</span></li>
+                            <li>Fuel savings <span class="soon">30 October</span></li>
+                            <li>Import/export data <span class="soon">30 October</span></li>
+                            <li>Widgets</li>
+                            <li>Apple Watch app</li>
+                        </ul>
+                        <a class="tier-cta" href="https://apps.apple.com/app/id6773839547" target="_blank" rel="noopener">Download free</a>
+                    </div>
                 </div>
-                <div class="pricing-card pricing-card--pro" data-aos="slide-left" data-aos-delay="100">
-                    <h3>JuiceBox Pro</h3>
-                    <p class="price-lead">Starting from</p>
-                    <div class="price">£4.99<span>/month</span></div>
-                    <p class="price-note">Pays for itself if it saves you one charge</p>
-                    <div class="price-alt">or £49.99/year (save over <b>16%</b>)</div>
-                    <ul class="ic-volt">
-                        <li>Everything in Free</li>
-                        <li>Up to 3 vehicles</li>
-                        <li>AI predictions</li>
-                        <li>Journey &amp; cost calculator</li>
-                        <li>Expense Log <span class="soon">30 October</span></li>
-                        <li>Advanced stats</li>
-                        <li>Flexi JuiceLog <span class="soon">30 October</span></li>
-                        <li>Reimbursement reports <span class="soon">30 October</span></li>
-                    </ul>
+                <div class="pricing-card tier tier--pro" data-aos="slide-left" data-aos-delay="100">
+                    <div class="tier-head">
+                        <div>
+                            <span class="tier-chip">Everything unlocked</span>
+                            <h3>JuiceBox Pro <i class="fas fa-certificate" aria-hidden="true"></i></h3>
+                            <div class="price">£4.99<span>/month</span></div>
+                            <p class="tier-sub">or £49.99/year, save over 16%</p>
+                        </div>
+                        <div class="tier-icon" aria-hidden="true"><i class="fas fa-crown"></i></div>
+                    </div>
+                    <div class="tier-body">
+                        <p class="tier-note">Pays for itself if it saves you one charge.</p>
+                        <p class="tier-label">Everything in Free, plus</p>
+                        <ul class="tier-list ic-volt">
+                            <li>Up to 3 vehicles</li>
+                            <li>AI predictions</li>
+                            <li>Journey &amp; cost calculator</li>
+                            <li>Battery depletion tool</li>
+                            <li>Charger screen scanning</li>
+                            <li>Advanced stats &amp; full charts</li>
+                            <li>Monthly &amp; annual JuiceLog</li>
+                            <li>Flexi JuiceLog <span class="soon">30 October</span></li>
+                            <li>Expense Log <span class="soon">30 October</span></li>
+                            <li>Reimbursement reports <span class="soon">30 October</span></li>
+                            <li>More in widgets</li>
+                        </ul>
+                        <a class="tier-cta" href="https://apps.apple.com/app/id6773839547" target="_blank" rel="noopener">Get JuiceBox Pro</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -572,9 +664,16 @@
     <!-- FAQ -->
     <section class="section" id="faq">
         <div class="app-wrap">
-            <div class="section-head" data-aos="fade-up">
-                <div class="eyebrow">Questions</div>
+            <div class="section-head page-head" data-aos="fade-up">
+                <img class="watt" src="assets/juicebox/watt/watt-settings.png" alt="" width="240" height="240" loading="lazy" decoding="async">
                 <h2>Frequently asked</h2>
+                <div class="head-card hc-ember">
+                    <div>
+                        <div class="head-card-title">Questions</div>
+                        <p>Everything people ask before they plug in.</p>
+                    </div>
+                    <div class="head-card-icon" aria-hidden="true"><i class="fas fa-question"></i></div>
+                </div>
             </div>
             <div class="faq">
                 <div class="faq-item" data-aos="fade-up">
