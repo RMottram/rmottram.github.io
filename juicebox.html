@@ -134,7 +134,7 @@
       "name": "What happens to my sessions if I cancel Pro?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "From 1.3: nothing is deleted and nothing is hidden. Session logging becomes unlimited on the free tier, so your full history stays visible and your charts, stats, widgets and Apple Watch keep using every session you have logged. You go back to tracking one vehicle, and the Pro-only extras like AI predictions, the Expense Log and import/export are paused until you resubscribe."
+        "text": "From 1.3: nothing is deleted and nothing is hidden. Session logging becomes unlimited on the free tier, so your full history stays visible and your charts, stats, widgets and Apple Watch keep using every session you have logged. You go back to tracking one vehicle, and the Pro-only extras like AI predictions, the Expense Log and exporting are paused until you resubscribe."
       }
     },
     {
@@ -142,7 +142,7 @@
       "name": "Can I bring charging data in from another app?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, and from 1.3 it is free for everyone. JuiceBox imports .jbx, CSV and JSON files and lets you map the columns to the right fields, so exports from other trackers or your own spreadsheet come across without retyping. You can export your data back out the same way."
+        "text": "Yes, and from 1.3 it is free for everyone. JuiceBox imports .jbx, CSV and JSON files and lets you map the columns to the right fields, so exports from other trackers or your own spreadsheet come across without retyping. With Pro, you can export it back out the same way."
       }
     },
     {
@@ -210,6 +210,7 @@
             <a href="#how-it-works"><i class="fas fa-plug" aria-hidden="true"></i><span>How it works</span></a>
             <a href="#features"><i class="fas fa-th-large" aria-hidden="true"></i><span>Features</span></a>
             <a href="#screens"><i class="fas fa-mobile-alt" aria-hidden="true"></i><span>Screens</span></a>
+            <a href="#try"><i class="fas fa-hand-pointer" aria-hidden="true"></i><span>Try it</span></a>
             <a href="#pricing"><i class="fas fa-tag" aria-hidden="true"></i><span>Pricing</span></a>
             <a href="#faq"><i class="fas fa-question-circle" aria-hidden="true"></i><span>FAQ</span></a>
             <button class="theme-toggle" type="button" data-theme-toggle
@@ -223,7 +224,7 @@
     <header class="hero hero--video">
         <div class="hero-copy">
             <div class="app-icon-halo" data-aos="zoom-in">
-                <img class="app-icon" src="assets/juicebox/juicebox-icon.png" alt="JuiceBox icon" width="512" height="512" fetchpriority="high" decoding="async">
+                <img class="app-icon" src="assets/juicebox/juicebox-icon.webp" alt="JuiceBox icon" width="512" height="512" fetchpriority="high" decoding="async">
             </div>
             <h1 data-aos="fade-up" data-aos-delay="60">JuiceBox</h1>
             <p class="tagline" data-aos="fade-up" data-aos-delay="120">
@@ -239,6 +240,8 @@
         </div>
         <video class="hero-video" data-aos="fade-up" data-aos-delay="240" autoplay loop muted playsinline controls
                preload="metadata" poster="assets/juicebox/videos/juicebox-promo-poster.jpg" width="1920" height="1080">
+            <!-- Phones get a 720p, 30fps cut at about a quarter of the size -->
+            <source src="assets/juicebox/videos/juicebox-promo-mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
             <source src="assets/juicebox/videos/juicebox-promo.mp4" type="video/mp4" />
         </video>
     </header>
@@ -247,7 +250,7 @@
     <section class="section" id="how-it-works">
         <div class="app-wrap">
             <div class="section-head page-head" data-aos="fade-up">
-                <img class="watt" src="assets/juicebox/watt/watt.png" alt="" width="240" height="240" loading="lazy" decoding="async">
+                <img class="watt" src="assets/juicebox/watt/watt.webp" alt="" width="240" height="240" loading="lazy" decoding="async">
                 <h2>Simple. Honest. No faff.</h2>
                 <div class="head-card hc-green">
                     <div>
@@ -281,7 +284,7 @@
     <section class="section" id="features">
         <div class="app-wrap">
             <div class="section-head page-head" data-aos="fade-up">
-                <img class="watt" src="assets/juicebox/watt/watt-car.png" alt="" width="240" height="240" loading="lazy" decoding="async">
+                <img class="watt" src="assets/juicebox/watt/watt-car.webp" alt="" width="240" height="240" loading="lazy" decoding="async">
                 <h2>Start free, always free</h2>
                 <div class="head-card hc-sage">
                     <div>
@@ -376,9 +379,9 @@
                         <p>Sessions keep the time a charge started. Drag round a 24-hour dial that shows your peak and off-peak hours, and home charges start at your off-peak time for you.</p>
                     </div>
                     <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
-                        <div class="icon-row"><div class="icon ic-teal"><i class="fas fa-database"></i></div><span class="soon">30 October</span></div>
-                        <h3>Your data, anywhere</h3>
-                        <p>Import and export your charging history from a .jbx, CSV or JSON file. Now free for everyone.</p>
+                        <div class="icon-row"><div class="icon ic-teal"><i class="fas fa-file-import"></i></div><span class="soon">30 October</span></div>
+                        <h3>Bring your history over</h3>
+                        <p>Import your charging history from a .jbx, CSV or JSON file, now free for everyone. Exporting it back out is part of Pro.</p>
                     </div>
                     <div class="feature-card" data-aos="fade-up" data-aos-delay="180">
                         <div class="icon ic-plum"><i class="fas fa-heartbeat"></i></div>
@@ -395,7 +398,7 @@
     <section class="section">
         <div class="app-wrap">
             <div class="section-head page-head" data-aos="fade-up">
-                <img class="watt" src="assets/juicebox/watt/watt-chart.png" alt="" width="240" height="240" loading="lazy" decoding="async">
+                <img class="watt" src="assets/juicebox/watt/watt-chart.webp" alt="" width="240" height="240" loading="lazy" decoding="async">
                 <h2>More power. More insight.</h2>
                 <div class="head-card hc-plum">
                     <div>
@@ -479,7 +482,7 @@
     <section class="section" id="screens">
         <div class="app-wrap">
             <div class="section-head page-head" data-aos="fade-up">
-                <img class="watt" src="assets/juicebox/watt/watt-logging.png" alt="" width="240" height="240" loading="lazy" decoding="async">
+                <img class="watt" src="assets/juicebox/watt/watt-logging.webp" alt="" width="240" height="240" loading="lazy" decoding="async">
                 <h2>Clean, fast, and actually useful</h2>
                 <div class="head-card hc-sky">
                     <div>
@@ -503,79 +506,79 @@
                     <button type="button" class="gallery-btn gallery-btn--prev" aria-label="Previous screenshots"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
                     <ul class="gallery-track" tabindex="0" aria-label="JuiceBox screenshots">
                         <li class="gallery-item" data-tags="logging">
-                            <img src="assets/juicebox/sessions.png" alt="JuiceBox session history for a Polestar 2" width="392" height="800" loading="lazy" decoding="async">
+                            <img src="assets/juicebox/sessions.webp" alt="JuiceBox session history for a Polestar 2" width="392" height="800" loading="lazy" decoding="async">
                             <p class="gallery-caption"><b>Session history</b>Every charge with its cost, speed and rate.</p>
                         </li>
                         <li class="gallery-item" data-tags="logging new">
-                            <img src="assets/juicebox/add-session.png" alt="Adding a charging session with an estimated kWh" width="392" height="800" loading="lazy" decoding="async">
+                            <img src="assets/juicebox/add-session.webp" alt="Adding a charging session with an estimated kWh" width="392" height="800" loading="lazy" decoding="async">
                             <p class="gallery-caption"><b>New Logging Form <span class="soon">New</span></b>Estimates the kWh and cost before you save.</p>
                         </li>
                         <li class="gallery-item" data-tags="logging new">
-                            <img src="assets/juicebox/pending-charge.png" alt="Starting a charge to finish later on off-peak" width="392" height="800" loading="lazy" decoding="async">
+                            <img src="assets/juicebox/pending-charge.webp" alt="Starting a charge to finish later on off-peak" width="392" height="800" loading="lazy" decoding="async">
                             <p class="gallery-caption"><b>Finish later <span class="soon">New</span></b>Start a charge now and add the kWh when it's done.</p>
                         </li>
                         <li class="gallery-item" data-tags="logging new">
-                            <img src="assets/juicebox/live-activity.png" alt="A pending charge as a Live Activity on the Lock Screen" width="392" height="800" loading="lazy" decoding="async">
+                            <img src="assets/juicebox/live-activity.webp" alt="A pending charge as a Live Activity on the Lock Screen" width="392" height="800" loading="lazy" decoding="async">
                             <p class="gallery-caption"><b>Live Activity <span class="soon">New</span></b>Follow a pending charge from the Lock Screen.</p>
                         </li>
                         <li class="gallery-item" data-tags="logging">
-                            <img src="assets/juicebox/widgets.png" alt="JuiceBox widgets on the Home Screen" width="392" height="800" loading="lazy" decoding="async">
+                            <img src="assets/juicebox/widgets.webp" alt="JuiceBox widgets on the Home Screen" width="392" height="800" loading="lazy" decoding="async">
                             <p class="gallery-caption"><b>Widgets</b>Recent sessions, efficiency and battery health at a glance.</p>
                         </li>
                         <li class="gallery-item" data-tags="watch">
-                            <img src="assets/juicebox/watch-driveway.png" alt="The JuiceBox Driveway on Apple Watch" width="392" height="800" loading="lazy" decoding="async">
+                            <img src="assets/juicebox/watch-driveway.webp" alt="The JuiceBox Driveway on Apple Watch" width="392" height="800" loading="lazy" decoding="async">
                             <p class="gallery-caption"><b>Apple Watch</b>Your cars, sessions and total cost on your wrist.</p>
                         </li>
                         <li class="gallery-item" data-tags="watch">
-                            <img src="assets/juicebox/watch-sessions.png" alt="A charging session on Apple Watch" width="392" height="800" loading="lazy" decoding="async">
+                            <img src="assets/juicebox/watch-sessions.webp" alt="A charging session on Apple Watch" width="392" height="800" loading="lazy" decoding="async">
                             <p class="gallery-caption"><b>Sessions on Watch</b>Energy, cost and charge for every session.</p>
                         </li>
                         <li class="gallery-item" data-tags="watch">
-                            <img src="assets/juicebox/watch-complication.png" alt="A JuiceBox complication on an Apple Watch face" width="392" height="800" loading="lazy" decoding="async">
+                            <img src="assets/juicebox/watch-complication.webp" alt="A JuiceBox complication on an Apple Watch face" width="392" height="800" loading="lazy" decoding="async">
                             <p class="gallery-caption"><b>Complications</b>Your last charge on your watch face.</p>
                         </li>
                         <li class="gallery-item" data-tags="insights">
-                            <img src="assets/juicebox/stats.png" alt="JuiceBox stats and key metrics" width="392" height="800" loading="lazy" decoding="async">
+                            <img src="assets/juicebox/stats.webp" alt="JuiceBox stats and key metrics" width="392" height="800" loading="lazy" decoding="async">
                             <p class="gallery-caption"><b>Stats</b>Totals, averages and charge time for each car.</p>
                         </li>
                         <li class="gallery-item" data-tags="insights">
-                            <img src="assets/juicebox/charts.png" alt="JuiceBox charts of home and public charging" width="392" height="800" loading="lazy" decoding="async">
+                            <img src="assets/juicebox/charts.webp" alt="JuiceBox charts of home and public charging" width="392" height="800" loading="lazy" decoding="async">
                             <p class="gallery-caption"><b>Charts</b>Home vs public, kWh per session and more.</p>
                         </li>
                         <li class="gallery-item" data-tags="insights new">
-                            <img src="assets/juicebox/fuel-savings.png" alt="Money saved on fuel compared with petrol and diesel" width="392" height="800" loading="lazy" decoding="async">
+                            <img src="assets/juicebox/fuel-savings.webp" alt="Money saved on fuel compared with petrol and diesel" width="392" height="800" loading="lazy" decoding="async">
                             <p class="gallery-caption"><b>Saved on fuel <span class="soon">New</span></b>What the same miles would cost in petrol or diesel.</p>
                         </li>
                         <li class="gallery-item" data-tags="insights">
-                            <img src="assets/juicebox/prediction.png" alt="JuiceBox next charge prediction" width="392" height="800" loading="lazy" decoding="async">
+                            <img src="assets/juicebox/prediction.webp" alt="JuiceBox next charge prediction" width="392" height="800" loading="lazy" decoding="async">
                             <p class="gallery-caption"><b>Next charge prediction</b>When you'll charge next and what it should cost.</p>
                         </li>
                         <li class="gallery-item" data-tags="insights">
-                            <img src="assets/juicebox/juicelog.png" alt="JuiceBox monthly JuiceLog report" width="392" height="800" loading="lazy" decoding="async">
+                            <img src="assets/juicebox/juicelog.webp" alt="JuiceBox monthly JuiceLog report" width="392" height="800" loading="lazy" decoding="async">
                             <p class="gallery-caption"><b>JuiceLog</b>A report for every month you charge.</p>
                         </li>
                         <li class="gallery-item" data-tags="costs new">
-                            <img src="assets/juicebox/running-costs.png" alt="A year's running costs for a Polestar 2" width="392" height="800" loading="lazy" decoding="async">
+                            <img src="assets/juicebox/running-costs.webp" alt="A year's running costs for a Polestar 2" width="392" height="800" loading="lazy" decoding="async">
                             <p class="gallery-caption"><b>Running costs <span class="soon">New</span></b>Charging, servicing, tax and finance in one total.</p>
                         </li>
                         <li class="gallery-item" data-tags="costs new">
-                            <img src="assets/juicebox/tariff.png" alt="Peak and off-peak electricity rates and hours" width="392" height="800" loading="lazy" decoding="async">
+                            <img src="assets/juicebox/tariff.webp" alt="Peak and off-peak electricity rates and hours" width="392" height="800" loading="lazy" decoding="async">
                             <p class="gallery-caption"><b>Peak &amp; off-peak <span class="soon">New</span></b>Set your tariff and off-peak hours once.</p>
                         </li>
                         <li class="gallery-item" data-tags="costs new">
-                            <img src="assets/juicebox/reimbursement.png" alt="A reimbursement report for home charging" width="392" height="800" loading="lazy" decoding="async">
+                            <img src="assets/juicebox/reimbursement.webp" alt="A reimbursement report for home charging" width="392" height="800" loading="lazy" decoding="async">
                             <p class="gallery-caption"><b>Reimbursement <span class="soon">New</span></b>Claim home charging or mileage from your employer.</p>
                         </li>
                         <li class="gallery-item" data-tags="import">
-                            <img src="assets/juicebox/import.png" alt="Importing 100 sessions into an existing car" width="392" height="800" loading="lazy" decoding="async">
+                            <img src="assets/juicebox/import.webp" alt="Importing 100 sessions into an existing car" width="392" height="800" loading="lazy" decoding="async">
                             <p class="gallery-caption"><b>Import data</b>Merge sessions into a car you already have.</p>
                         </li>
                         <li class="gallery-item" data-tags="import">
-                            <img src="assets/juicebox/csv.png" alt="Mapping CSV columns on import" width="392" height="800" loading="lazy" decoding="async">
+                            <img src="assets/juicebox/csv.webp" alt="Mapping CSV columns on import" width="392" height="800" loading="lazy" decoding="async">
                             <p class="gallery-caption"><b>CSV import</b>Columns are detected for you.</p>
                         </li>
                         <li class="gallery-item" data-tags="import">
-                            <img src="assets/juicebox/json.png" alt="Mapping JSON fields on import" width="392" height="800" loading="lazy" decoding="async">
+                            <img src="assets/juicebox/json.webp" alt="Mapping JSON fields on import" width="392" height="800" loading="lazy" decoding="async">
                             <p class="gallery-caption"><b>JSON import</b>Bring your history over from another app.</p>
                         </li>
                     </ul>
@@ -585,11 +588,274 @@
         </div>
     </section>
 
+    <!-- TRY IT: working copies of two app screens, run by scripts/juicebox-demo.js -->
+    <section class="section" id="try">
+        <div class="app-wrap">
+            <div class="section-head page-head" data-aos="fade-up">
+                <img class="watt" src="assets/juicebox/watt/watt-tools.webp" alt="" width="240" height="240" loading="lazy" decoding="async">
+                <h2>Take it for a spin</h2>
+                <div class="head-card hc-green">
+                    <div>
+                        <div class="head-card-title">Try it here</div>
+                        <p>Two screens from the app, working in your browser, with the same sums as JuiceBox. Nothing you enter leaves this page.</p>
+                    </div>
+                    <div class="head-card-icon" aria-hidden="true"><i class="fas fa-hand-pointer"></i></div>
+                </div>
+            </div>
+
+            <div class="jd-phones">
+                <!-- TOOLS -->
+                <figure class="jd-phone" data-aos="fade-up">
+                    <div class="jd-device">
+                        <div class="jd-screen" id="jd-tools">
+                            <div class="jd-status" aria-hidden="true"><span>9:41</span><span class="jd-island"></span><span class="jd-status-icons"><i class="fas fa-signal"></i><i class="fas fa-wifi"></i><i class="fas fa-battery-full"></i></span></div>
+                            <div class="jd-scroll">
+                                <img class="jd-watt" src="assets/juicebox/watt/watt-tools.webp" alt="" width="240" height="240" loading="lazy" decoding="async">
+                                <div class="jd-title">Tools</div>
+
+                                <div class="jd-head">
+                                    <div>
+                                        <b data-out="head-title">Estimated Time</b>
+                                        <p data-out="head-sub">Estimate how long a charge session will take from your current state of charge.</p>
+                                    </div>
+                                    <div class="jd-head-icon" aria-hidden="true"><i class="fas fa-clock" data-out="head-icon"></i></div>
+                                </div>
+
+                                <div class="jd-summary" data-out="summary-card" aria-live="polite">
+                                    <small data-out="summary-title">Estimated Time</small>
+                                    <div class="jd-result" data-out="result">5h 21m</div>
+                                    <p data-out="summary"></p>
+                                    <p class="jd-warn" data-out="warning" hidden></p>
+                                </div>
+
+                                <div class="jd-card">
+                                    <div class="jd-card-title">Tool</div>
+                                    <div class="jd-card-sub">Switch between the calculators</div>
+                                    <div class="jd-seg" role="group" aria-label="Tool" data-seg="tool">
+                                        <button type="button" data-value="time" class="is-active" aria-pressed="true">Charge Time</button>
+                                        <button type="button" data-value="cost" aria-pressed="false">Cost</button>
+                                        <button type="button" data-value="battery" aria-pressed="false">Battery <span class="jd-pro">Pro</span></button>
+                                    </div>
+                                </div>
+
+                                <!-- Charge Time -->
+                                <div data-panel="time">
+                                    <div class="jd-card">
+                                        <div class="jd-card-title">Battery Capacity</div>
+                                        <div class="jd-card-sub">Enter your vehicle's battery size.</div>
+                                        <label class="jd-field"><span>Battery Capacity</span><input type="number" inputmode="decimal" min="0" step="0.1" data-key="capacity" value="75"><em>kWh</em></label>
+                                    </div>
+                                    <div class="jd-card">
+                                        <div class="jd-slider-head"><div class="jd-card-title">Charging Speed</div><b data-out="speed">7 kW</b></div>
+                                        <input class="jd-range jd-volt" type="range" min="2" max="350" step="1" data-key="speed" value="7" aria-label="Charging speed">
+                                        <div class="jd-card-sub">Match the charger power you expect to use.</div>
+                                    </div>
+                                    <div class="jd-card">
+                                        <div class="jd-slider-head"><div class="jd-card-title">Charge Target</div><b data-out="target">80%</b></div>
+                                        <input class="jd-range jd-green" type="range" min="0" max="100" step="1" data-key="target" value="80" aria-label="Charge target">
+                                        <div class="jd-card-sub">Set the battery level you want to finish at.</div>
+                                    </div>
+                                    <div class="jd-card">
+                                        <div class="jd-slider-head"><div class="jd-card-title">Current Charge</div><b data-out="current">30%</b></div>
+                                        <input class="jd-range jd-sky" type="range" min="0" max="100" step="1" data-key="current" value="30" aria-label="Current charge">
+                                        <div class="jd-card-sub">Start from the battery percentage your car currently shows.</div>
+                                    </div>
+                                </div>
+
+                                <!-- Cost -->
+                                <div data-panel="cost" hidden>
+                                    <div class="jd-card">
+                                        <div class="jd-card-title">Vehicle Type</div>
+                                        <div class="jd-card-sub">Pick the energy source you want to compare</div>
+                                        <div class="jd-seg" role="group" aria-label="Vehicle type" data-seg="fuel">
+                                            <button type="button" data-value="electric" class="is-active" aria-pressed="true">Electric</button>
+                                            <button type="button" data-value="fuel" aria-pressed="false">Fuel</button>
+                                        </div>
+                                    </div>
+                                    <div class="jd-card">
+                                        <div class="jd-card-title">Calculation Type</div>
+                                        <div class="jd-card-sub">Switch between journey and refill calculations</div>
+                                        <div class="jd-seg" role="group" aria-label="Calculation type" data-seg="mode">
+                                            <button type="button" data-value="journey" class="is-active" aria-pressed="true">Journey Cost</button>
+                                            <button type="button" data-value="refuel" aria-pressed="false" data-out="refuel-label">Charge Cost</button>
+                                        </div>
+                                    </div>
+                                    <div class="jd-card" data-show="electric-journey">
+                                        <div class="jd-card-title">Electric Journey Inputs</div>
+                                        <div class="jd-card-sub">Use your efficiency, tariff, and distance</div>
+                                        <label class="jd-field"><span>EV Efficiency</span><input type="number" inputmode="decimal" min="0" step="0.1" data-key="efficiency" value="4"><em>mi/kWh</em></label>
+                                        <label class="jd-field"><span>Price per kWh</span><input type="number" inputmode="decimal" min="0" step="0.01" data-key="price" value="7"><em>p/kWh</em></label>
+                                        <label class="jd-field"><span>Miles to Travel</span><input type="number" inputmode="decimal" min="0" step="1" data-key="miles" value="60"><em>mi</em></label>
+                                    </div>
+                                    <div class="jd-card" data-show="electric-refuel" hidden>
+                                        <div class="jd-card-title">Charge Cost Inputs</div>
+                                        <div class="jd-card-sub">Battery, tariff, and target state of charge</div>
+                                        <label class="jd-field"><span>Price per kWh</span><input type="number" inputmode="decimal" min="0" step="0.01" data-key="price" value="7"><em>p/kWh</em></label>
+                                        <div class="jd-field jd-field--read"><span>kWh Needed</span><b data-out="kwh-needed">37.50 kWh</b></div>
+                                        <div class="jd-card-sub">From your Charge Time battery and charge levels.</div>
+                                    </div>
+                                    <div class="jd-card" data-show="fuel-journey" hidden>
+                                        <div class="jd-card-title">Fuel Journey Inputs</div>
+                                        <div class="jd-card-sub">Distance, efficiency, and pump price</div>
+                                        <label class="jd-field"><span>MPG</span><input type="number" inputmode="decimal" min="0" step="0.1" data-key="mpg" value="40"><em>mpg</em></label>
+                                        <label class="jd-field"><span>Fuel Price</span><input type="number" inputmode="decimal" min="0" step="0.1" data-key="fuelPrice" value="145.9"><em>p/litre</em></label>
+                                        <label class="jd-field"><span>Miles to Travel</span><input type="number" inputmode="decimal" min="0" step="1" data-key="miles" value="60"><em>mi</em></label>
+                                    </div>
+                                    <div class="jd-card" data-show="fuel-refuel" hidden>
+                                        <div class="jd-card-title">Refuel Inputs</div>
+                                        <div class="jd-card-sub">Tank size, remaining fuel, and price at the pump</div>
+                                        <label class="jd-field"><span>Tank Size</span><input type="number" inputmode="decimal" min="0" step="0.1" data-key="tank" value="50"><em>L</em></label>
+                                        <label class="jd-field"><span>Current Fuel Level</span><input type="number" inputmode="decimal" min="0" step="0.1" data-key="fuelLevel" value="5"><em>L</em></label>
+                                        <label class="jd-field"><span>Fuel Price</span><input type="number" inputmode="decimal" min="0" step="0.1" data-key="fuelPrice" value="145.9"><em>p/litre</em></label>
+                                    </div>
+                                </div>
+
+                                <!-- Battery -->
+                                <div data-panel="battery" hidden>
+                                    <div class="jd-card">
+                                        <div class="jd-card-title">Battery</div>
+                                        <div class="jd-card-sub">Enter your vehicle's usable battery capacity and current charge</div>
+                                        <label class="jd-field"><span>Usable Capacity</span><input type="number" inputmode="decimal" min="0" step="0.1" data-key="capacity" value="75"><em>kWh</em></label>
+                                        <div class="jd-slider-head"><span class="jd-mini">Current Charge</span><b data-out="current">30%</b></div>
+                                        <input class="jd-range jd-sky" type="range" min="0" max="100" step="1" data-key="current" value="30" aria-label="Current charge">
+                                    </div>
+                                    <div class="jd-card">
+                                        <div class="jd-card-title">Journey</div>
+                                        <div class="jd-card-sub">Enter how far you expect to drive</div>
+                                        <label class="jd-field"><span>Miles to Travel</span><input type="number" inputmode="decimal" min="0" step="1" data-key="miles" value="60"><em>mi</em></label>
+                                    </div>
+                                    <div class="jd-card">
+                                        <div class="jd-card-title">Efficiency</div>
+                                        <div class="jd-card-sub">Use your recent trip or long term average</div>
+                                        <label class="jd-field"><span>EV Efficiency</span><input type="number" inputmode="decimal" min="0" step="0.1" data-key="efficiency" value="4"><em>mi/kWh</em></label>
+                                    </div>
+                                    <div class="jd-card">
+                                        <div class="jd-card-title">Journey Breakdown</div>
+                                        <div class="jd-card-sub">See how the journey affects your battery</div>
+                                        <div class="jd-tiles">
+                                            <div class="jd-tile"><span>Energy Used</span><b data-out="energy-used">25.00 kWh</b></div>
+                                            <div class="jd-tile"><span>Battery Used</span><b data-out="battery-used">33%</b></div>
+                                            <div class="jd-tile"><span>Battery Remaining</span><b data-out="battery-left">0%</b></div>
+                                            <div class="jd-tile"><span>Remaining Energy</span><b data-out="energy-left">0.00 kWh</b></div>
+                                        </div>
+                                    </div>
+                                    <div class="jd-card">
+                                        <div class="jd-card-title">Estimated Remaining Range</div>
+                                        <div class="jd-card-sub">Based on your current battery and efficiency</div>
+                                        <div class="jd-big" data-out="range">0 mi</div>
+                                    </div>
+                                </div>
+
+                                <p class="jd-fine">Estimation is based on calculations from the provided information and is not a guarantee. Please consult the charger, receipts, or your vehicle for the most accurate information.</p>
+                            </div>
+                            <div class="jd-mini-summary" data-out="mini" aria-hidden="true"><span data-out="mini-title">Estimated Time</span><b data-out="mini-result">5h 21m</b></div>
+                            <div class="jd-tabbar" aria-hidden="true"><i class="fas fa-car"></i><i class="fas fa-chart-line"></i><i class="fas fa-tools is-active"></i><i class="fas fa-cogs"></i></div>
+                        </div>
+                        <img class="jd-frame" src="assets/juicebox/demo-frame.webp" alt="" width="390" height="796" loading="lazy" decoding="async">
+                    </div>
+                    <figcaption><b>Tools</b>Charge time, trip cost and battery calculators.</figcaption>
+                </figure>
+
+                <!-- LOG A SESSION -->
+                <figure class="jd-phone" data-aos="fade-up" data-aos-delay="100">
+                    <div class="jd-device">
+                        <div class="jd-screen" id="jd-log">
+                            <div class="jd-status" aria-hidden="true"><span>9:41</span><span class="jd-island"></span><span class="jd-status-icons"><i class="fas fa-signal"></i><i class="fas fa-wifi"></i><i class="fas fa-battery-full"></i></span></div>
+                            <div class="jd-scroll">
+                                <div data-view="form">
+                                    <div class="jd-sheet-bar">
+                                        <button type="button" class="jd-chip-btn jd-cancel" data-act="reset">Cancel</button>
+                                        <b>Add New Session</b>
+                                        <button type="button" class="jd-chip-btn jd-save" data-act="save" disabled>Save</button>
+                                    </div>
+                                    <div class="jd-car-bar">
+                                        <span class="jd-car-tile" aria-hidden="true"><i class="fas fa-bolt"></i></span>
+                                        <select data-key="car" aria-label="Vehicle">
+                                            <option value="78|Polestar 2">Polestar 2</option>
+                                            <option value="82|Tesla Model 3">Tesla Model 3</option>
+                                            <option value="77.4|Kia EV6">Kia EV6</option>
+                                            <option value="64|MG4">MG4</option>
+                                        </select>
+                                        <span class="jd-scan" title="Scan a charger's screen in the app (Pro)"><i class="fas fa-expand"></i> Scan</span>
+                                    </div>
+
+                                    <div class="jd-card">
+                                        <div class="jd-card-title">Charge Details</div>
+                                        <label class="jd-field"><span><i class="fas fa-calendar-alt jd-ic-green"></i> Started</span><input type="datetime-local" data-key="started"></label>
+                                        <div class="jd-seg" role="group" aria-label="Location" data-seg="where">
+                                            <button type="button" data-value="home" class="is-active" aria-pressed="true">Home</button>
+                                            <button type="button" data-value="public" aria-pressed="false">Public</button>
+                                        </div>
+                                        <div class="jd-slider-head"><span class="jd-mini"><i class="fas fa-bolt jd-ic-volt"></i> Charging Speed</span><b data-out="log-speed">7 kW</b></div>
+                                        <input class="jd-range jd-volt" type="range" min="0" max="22" step="1" data-key="logSpeed" value="7" aria-label="Charging speed">
+                                        <div class="jd-card-sub">Start time doesn't need to be exact. It keeps charges on the same day in order, shows in your sessions list, helps predict your next charge, and times a charge you finish later.</div>
+                                    </div>
+
+                                    <div class="jd-card">
+                                        <div class="jd-card-title">Battery Level</div>
+                                        <label class="jd-field"><span><i class="fas fa-battery-quarter jd-ic-ember"></i> Charged From</span><input type="number" inputmode="numeric" min="0" max="100" step="1" data-key="from" placeholder="Optional"><em>%</em></label>
+                                        <label class="jd-field"><span><i class="fas fa-battery-full jd-ic-green"></i> Charged To</span><input type="number" inputmode="numeric" min="1" max="100" step="1" data-key="to" value="80"><em>%</em></label>
+                                        <div class="jd-card-sub">Logging the starting % lets JuiceBox measure your battery's real usable capacity and health over time.</div>
+                                    </div>
+
+                                    <div class="jd-card">
+                                        <div class="jd-card-title">Energy &amp; Cost</div>
+                                        <label class="jd-field"><span><i class="fas fa-bolt jd-ic-volt"></i> kWh Added</span><input type="number" inputmode="decimal" min="0" step="0.01" data-key="kwh" placeholder="Required"><em>kWh</em></label>
+                                        <button type="button" class="jd-estimate" data-act="estimate" hidden><i class="fas fa-car-battery"></i> <span data-out="estimate-label"></span></button>
+                                        <label class="jd-field"><span><i class="fas fa-mobile-alt jd-ic-teal"></i> Read from</span>
+                                            <select data-key="source">
+                                                <option value="chargerApp">Charger App</option>
+                                                <option value="chargerDisplay">Charger Display</option>
+                                                <option value="energyProvider">Energy Provider Invoice</option>
+                                                <option value="carDisplay">Car's Display</option>
+                                            </select>
+                                        </label>
+                                        <label class="jd-field"><span><i class="fas fa-pound-sign jd-ic-green"></i> Price per kWh</span><input type="number" inputmode="decimal" min="0" step="0.01" data-key="logPrice" value="7"><em>p/kWh</em></label>
+                                        <div class="jd-rate-chips" data-show-home>
+                                            <button type="button" class="jd-rate jd-rate--off" data-rate="7"><i class="fas fa-moon"></i> Off-Peak 7.00p/kWh</button>
+                                            <button type="button" class="jd-rate jd-rate--peak" data-rate="24.5"><i class="fas fa-sun"></i> Peak 24.50p/kWh</button>
+                                        </div>
+                                        <div class="jd-card-sub" data-out="source-note">The kWh your charger's app reported for the session. JuiceBox subtracts charging losses from this to work out what reached the battery.</div>
+                                    </div>
+
+                                    <div class="jd-cost-bar" aria-live="polite"><span>This charge</span><b data-out="log-cost">£0.00</b></div>
+                                </div>
+
+                                <div data-view="saved" hidden>
+                                    <div class="jd-sheet-bar"><span></span><b data-out="saved-car">Polestar 2</b><span></span></div>
+                                    <div class="jd-saved-note"><i class="fas fa-check-circle"></i> Session saved</div>
+                                    <div class="jd-session">
+                                        <div class="jd-session-head"><b data-out="saved-date">28 October 2026</b><span class="jd-session-icon"><i class="fas fa-home" data-out="saved-icon"></i></span></div>
+                                        <div class="jd-tiles">
+                                            <div class="jd-tile"><span>Battery</span><b data-out="saved-battery">35% to 80%</b></div>
+                                            <div class="jd-tile"><span>Duration</span><b data-out="saved-duration">5h 18m</b></div>
+                                            <div class="jd-tile"><span>Energy</span><b data-out="saved-energy">37.10 kWh</b></div>
+                                            <div class="jd-tile"><span>Cost</span><b data-out="saved-cost">£2.60</b></div>
+                                        </div>
+                                        <div class="jd-pills">
+                                            <span class="jd-pill jd-pill--sky"><i class="fas fa-clock"></i> <span data-out="saved-time">11:30 pm</span></span>
+                                            <span class="jd-pill jd-pill--volt"><i class="fas fa-bolt"></i> <span data-out="saved-speed">7 kW</span></span>
+                                            <span class="jd-pill jd-pill--teal"><i class="fas fa-pound-sign"></i> <span data-out="saved-rate">7.00p/kWh</span></span>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="jd-primary" data-act="again">Log another session</button>
+                                </div>
+                            </div>
+                            <div class="jd-tabbar" aria-hidden="true"><i class="fas fa-car is-active"></i><i class="fas fa-chart-line"></i><i class="fas fa-tools"></i><i class="fas fa-cogs"></i></div>
+                        </div>
+                        <img class="jd-frame" src="assets/juicebox/demo-frame.webp" alt="" width="390" height="796" loading="lazy" decoding="async">
+                    </div>
+                    <figcaption><b>Log a session</b>Estimates the kWh and cost before you save.</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
     <!-- PRICING -->
     <section class="section" id="pricing">
         <div class="app-wrap">
             <div class="section-head page-head" data-aos="fade-up">
-                <img class="watt" src="assets/juicebox/watt/watt-expenses.png" alt="" width="240" height="240" loading="lazy" decoding="async">
+                <img class="watt" src="assets/juicebox/watt/watt-expenses.webp" alt="" width="240" height="240" loading="lazy" decoding="async">
                 <h2>Start free. Upgrade when you're ready.</h2>
                 <div class="head-card hc-teal">
                     <div>
@@ -621,7 +887,7 @@
                             <li>Peak &amp; off-peak rates <span class="soon">30 October</span></li>
                             <li>Solar &amp; home battery <span class="soon">30 October</span></li>
                             <li>Fuel savings <span class="soon">30 October</span></li>
-                            <li>Import/export data <span class="soon">30 October</span></li>
+                            <li>Import data <span class="soon">30 October</span></li>
                             <li>Widgets</li>
                             <li>Apple Watch app</li>
                         </ul>
@@ -652,6 +918,7 @@
                             <li>Flexi JuiceLog <span class="soon">30 October</span></li>
                             <li>Expense Log <span class="soon">30 October</span></li>
                             <li>Reimbursement reports <span class="soon">30 October</span></li>
+                            <li>Export &amp; backups</li>
                             <li>More in widgets</li>
                         </ul>
                         <a class="tier-cta" href="https://apps.apple.com/app/id6773839547" target="_blank" rel="noopener">Get JuiceBox Pro</a>
@@ -665,7 +932,7 @@
     <section class="section" id="faq">
         <div class="app-wrap">
             <div class="section-head page-head" data-aos="fade-up">
-                <img class="watt" src="assets/juicebox/watt/watt-settings.png" alt="" width="240" height="240" loading="lazy" decoding="async">
+                <img class="watt" src="assets/juicebox/watt/watt-settings.webp" alt="" width="240" height="240" loading="lazy" decoding="async">
                 <h2>Frequently asked</h2>
                 <div class="head-card hc-ember">
                     <div>
@@ -686,11 +953,11 @@
                 </div>
                 <div class="faq-item" data-aos="fade-up">
                     <button class="faq-q">What happens to my sessions if I cancel Pro? <i class="fas fa-chevron-down chev"></i></button>
-                    <div class="faq-a"><div><b>From 1.3:</b> nothing is deleted and nothing is hidden. Session logging becomes unlimited on the free tier, so your full history stays visible and your charts, stats, widgets and Apple Watch keep using every session you have logged. You go back to tracking one vehicle, and the Pro-only extras like AI predictions, the Expense Log and import/export are paused until you resubscribe.</div></div>
+                    <div class="faq-a"><div><b>From 1.3:</b> nothing is deleted and nothing is hidden. Session logging becomes unlimited on the free tier, so your full history stays visible and your charts, stats, widgets and Apple Watch keep using every session you have logged. You go back to tracking one vehicle, and the Pro-only extras like AI predictions, the Expense Log and exporting are paused until you resubscribe.</div></div>
                 </div>
                 <div class="faq-item" data-aos="fade-up">
                     <button class="faq-q">Can I bring charging data in from another app? <i class="fas fa-chevron-down chev"></i></button>
-                    <div class="faq-a"><div>Yes, and <b>from 1.3</b> it is free for everyone. JuiceBox imports .jbx, CSV and JSON files and lets you map the columns to the right fields, so exports from other trackers or your own spreadsheet come across without retyping. You can export your data back out the same way.</div></div>
+                    <div class="faq-a"><div>Yes, and <b>from 1.3</b> it is free for everyone. JuiceBox imports .jbx, CSV and JSON files and lets you map the columns to the right fields, so exports from other trackers or your own spreadsheet come across without retyping. With Pro, you can export it back out the same way.</div></div>
                 </div>
                 <div class="faq-item" data-aos="fade-up">
                     <button class="faq-q">Do I need to log sessions while charging? <i class="fas fa-chevron-down chev"></i></button>
@@ -739,5 +1006,6 @@
 
     <script src="https://unpkg.com/aos@3.0.0-beta.6/dist/aos.js"></script>
     <script src="scripts/app.js"></script>
+    <script src="scripts/juicebox-demo.js"></script>
 </body>
 </html>

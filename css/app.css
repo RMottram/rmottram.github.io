@@ -1297,6 +1297,439 @@ a:hover { text-decoration: underline; }
 .theme-juicebox .faq-q .chev { margin-left: auto; color: var(--text-dim); }
 .theme-juicebox .faq-a > div { padding: 0 0 18px 46px; }
 
+/* ---- Try it: working copies of the app's Tools and Add New Session ----
+   Each screen sits under the Cosmic Orange frame, at the frame's own
+   screen opening (75,66 and 1320 x 2868 in a 1470 x 3000 frame). Text is
+   sized from the phone's width (3.59cqw = 14px at 390px wide), so a
+   narrower phone scales the whole screen rather than squeezing it. */
+.jd-phones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 48px;
+}
+.jd-phone { margin: 0; width: min(390px, 100%); }
+.jd-phone figcaption {
+    margin-top: 16px;
+    text-align: center;
+    color: var(--text-dim);
+}
+.jd-phone figcaption b { display: block; color: var(--heading); font-size: 1.1rem; }
+.jd-device {
+    position: relative;
+    container-type: inline-size;
+    aspect-ratio: 1470 / 3000;
+}
+.jd-frame {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 3;
+}
+.jd-screen {
+    position: absolute;
+    left: 5.102%;
+    top: 2.2%;
+    width: 89.796%;
+    height: 95.6%;
+    /* 185pt corners on the 1320 x 2868 screen */
+    border-radius: 14.02% / 6.45%;
+    overflow: hidden;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 3.59cqw;
+    line-height: 1.35;
+    text-align: left;
+}
+.jd-screen [hidden] { display: none !important; }
+.jd-scroll {
+    position: absolute;
+    inset: 3.4em 0 0;
+    overflow-y: auto;
+    /* Scrolling carries on to the page at either end, so a swipe that
+       lands on a phone never traps someone scrolling past it */
+    overscroll-behavior-y: auto;
+    padding: 0 1.1em 6.5em;
+    scrollbar-width: none;
+}
+.jd-scroll::-webkit-scrollbar { display: none; }
+.jd-status {
+    position: absolute;
+    inset: 0 0 auto;
+    height: 3.4em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.9em;
+    font-size: 1em;
+    font-weight: 700;
+    color: var(--heading);
+    background: var(--bg);
+    z-index: 2;
+}
+.jd-island {
+    position: absolute;
+    left: 50%;
+    top: .75em;
+    width: 7.6em;
+    height: 2.2em;
+    transform: translateX(-50%);
+    border-radius: 999px;
+    background: #000;
+}
+.jd-status-icons { display: flex; gap: .4em; font-size: .78em; }
+.jd-watt { display: block; width: 3.2em; height: 3.2em; margin: .2em auto 0; }
+.jd-title { margin: .1em 0 .55em; font-size: 2.2em; font-weight: 700; color: var(--heading); }
+
+/* Cards and their parts, after the app's ToolsSectionCard */
+.jd-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: .9em;
+    padding: 1.1em;
+    margin-bottom: .9em;
+    border-radius: 1.4em;
+    color: #fff;
+    background: #29774B;
+}
+.jd-head b { display: block; font-size: 1.35em; }
+.jd-head p { margin: .3em 0 0; font-size: .85em; color: rgba(255,255,255,.85); }
+.jd-head-icon {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 3.6em;
+    height: 3.6em;
+    border-radius: 1em;
+    font-size: 1.1em;
+    background: rgba(255,255,255,.2);
+    border: 2px solid rgba(255,255,255,.45);
+}
+.jd-card {
+    padding: 1em;
+    margin-bottom: .8em;
+    border-radius: 1.3em;
+    background: var(--bg-2);
+    box-shadow: 0 1px 2px rgba(0,0,0,.05), 0 4px 14px rgba(0,0,0,.05);
+}
+.jd-card-title { font-size: 1.1em; font-weight: 600; color: var(--text-dim); }
+.jd-card-sub { margin: .25em 0 .7em; font-size: .82em; color: var(--text-dim); }
+.jd-card-sub:last-child { margin-bottom: 0; }
+.jd-field {
+    display: flex;
+    align-items: center;
+    gap: .5em;
+    margin-top: .55em;
+    padding: .7em .9em;
+    border-radius: .9em;
+    background: var(--bg-3);
+    font-size: .95em;
+}
+.jd-field > span { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; color: var(--text-dim); white-space: nowrap; }
+/* No spin arrows, as on iOS: they take the room a placeholder needs */
+.jd-field input[type="number"] { -moz-appearance: textfield; appearance: textfield; }
+.jd-field input[type="number"]::-webkit-inner-spin-button,
+.jd-field input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+.jd-field input,
+.jd-field select,
+.jd-car-bar select {
+    min-width: 0;
+    font: inherit;
+    font-weight: 600;
+    color: var(--heading);
+    background: transparent;
+    border: none;
+    text-align: right;
+}
+.jd-field input[type="number"] { width: 5.4em; }
+.jd-field input[type="datetime-local"] { width: 12.5em; font-size: .9em; }
+.jd-field select { flex: none; font-size: .88em; text-align-last: right; cursor: pointer; }
+.jd-field input::placeholder { color: var(--text-dim); font-weight: 400; opacity: .8; }
+.jd-field input:focus-visible,
+.jd-field select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+.jd-field em { font-style: normal; font-weight: 700; color: var(--heading); }
+.jd-field--read b { color: var(--heading); }
+.jd-mini { color: var(--text-dim); font-size: .95em; }
+.jd-ic-green { color: var(--jb-green); }
+.jd-ic-volt  { color: #E0A800; }
+.jd-ic-ember { color: var(--jb-ember); }
+.jd-ic-teal  { color: var(--jb-teal); }
+
+/* The app's segmented control */
+.jd-seg {
+    display: flex;
+    gap: 2px;
+    margin-top: .2em;
+    padding: .25em;
+    border-radius: 999px;
+    background: var(--bg-3);
+}
+.jd-card .jd-seg + .jd-slider-head { margin-top: .9em; }
+.jd-seg button {
+    flex: 1;
+    padding: .55em .4em;
+    border: none;
+    border-radius: 999px;
+    font: inherit;
+    font-size: .9em;
+    color: var(--text-dim);
+    background: transparent;
+    cursor: pointer;
+}
+.jd-seg button.is-active { color: #fff; background: var(--jb-green); font-weight: 600; }
+.jd-seg button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.jd-pro {
+    margin-left: .25em;
+    padding: .05em .4em;
+    border-radius: 999px;
+    font-size: .7em;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(to right, #CC331A, #953BB7);
+}
+
+/* Sliders, tinted per card like the app's ToolsSliderCard */
+.jd-slider-head { display: flex; align-items: baseline; justify-content: space-between; }
+.jd-slider-head b { font-size: 1.15em; color: var(--heading); }
+.jd-range { width: 100%; margin: .6em 0 .1em; accent-color: var(--rc, var(--jb-green)); cursor: pointer; }
+.jd-volt  { --rc: #F0B400; }
+.jd-green { --rc: var(--jb-green); }
+.jd-sky   { --rc: var(--jb-sky); }
+
+/* Result card: green, or ember / volt when the app would warn */
+.jd-summary {
+    --acc: var(--jb-green);
+    padding: 1em;
+    margin-bottom: .8em;
+    border-radius: 1.3em;
+    background: var(--bg-2);
+    box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--acc) 35%, transparent), 0 4px 14px rgba(0,0,0,.05);
+}
+.jd-summary[data-accent="ember"] { --acc: var(--jb-ember); }
+.jd-summary[data-accent="volt"]  { --acc: #E0A800; }
+.jd-summary small { font-size: .9em; font-weight: 600; color: var(--text-dim); }
+.jd-result { margin: .05em 0 .15em; font-size: 2.5em; font-weight: 700; line-height: 1.1; color: var(--acc); }
+.jd-summary p { margin: 0; font-size: .85em; color: var(--text-dim); }
+.jd-summary .jd-warn { margin-top: .5em; color: var(--jb-ember); font-weight: 600; }
+.jd-tiles { display: grid; grid-template-columns: 1fr 1fr; gap: .55em; }
+.jd-tile { padding: .7em .8em; border-radius: .9em; background: var(--bg-3); }
+.jd-tile span { display: block; font-size: .82em; color: var(--text-dim); }
+.jd-tile b { font-size: 1.05em; font-weight: 600; color: var(--heading); }
+.jd-big { font-size: 2em; font-weight: 700; color: var(--jb-green); }
+.jd-fine { margin: .3em .3em 0; font-size: .75em; color: var(--text-dim); }
+
+/* Compact result that floats up once the big one scrolls away, as in the app */
+.jd-mini-summary {
+    position: absolute;
+    left: 1.1em;
+    right: 1.1em;
+    top: 3.7em;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .65em 1em;
+    border-radius: 999px;
+    font-size: .9em;
+    color: var(--text-dim);
+    background: color-mix(in srgb, var(--bg-2) 88%, transparent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 14px rgba(0,0,0,.12);
+    opacity: 0;
+    transform: translateY(-.6em);
+    transition: opacity .2s, transform .2s;
+    pointer-events: none;
+}
+.jd-mini-summary.is-shown { opacity: 1; transform: none; }
+.jd-mini-summary b { font-size: 1.15em; color: var(--heading); }
+
+/* The floating tab bar (for show) */
+.jd-tabbar {
+    position: absolute;
+    left: 50%;
+    bottom: 1.6em;
+    z-index: 2;
+    display: flex;
+    gap: 1.6em;
+    padding: .8em 1.6em;
+    transform: translateX(-50%);
+    border-radius: 999px;
+    font-size: 1.2em;
+    color: var(--text-dim);
+    background: color-mix(in srgb, var(--bg-2) 80%, transparent);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 16px rgba(0,0,0,.12);
+}
+.jd-tabbar .is-active { color: var(--jb-green); }
+
+/* Add New Session */
+.jd-sheet-bar {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: .5em;
+    margin: .2em 0 .8em;
+}
+.jd-sheet-bar b { font-size: 1.05em; color: var(--heading); }
+.jd-sheet-bar > :last-child { justify-self: end; }
+.jd-chip-btn {
+    padding: .45em .9em;
+    border: none;
+    border-radius: 999px;
+    font: inherit;
+    font-size: .95em;
+    background: var(--bg-2);
+    box-shadow: 0 1px 4px rgba(0,0,0,.08);
+    cursor: pointer;
+}
+.jd-cancel { color: var(--jb-ember); justify-self: start; }
+.jd-save { color: var(--jb-green); font-weight: 600; }
+.jd-save:disabled { color: var(--text-dim); opacity: .6; cursor: default; }
+.jd-car-bar {
+    display: flex;
+    align-items: center;
+    gap: .6em;
+    padding: .7em .8em;
+    margin-bottom: .8em;
+    border-radius: 1.2em;
+    color: #fff;
+    background: #29774B;
+}
+.jd-car-tile {
+    display: grid;
+    place-items: center;
+    width: 2.4em;
+    height: 2.4em;
+    border-radius: .7em;
+    background: rgba(255,255,255,.2);
+    border: 1.5px solid rgba(255,255,255,.4);
+}
+.jd-car-bar select { flex: 1; text-align: left; font-size: 1.05em; color: #fff; cursor: pointer; }
+.jd-car-bar select option { color: #1A1A1A; }
+.jd-scan {
+    padding: .4em .8em;
+    border-radius: 999px;
+    font-size: .85em;
+    font-weight: 600;
+    color: #29774B;
+    background: #fff;
+}
+.jd-card .jd-seg { margin-top: .7em; }
+.jd-estimate {
+    display: inline-flex;
+    align-items: center;
+    gap: .4em;
+    margin-top: .55em;
+    padding: .4em .8em;
+    border: 1px solid color-mix(in srgb, #E0A800 45%, transparent);
+    border-radius: 999px;
+    font: inherit;
+    font-size: .82em;
+    font-weight: 600;
+    color: #8A6A00;
+    background: color-mix(in srgb, #FCD12B 22%, transparent);
+    cursor: pointer;
+}
+.jd-rate-chips { display: flex; flex-wrap: wrap; gap: .4em; margin-top: .55em; }
+.jd-rate {
+    display: inline-flex;
+    align-items: center;
+    gap: .35em;
+    padding: .35em .75em;
+    border-radius: 999px;
+    font: inherit;
+    font-size: .8em;
+    font-weight: 600;
+    cursor: pointer;
+}
+.jd-rate--off  { color: var(--jb-sky-ink); background: var(--jb-sky-tint); border: 1px solid color-mix(in srgb, var(--jb-sky) 35%, transparent); }
+.jd-rate--peak { color: #8A6A00; background: color-mix(in srgb, #FCD12B 22%, transparent); border: 1px solid color-mix(in srgb, #E0A800 40%, transparent); }
+.jd-cost-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .9em 1.1em;
+    border-radius: 999px;
+    color: #fff;
+    background: #29774B;
+}
+.jd-cost-bar b { font-size: 1.3em; }
+.jd-saved-note { margin-bottom: .8em; text-align: center; font-weight: 600; color: var(--jb-green); }
+.jd-session {
+    overflow: hidden;
+    margin-bottom: 1em;
+    border-radius: 1.3em;
+    background: var(--bg-2);
+    box-shadow: 0 1px 2px rgba(0,0,0,.05), 0 4px 14px rgba(0,0,0,.06);
+}
+.jd-session-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1em;
+    color: #fff;
+    background: #29774B;
+}
+.jd-session-head b { font-size: 1.35em; }
+.jd-session-icon {
+    display: grid;
+    place-items: center;
+    width: 2.9em;
+    height: 2.9em;
+    border-radius: .9em;
+    background: rgba(255,255,255,.2);
+    border: 1.5px solid rgba(255,255,255,.4);
+}
+.jd-session .jd-tiles { padding: 1em 1em .6em; }
+.jd-pills { display: flex; flex-wrap: wrap; gap: .4em; padding: 0 1em 1em; }
+.jd-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: .3em;
+    padding: .25em .7em;
+    border-radius: 999px;
+    font-size: .78em;
+    border: 1px solid currentColor;
+}
+.jd-pill--sky  { color: var(--jb-sky-ink);  background: var(--jb-sky-tint); }
+.jd-pill--volt { color: #8A6A00;            background: color-mix(in srgb, #FCD12B 22%, transparent); }
+.jd-pill--teal { color: var(--jb-teal-ink); background: var(--jb-teal-tint); }
+/* Dark gold text reads on the light volt tint only; dark mode takes the
+   bright volt itself */
+:root[data-theme="dark"] .jd-pill--volt,
+:root[data-theme="dark"] .jd-estimate,
+:root[data-theme="dark"] .jd-rate--peak { color: #FCD12B; }
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .jd-pill--volt,
+    :root:not([data-theme="light"]) .jd-estimate,
+    :root:not([data-theme="light"]) .jd-rate--peak { color: #FCD12B; }
+}
+/* The sky and teal -ink shades fall to about 4:1 on their dark tints */
+:root[data-theme="dark"] .jd-rate--off,
+:root[data-theme="dark"] .jd-pill--sky,
+:root[data-theme="dark"] .jd-pill--teal { color: var(--heading); }
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .jd-rate--off,
+    :root:not([data-theme="light"]) .jd-pill--sky,
+    :root:not([data-theme="light"]) .jd-pill--teal { color: var(--heading); }
+}
+.jd-primary {
+    width: 100%;
+    padding: .9em;
+    border: none;
+    border-radius: 999px;
+    font: inherit;
+    font-weight: 700;
+    color: #fff;
+    background: #29774B;
+    cursor: pointer;
+}
+
 /* Buttons: fully-rounded, solid green — the app's primary action */
 .theme-juicebox .btn-ghost {
     background: var(--accent-ink);

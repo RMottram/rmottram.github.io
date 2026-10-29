@@ -33,6 +33,7 @@ node_modules/
 *.MOV
 # ...except the JuiceBox promo shown in the app page's hero
 !assets/juicebox/videos/juicebox-promo.mp4
+!assets/juicebox/videos/juicebox-promo-mobile.mp4
 
 # Affinity lock files
 *.af~lock~
