@@ -31,6 +31,8 @@ node_modules/
 *.webm
 *.mov
 *.MOV
+# ...except the JuiceBox promo shown in the app page's hero
+!assets/juicebox/videos/juicebox-promo.mp4
 
 # Affinity lock files
 *.af~lock~

@@ -135,4 +135,59 @@
     wrapper.addEventListener('touchstart', pause, { passive: true });
   });
 
+  // ---- Screenshot gallery: filters + prev/next paging ----
+  document.querySelectorAll('.gallery').forEach(function (gallery) {
+    var track = gallery.querySelector('.gallery-track');
+    var items = Array.prototype.slice.call(gallery.querySelectorAll('.gallery-item'));
+    var filters = gallery.querySelectorAll('.gallery-filter');
+    var prev = gallery.querySelector('.gallery-btn--prev');
+    var next = gallery.querySelector('.gallery-btn--next');
+    if (!track) return;
+
+    // Hide a button at its end of the strip, or both when nothing overflows
+    function updateButtons() {
+      var maxScroll = track.scrollWidth - track.clientWidth;
+      var canPrev = track.scrollLeft > 1;
+      var canNext = track.scrollLeft < maxScroll - 1;
+      if (prev) prev.disabled = !canPrev;
+      if (next) next.disabled = !canNext;
+      // The viewport's classes drive the edge fades
+      track.parentNode.classList.toggle('can-prev', canPrev);
+      track.parentNode.classList.toggle('can-next', canNext);
+    }
+
+    // A page is as many whole screens as are fully on show
+    function step() {
+      var first = items.filter(function (item) { return !item.hidden; })[0];
+      if (!first) return track.clientWidth;
+      var gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+      var unit = first.getBoundingClientRect().width + gap;
+      return unit * Math.max(1, Math.floor((track.clientWidth + gap) / unit));
+    }
+
+    filters.forEach(function (button) {
+      button.addEventListener('click', function () {
+        var tag = button.getAttribute('data-filter');
+        filters.forEach(function (other) {
+          var on = other === button;
+          other.classList.toggle('is-active', on);
+          other.setAttribute('aria-pressed', on ? 'true' : 'false');
+        });
+        items.forEach(function (item) {
+          var tags = (item.getAttribute('data-tags') || '').split(' ');
+          item.hidden = tag !== 'all' && tags.indexOf(tag) === -1;
+        });
+        track.scrollTo({ left: 0 });
+        updateButtons();
+      });
+    });
+
+    if (prev) prev.addEventListener('click', function () { track.scrollBy({ left: -step(), behavior: 'smooth' }); });
+    if (next) next.addEventListener('click', function () { track.scrollBy({ left: step(), behavior: 'smooth' }); });
+    track.addEventListener('scroll', updateButtons, { passive: true });
+    window.addEventListener('resize', updateButtons);
+    window.addEventListener('load', updateButtons);
+    updateButtons();
+  });
+
 })();

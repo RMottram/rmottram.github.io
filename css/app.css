@@ -194,6 +194,35 @@ a:hover { text-decoration: underline; }
     max-width: 640px;
     margin: 0 auto 30px;
 }
+/* Promo video under the hero's call-to-action buttons */
+.hero-video {
+    display: block;
+    width: 100%;
+    max-width: 960px;
+    height: auto;
+    margin: 48px auto 0;
+    border-radius: var(--radius);
+    box-shadow: 0 18px 50px rgba(0,0,0,.35);
+}
+/* Laptops and up: copy on the left, video on the right. Below this the
+   video stacks under the buttons as above. */
+@media (min-width: 1200px) {
+    .hero--video {
+        display: grid;
+        /* The video is the focal point, so it takes about two thirds */
+        grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr);
+        gap: 48px;
+        align-items: center;
+        /* Wider than the page's content width so the video has room */
+        max-width: 1480px;
+        margin: 0 auto;
+    }
+    .hero--video .app-icon-halo { --icon-size: 104px; }
+    .hero--video h1 { font-size: clamp(2.2rem, 3.4vw, 3rem); }
+    .hero--video .tagline { font-size: 1.05rem; margin-bottom: 24px; }
+    .hero--video .store-badge img { height: 42px; }
+    .hero--video .hero-video { margin: 0; max-width: none; }
+}
 .hero .subtag {
     display: inline-block;
     font-size: .85rem;
@@ -382,6 +411,114 @@ a:hover { text-decoration: underline; }
 .shots-btn:hover { background: var(--bg-3); border-color: var(--accent); color: var(--accent); }
 .shots-btn--prev { left: 6px; }
 .shots-btn--next { right: 6px; }
+
+/* ---- Gallery (app pages): filterable, captioned strip of screenshots ----
+   Too many screens for a grid, so they sit in one row that scrolls
+   sideways, about four on show with the next peeking in. */
+.gallery-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin: 0 0 28px;
+}
+.gallery-filter {
+    font: inherit;
+    font-size: .9rem;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--bg-2);
+    color: var(--text-dim);
+    cursor: pointer;
+    transition: background .2s, border-color .2s, color .2s;
+}
+.gallery-filter:hover { color: var(--accent-ink, var(--accent)); border-color: var(--accent); }
+.gallery-filter.is-active,
+.gallery-filter.is-active:hover {
+    background: var(--accent-ink, var(--accent));
+    border-color: var(--accent-ink, var(--accent));
+    color: var(--bg);
+}
+.gallery-filter:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.gallery-viewport { position: relative; }
+.gallery-track {
+    list-style: none;
+    margin: 0;
+    padding: 4px 2px 18px;
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 2px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+    /* Fade whichever edge has more to scroll to, so a half-shown screen
+       reads as "more this way" rather than cut off */
+    --fade-l: 0px;
+    --fade-r: 0px;
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 var(--fade-l), #000 calc(100% - var(--fade-r)), transparent);
+    mask-image: linear-gradient(to right, transparent, #000 var(--fade-l), #000 calc(100% - var(--fade-r)), transparent);
+}
+.gallery-viewport.can-prev .gallery-track { --fade-l: 56px; }
+.gallery-viewport.can-next .gallery-track { --fade-r: 56px; }
+.gallery-track::-webkit-scrollbar { height: 8px; }
+.gallery-track::-webkit-scrollbar-thumb { background: var(--border); border-radius: 999px; }
+.gallery-track:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 12px; }
+.gallery-item {
+    flex: 0 0 clamp(180px, 22%, 240px);
+    scroll-snap-align: start;
+}
+.gallery-item[hidden] { display: none; }
+.gallery-item img { display: block; width: 100%; height: auto; }
+.gallery-caption {
+    margin: 14px 4px 0;
+    font-size: .92rem;
+    line-height: 1.45;
+    color: var(--text-dim);
+}
+.gallery-caption b {
+    display: block;
+    margin-bottom: 2px;
+    font-size: 1rem;
+    color: var(--heading);
+}
+.gallery-caption .soon { margin-left: 6px; padding: 2px 8px; font-size: .62rem; }
+
+/* Prev/next sit on the phones' centre line, half outside the strip */
+.gallery-btn {
+    position: absolute;
+    top: calc(50% - 40px);
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--border);
+    background: var(--bg-2);
+    color: var(--text);
+    box-shadow: 0 6px 18px rgba(0,0,0,.12);
+    cursor: pointer;
+    transition: opacity .2s, color .2s, border-color .2s;
+}
+.gallery-btn:hover { color: var(--accent-ink, var(--accent)); border-color: var(--accent); }
+.gallery-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.gallery-btn[disabled] { opacity: 0; pointer-events: none; }
+.gallery-btn--prev { left: -22px; }
+.gallery-btn--next { right: -22px; }
+
+/* Touch screens swipe the strip, so the buttons step aside and each
+   screen is larger, with the next one peeking in. */
+@media (max-width: 768px) {
+    .gallery-btn { display: none; }
+    .gallery-track { gap: 16px; }
+    .gallery-item { flex-basis: 62%; }
+}
 
 /* ---------------- SPLIT (video + copy) ---------------- */
 .split {
