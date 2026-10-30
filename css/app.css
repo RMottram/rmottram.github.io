@@ -348,7 +348,7 @@ a:hover { text-decoration: underline; }
 .feature-card .icon-row .icon { margin-bottom: 0; flex: none; }
 .feature-card .icon-row .soon { margin-left: 0; }
 
-/* "Coming soon" badge for features that are built but not yet released.
+/* Status badge for a feature ("New" for those that arrived in 1.3).
    Sits on the icon row of a card, or inline in a pricing list item. */
 .soon {
     display: inline-block;
