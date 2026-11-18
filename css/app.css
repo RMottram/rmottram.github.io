@@ -310,8 +310,10 @@ a:hover { text-decoration: underline; }
 .gallery-viewport.can-prev .feature-swipe { --fade-l: calc(var(--spill) + 32px); }
 .gallery-viewport.can-next .feature-swipe { --fade-r: calc(var(--spill) + 32px); }
 .gallery-viewport--cards .gallery-btn { top: 50%; }
-/* Narrower screens: the spill stays inside the page's side gutter */
-@media (max-width: 900px) { .feature-swipe { --cols: 2; --spill: 24px; } }
+/* Narrower screens: the spill stays inside the page's side gutter, which
+   is only the wrapper's 24px padding until the page is wider than ~1170px */
+@media (max-width: 1180px) { .feature-swipe { --spill: 24px; } }
+@media (max-width: 900px) { .feature-swipe { --cols: 2; } }
 /* Phones: a single row, one card at a time with the next peeking in.
    Two rows would stretch every card to the tallest one twice over. */
 @media (max-width: 560px) { .feature-swipe { --spill: 20px; grid-template-rows: auto; grid-auto-columns: 85%; gap: 14px; } }
@@ -1223,11 +1225,17 @@ a:hover { text-decoration: underline; }
     background: color-mix(in srgb, var(--jb-green) 12%, transparent);
 }
 .theme-juicebox .app-nav .nav-links a.is-active { color: #fff; background: var(--pricing-header); }
-@media (max-width: 768px) {
+/* Seven labelled links need about 1080px; below that, icons only */
+@media (max-width: 1080px) {
     .theme-juicebox .app-nav .nav-links a { padding: 9px 12px; font-size: 1.05rem; }
     .theme-juicebox .app-nav .nav-links a span {
         position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
     }
+}
+/* Seven icons plus the theme switch only clear the back arrow on a small
+   phone with tighter padding */
+@media (max-width: 480px) {
+    .theme-juicebox .app-nav .nav-links a { padding: 9px 8px; }
 }
 
 /* Screenshot filters become the app's segmented control: a recessed
@@ -1729,6 +1737,70 @@ a:hover { text-decoration: underline; }
     background: #29774B;
     cursor: pointer;
 }
+
+/* ---- What's new: the next update's strip, then the latest releases ---- */
+/* Upcoming features carry the version they arrive in, in plum */
+.theme-juicebox .soon--next {
+    color: var(--jb-plum-ink);
+    background: color-mix(in srgb, var(--jb-plum) 14%, transparent);
+    border-color: color-mix(in srgb, var(--jb-plum) 34%, transparent);
+}
+/* A Free or Pro tag beside it; Pro wears the app's Pro banner gradient */
+.theme-juicebox .feature-card .badges { display: inline-flex; align-items: center; gap: 6px; }
+.theme-juicebox .feature-card .badges .soon { margin-left: 0; }
+.theme-juicebox .plan {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: var(--jb-green-ink);
+    background: var(--jb-green-tint);
+}
+.theme-juicebox .plan--pro { color: #fff; background: linear-gradient(to right, #CC331A, #953BB7 55%, #29774B); }
+/* Dark mode lightens the -ink shades to about 3 to 4.5:1 on their tints */
+:root[data-theme="dark"] .theme-juicebox .soon--next,
+:root[data-theme="dark"] .theme-juicebox .plan:not(.plan--pro) { color: var(--heading); }
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .theme-juicebox .soon--next,
+    :root:not([data-theme="light"]) .theme-juicebox .plan:not(.plan--pro) { color: var(--heading); }
+}
+
+.theme-juicebox .releases {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+}
+@media (max-width: 768px) { .theme-juicebox .releases { grid-template-columns: 1fr; } }
+.theme-juicebox .release {
+    display: flex;
+    flex-direction: column;
+    padding: 22px 24px 24px;
+    border-radius: var(--radius);
+    background: var(--bg-2);
+    box-shadow: var(--card-shadow);
+}
+.theme-juicebox .release-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 6px;
+}
+.theme-juicebox .release-head b { font-size: 1.3rem; color: var(--heading); }
+.theme-juicebox .release-status {
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: .8rem;
+    font-weight: 700;
+    color: #fff;
+    background: var(--pricing-header);
+}
+.theme-juicebox .release .tier-list li { font-size: .95rem; }
+.theme-juicebox .release .tier-list:last-child { margin-bottom: 0; }
 
 /* Buttons: fully-rounded, solid green — the app's primary action */
 .theme-juicebox .btn-ghost {
