@@ -40,3 +40,5 @@ node_modules/
 
 # Affinity lock files
 *.af~lock~
+
+.claude/
