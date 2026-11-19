@@ -1225,14 +1225,14 @@ a:hover { text-decoration: underline; }
     background: color-mix(in srgb, var(--jb-green) 12%, transparent);
 }
 .theme-juicebox .app-nav .nav-links a.is-active { color: #fff; background: var(--pricing-header); }
-/* Seven labelled links need about 1080px; below that, icons only */
+/* Eight labelled links need about 1080px; below that, icons only */
 @media (max-width: 1080px) {
     .theme-juicebox .app-nav .nav-links a { padding: 9px 12px; font-size: 1.05rem; }
     .theme-juicebox .app-nav .nav-links a span {
         position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
     }
 }
-/* Seven icons plus the theme switch only clear the back arrow on a small
+/* Eight icons plus the theme switch only clear the back arrow on a small
    phone with tighter padding */
 @media (max-width: 480px) {
     .theme-juicebox .app-nav .nav-links a { padding: 9px 8px; }
@@ -1314,9 +1314,10 @@ a:hover { text-decoration: underline; }
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 48px;
+    gap: 32px;
 }
-.jd-phone { margin: 0; width: min(390px, 100%); }
+/* Three abreast on a laptop, two then one on a tablet, one on a phone */
+.jd-phone { margin: 0; flex: 1 1 300px; max-width: 390px; }
 .jd-phone figcaption {
     margin-top: 16px;
     text-align: center;
@@ -1720,11 +1721,13 @@ a:hover { text-decoration: underline; }
 /* The sky and teal -ink shades fall to about 4:1 on their dark tints */
 :root[data-theme="dark"] .jd-rate--off,
 :root[data-theme="dark"] .jd-pill--sky,
-:root[data-theme="dark"] .jd-pill--teal { color: var(--heading); }
+:root[data-theme="dark"] .jd-pill--teal,
+:root[data-theme="dark"] .jd-pill--ember { color: var(--heading); }
 @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) .jd-rate--off,
     :root:not([data-theme="light"]) .jd-pill--sky,
-    :root:not([data-theme="light"]) .jd-pill--teal { color: var(--heading); }
+    :root:not([data-theme="light"]) .jd-pill--teal,
+    :root:not([data-theme="light"]) .jd-pill--ember { color: var(--heading); }
 }
 .jd-primary {
     width: 100%;
@@ -1736,6 +1739,233 @@ a:hover { text-decoration: underline; }
     color: #fff;
     background: #29774B;
     cursor: pointer;
+}
+
+/* Stats */
+.jd-title-row { display: flex; align-items: center; justify-content: space-between; gap: .5em; margin-bottom: .55em; }
+.jd-title-row .jd-title { margin-bottom: 0; }
+.jd-car-pick {
+    display: inline-flex;
+    align-items: center;
+    gap: .4em;
+    padding: .4em .5em .4em .8em;
+    border-radius: 999px;
+    font-size: .85em;
+    font-weight: 600;
+    color: var(--jb-green-ink);
+    background: var(--jb-green-tint);
+}
+.jd-car-pick select { max-width: 8.5em; border: none; font: inherit; color: inherit; background: transparent; cursor: pointer; }
+.jd-car-pick select option,
+.jd-link-select option { color: #1A1A1A; }
+.jd-car-pick:focus-within { outline: 2px solid var(--accent); outline-offset: 2px; }
+.jd-car-pick select:focus { outline: none; }
+.jd-overview {
+    overflow: hidden;
+    margin-bottom: .8em;
+    border-radius: 1.3em;
+    background: var(--bg-2);
+    box-shadow: 0 1px 2px rgba(0,0,0,.05), 0 4px 14px rgba(0,0,0,.06);
+}
+.jd-overview-top {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: .8em;
+    padding: 1em;
+    color: #fff;
+    background: #29774B;
+}
+.jd-overview-name b { display: block; font-size: 1.6em; line-height: 1.1; }
+.jd-overview-name span { font-size: 1.25em; font-weight: 700; opacity: .7; }
+.jd-overview-car {
+    display: grid;
+    place-items: center;
+    width: 6.2em;
+    height: 3.1em;
+    border-radius: .9em;
+    font-size: 1.1em;
+    background: rgba(255,255,255,.2);
+    border: 1.5px solid rgba(255,255,255,.4);
+}
+.jd-overview-cells { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, 1fr); gap: .45em; }
+.jd-overview-cells div { padding: .45em .6em; border-radius: .7em; background: rgba(255,255,255,.18); }
+.jd-overview-cells span { display: block; font-size: .72em; opacity: .9; }
+.jd-overview-cells b { font-size: .88em; }
+.jd-overview-body { padding: 1em; }
+.jd-overview-body .jd-pills { padding: .7em 0 0; }
+.jd-pill--ember { color: var(--jb-ember-ink); background: var(--jb-ember-tint); }
+.jd-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: .55em; }
+.jd-metric {
+    display: flex;
+    flex-direction: column;
+    gap: .1em;
+    padding: .75em .8em;
+    border-radius: 1em;
+    background: var(--bg-3);
+    border: 1.5px solid color-mix(in srgb, var(--mc) 35%, transparent);
+}
+.jd-metric > i { margin-bottom: .35em; font-size: 1.3em; color: var(--mc); }
+.jd-metric > span { font-size: .8em; color: var(--text-dim); }
+.jd-metric > b { font-size: 1.05em; font-weight: 600; color: var(--heading); }
+.jd-fuel-head { display: flex; align-items: center; gap: .3em; }
+.jd-fuel-head .jd-card-title { flex: 1; }
+.jd-link-select { border: none; font: inherit; font-size: .9em; font-weight: 600; color: var(--jb-green-ink); background: transparent; cursor: pointer; }
+.jd-icon-btn {
+    display: grid;
+    place-items: center;
+    width: 2em;
+    height: 2em;
+    border: none;
+    border-radius: 50%;
+    font: inherit;
+    color: var(--jb-green-ink);
+    background: transparent;
+    cursor: pointer;
+}
+.jd-icon-btn[aria-expanded="true"] { background: var(--jb-green-tint); }
+.jd-link-select:focus-visible,
+.jd-icon-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.jd-fuel-tiles { display: grid; grid-template-columns: 1fr 1fr; gap: .55em; margin-top: .7em; }
+.jd-fuel-tile { padding: .7em .8em; border-radius: .9em; background: var(--jb-green-tint); }
+.jd-fuel-tile--diesel { background: var(--jb-teal-tint); }
+.jd-fuel-tile span { display: block; font-size: .8em; color: var(--text); }
+.jd-fuel-tile b { display: block; margin: .1em 0; font-size: 1.35em; color: var(--heading); }
+.jd-fuel-tile.is-more b { color: var(--jb-ember-ink); }
+.jd-compare { margin-top: .8em; }
+.jd-teal { --rc: var(--jb-teal); }
+.jd-fuel-note { margin: .7em 0 0; font-size: .8em; color: var(--text); }
+.jd-seg--page { margin: 0 0 .8em; }
+/* Charts, drawn by the script in a 300 x 150 box */
+.jd-chart {
+    position: relative;
+    margin-top: .4em;
+    border-radius: .6em;
+    cursor: crosshair;
+    /* A sideways drag reads the chart; an upright one still scrolls */
+    touch-action: pan-y;
+    -webkit-user-select: none;
+    user-select: none;
+}
+.jd-chart--static { cursor: default; }
+.jd-chart:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.jd-chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.jd-grid { stroke: var(--border); stroke-width: .6; stroke-dasharray: 2 2; }
+.jd-axis { font-family: inherit; font-size: 8.5px; fill: var(--text-dim); }
+.jd-line { fill: none; stroke: var(--c); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.jd-stop-top { stop-color: var(--c); stop-opacity: .35; }
+.jd-stop-bottom { stop-color: var(--c); stop-opacity: 0; }
+.jd-bar { fill: color-mix(in srgb, var(--c) 60%, transparent); transition: opacity .15s; }
+.jd-bar.is-dim { opacity: .35; }
+.jd-rule { stroke: var(--text-dim); stroke-width: .8; stroke-dasharray: 3 2; }
+.jd-dot { fill: var(--c); stroke: var(--bg-2); stroke-width: 1.5; }
+.jd-ring svg { display: block; width: 58%; margin: .5em auto; }
+.jd-ring circle { fill: none; stroke-width: 16; }
+.jd-ring-home { stroke: color-mix(in srgb, var(--jb-green) 60%, transparent); }
+.jd-ring-public { stroke: color-mix(in srgb, var(--jb-ember) 60%, transparent); }
+.jd-legend { display: flex; justify-content: center; gap: 2em; font-size: .85em; color: var(--heading); }
+.jd-legend > span { display: inline-flex; align-items: center; gap: .4em; }
+.jd-legend b { color: var(--text-dim); font-weight: 600; }
+.jd-key { display: inline-block; width: .75em; height: .75em; border-radius: 50%; }
+.jd-key--home { background: color-mix(in srgb, var(--jb-green) 60%, transparent); }
+.jd-key--public { background: color-mix(in srgb, var(--jb-ember) 60%, transparent); }
+.jd-cost-row { display: flex; justify-content: space-around; margin-top: .5em; text-align: center; font-size: .78em; color: var(--text-dim); }
+.jd-cost-row b { display: block; font-size: 1.1em; color: var(--heading); }
+.jd-empty { display: flex; flex-direction: column; align-items: center; gap: .3em; padding: 2em 1em; text-align: center; color: var(--text-dim); }
+.jd-empty i { font-size: 1.6em; }
+.jd-empty b { color: var(--heading); }
+.jd-empty span { font-size: .85em; }
+
+/* ---- Why JuiceBox: a video, six reasons, then a side-by-side comparison ---- */
+.why-video { max-width: 900px; margin: 0 auto 44px; text-align: center; }
+.why-video video {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    background: #000;
+    box-shadow: 0 18px 50px rgba(0,0,0,.25);
+}
+.why-video figcaption { margin-top: 14px; color: var(--text-dim); }
+.why-video figcaption b { display: block; font-size: 1.1rem; color: var(--heading); }
+.why-compare {
+    margin-top: 40px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--bg-2);
+    box-shadow: var(--card-shadow);
+}
+.why-table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+.why-table caption {
+    caption-side: top;
+    padding: 22px 24px 6px;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--heading);
+}
+.why-table thead th {
+    padding: 14px 16px;
+    text-align: left;
+    font-size: .95rem;
+    color: var(--heading);
+    white-space: nowrap;
+}
+.why-table thead th i { margin-right: 4px; color: var(--text-dim); }
+.why-table thead img { width: 22px; height: 22px; margin-right: 4px; border-radius: 6px; vertical-align: -5px; }
+.why-table tbody th {
+    width: 22%;
+    padding: 14px 16px 14px 24px;
+    text-align: left;
+    font-weight: 600;
+    color: var(--heading);
+}
+.why-table tbody th,
+.why-table tbody td { border-top: 1px solid var(--border); vertical-align: top; }
+.why-table tbody td { position: relative; padding: 14px 16px 14px 42px; color: var(--text); }
+/* JuiceBox's column is picked out like the app's selected tab */
+.why-table .why-us,
+.why-table .why-yes { background: color-mix(in srgb, var(--jb-green) 9%, transparent); }
+.why-table .why-yes { font-weight: 600; color: var(--heading); }
+.why-table .plan { margin-left: 4px; vertical-align: 1px; }
+/* A tick, a dash or a cross before each answer (FA 5 solid glyphs) */
+.why-table tbody td::before {
+    position: absolute;
+    left: 16px;
+    top: 15px;
+    font-family: "Font Awesome 5 Free", "Font Awesome 6 Free", sans-serif;
+    font-weight: 900;
+    font-size: 1rem;
+    line-height: 1.2;
+}
+.why-yes::before  { content: "\f058"; color: var(--jb-green-ink); }   /* fa-check-circle */
+.why-part::before { content: "\f056"; color: var(--jb-volt-ink); }    /* fa-minus-circle */
+.why-no::before   { content: "\f057"; color: var(--jb-ember-ink); }   /* fa-times-circle */
+.why-note { margin: 22px 0 0; text-align: center; color: var(--text-dim); }
+.why-note i { margin-right: 6px; color: var(--jb-teal-ink); }
+.why-note a { font-weight: 600; }
+/* Narrow screens: each row becomes a card, every answer labelled */
+@media (max-width: 760px) {
+    .why-table, .why-table tbody, .why-table tr, .why-table th, .why-table td { display: block; width: auto; }
+    .why-table thead { display: none; }
+    .why-table caption { display: block; padding: 20px 20px 4px; }
+    .why-table tbody tr { padding: 14px 20px 16px; border-top: 1px solid var(--border); }
+    .why-table tbody th,
+    .why-table tbody td { border-top: none; }
+    .why-table tbody th { width: auto; padding: 0 0 8px; font-size: 1rem; }
+    .why-table tbody td { display: flex; flex-direction: column; align-items: flex-start; padding: 6px 10px 6px 34px; border-radius: 10px; }
+    .why-table tbody td::before { left: 10px; top: 7px; }
+    .why-table tbody td::after {
+        content: attr(data-label);
+        order: -1;
+        font-size: .72rem;
+        font-weight: 700;
+        letter-spacing: .04em;
+        text-transform: uppercase;
+        color: var(--text-dim);
+    }
+    .why-table .plan { margin: 4px 0 0; }
 }
 
 /* ---- What's new: the next update's strip, then the latest releases ---- */

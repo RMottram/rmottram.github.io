@@ -174,7 +174,7 @@
       "name": "Can JuiceBox track more than just charging costs?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, from 1.3. Open a vehicle in Driveway and choose Running Costs to add your MOT, service, road tax and insurance dates. You get reminders 30 and 7 days before each is due, and the next one shows on your Driveway card. Services can be set by date, by distance, or whichever comes first. With Pro, the Expense Log also tracks services, repairs, tax, insurance and finance, recording your monthly payments so you can see what your EV really costs to run with charging included."
+        "text": "Yes, from 1.3. Open a vehicle in Driveway and choose Running Costs to add your MOT, service, road tax and insurance dates. You get reminders 30 and 7 days before each is due, and the next one shows on your Driveway card. Services can be set by date, by distance, or whichever comes first. With Pro, the Expense Log also tracks services, repairs, tax, insurance and finance, recording your monthly payments so you can see what your EV really costs to run with charging included. From 1.3.2, it tracks tyres too: what's left on each one, when they're due a rotation, and reminders before both."
       }
     },
     {
@@ -208,6 +208,7 @@
         </a>
         <div class="nav-links">
             <a href="#how-it-works"><i class="fas fa-plug" aria-hidden="true"></i><span>How it works</span></a>
+            <a href="#why"><i class="fas fa-balance-scale" aria-hidden="true"></i><span>Why</span></a>
             <a href="#features"><i class="fas fa-th-large" aria-hidden="true"></i><span>Features</span></a>
             <a href="#whats-new"><i class="fas fa-rocket" aria-hidden="true"></i><span>What's new</span></a>
             <a href="#screens"><i class="fas fa-mobile-alt" aria-hidden="true"></i><span>Screens</span></a>
@@ -278,6 +279,140 @@
                     <p>Cost per charge, charging time, cost per mile, and how it all adds up over time.</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- WHY JUICEBOX: against a spreadsheet and a phone full of charging apps -->
+    <section class="section" id="why">
+        <div class="app-wrap">
+            <div class="section-head page-head" data-aos="fade-up">
+                <img class="watt" src="assets/juicebox/watt/watt-chart.webp" alt="" width="240" height="240" loading="lazy" decoding="async">
+                <h2>Why JuiceBox?</h2>
+                <div class="head-card hc-teal">
+                    <div>
+                        <div class="head-card-title">Everything in one app</div>
+                        <p>A spreadsheet only knows what you type into it and needs formulas to say anything. A network's app only knows its own chargers. JuiceBox brings every charge and running cost together and does the maths for you.</p>
+                    </div>
+                    <div class="head-card-icon" aria-hidden="true"><i class="fas fa-balance-scale"></i></div>
+                </div>
+            </div>
+
+            <!-- Plays on a tap, with sound; nothing downloads until then -->
+            <figure class="why-video" data-aos="fade-up">
+                <video controls playsinline preload="none" width="1920" height="1080"
+                       poster="assets/juicebox/videos/juicebox-ditch-the-spreadsheet-poster.jpg"
+                       aria-label="Ditch the spreadsheet: a JuiceBox video">
+                    <!-- Phones get a 720p cut at about half the size -->
+                    <source src="assets/juicebox/videos/juicebox-ditch-the-spreadsheet-mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
+                    <source src="assets/juicebox/videos/juicebox-ditch-the-spreadsheet.mp4" type="video/mp4" />
+                </video>
+                <figcaption><b>Ditch the spreadsheet</b>From rows of numbers to logging a charge in seconds, in about a minute.</figcaption>
+            </figure>
+
+            <div class="feature-grid why-grid">
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="icon ic-green"><i class="fas fa-layer-group"></i></div>
+                    <h3>Every charge in one place</h3>
+                    <p>Home, work and every public network in one history, not split across an app for each network. Each charge is costed the same way, so you can compare them.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon ic-volt"><i class="fas fa-calculator"></i></div>
+                    <h3>The real cost, worked out for you</h3>
+                    <p>Peak and off-peak rates, split tariffs, solar, a home battery and charging losses, all allowed for. You get the cost per charge and per mile without writing a single formula.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="180">
+                    <div class="icon ic-sky"><i class="fas fa-hand-pointer"></i></div>
+                    <h3>Made for your phone, not a desk</h3>
+                    <p>Log a charge in seconds with your rates a tap away, or let JuiceBox estimate the kWh from your battery %. No zooming into rows and columns on a small screen.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="icon ic-teal"><i class="fas fa-chart-line"></i></div>
+                    <h3>Answers, not just numbers</h3>
+                    <p>Charts, monthly and yearly JuiceLog round-ups, and what you've saved on fuel, ready the moment you log. Your battery's health is tracked from your charges too.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon ic-ember"><i class="fas fa-bell"></i></div>
+                    <h3>It remembers, so you don't</h3>
+                    <p>Reminders before your MOT, service, road tax and insurance are due, and a Pending Charge that knows when your off-peak hours start. A spreadsheet just waits to be opened.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="180">
+                    <div class="icon ic-plum"><i class="fas fa-lock"></i></div>
+                    <h3>Yours, and easy to move to</h3>
+                    <p>Your data stays on your device and syncs only through your own iCloud. Bring your spreadsheet with you: CSV and JSON import is free, with the columns matched for you.</p>
+                </div>
+            </div>
+
+            <!-- Side by side: what each way of tracking gives you -->
+            <div class="why-compare" data-aos="fade-up">
+                <table class="why-table">
+                    <caption>How JuiceBox compares with tracking in a spreadsheet or across several charging apps</caption>
+                    <thead>
+                        <tr>
+                            <td></td>
+                            <th scope="col"><i class="fas fa-table" aria-hidden="true"></i> Spreadsheet</th>
+                            <th scope="col"><i class="fas fa-th" aria-hidden="true"></i> Charging apps</th>
+                            <th scope="col" class="why-us"><img src="assets/juicebox/juicebox-icon.webp" alt="" width="512" height="512" loading="lazy" decoding="async"> JuiceBox</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">All your charging in one place</th>
+                            <td data-label="Spreadsheet" class="why-part">If you type every charge in</td>
+                            <td data-label="Charging apps" class="why-no">One network or charger per app</td>
+                            <td data-label="JuiceBox" class="why-yes">Home, work and every network</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Cost of each charge</th>
+                            <td data-label="Spreadsheet" class="why-part">With formulas you write and fix</td>
+                            <td data-label="Charging apps" class="why-part">Their price, not your home tariff</td>
+                            <td data-label="JuiceBox" class="why-yes">Your tariffs, solar and losses allowed for</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Logging on your phone</th>
+                            <td data-label="Spreadsheet" class="why-no">Tiny cells on a small screen</td>
+                            <td data-label="Charging apps" class="why-part">Automatic, on their chargers only</td>
+                            <td data-label="JuiceBox" class="why-yes">Seconds, with the kWh estimated for you</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Charts and trends</th>
+                            <td data-label="Spreadsheet" class="why-part">Build them, then keep them updated</td>
+                            <td data-label="Charging apps" class="why-part">A list of past sessions</td>
+                            <td data-label="JuiceBox" class="why-yes">Ready-made, for any range you choose</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Cost per mile and fuel savings</th>
+                            <td data-label="Spreadsheet" class="why-part">More formulas, and odometer maths</td>
+                            <td data-label="Charging apps" class="why-no">No idea how far you drove</td>
+                            <td data-label="JuiceBox" class="why-yes">From your odometer readings</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Battery health</th>
+                            <td data-label="Spreadsheet" class="why-no">Not without serious maths</td>
+                            <td data-label="Charging apps" class="why-no">Not tracked</td>
+                            <td data-label="JuiceBox" class="why-yes">Estimated from your charges</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">MOT, service and tax reminders</th>
+                            <td data-label="Spreadsheet" class="why-no">Only if you remember to look</td>
+                            <td data-label="Charging apps" class="why-no">Not their job</td>
+                            <td data-label="JuiceBox" class="why-yes">30 and 7 days before each is due</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Reports for your employer</th>
+                            <td data-label="Spreadsheet" class="why-part">Copy, paste and double-check</td>
+                            <td data-label="Charging apps" class="why-part">Receipts, one network at a time</td>
+                            <td data-label="JuiceBox" class="why-yes">A checked PDF or CSV each month <span class="plan plan--pro">Pro</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">At a glance</th>
+                            <td data-label="Spreadsheet" class="why-no">Open the file and scroll</td>
+                            <td data-label="Charging apps" class="why-part">Open the right app first</td>
+                            <td data-label="JuiceBox" class="why-yes">Widgets, Live Activities and Apple Watch</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="why-note" data-aos="fade-up"><i class="fas fa-file-import" aria-hidden="true"></i> Already tracking in a spreadsheet? <a href="#faq">Import it for free</a> and pick up where you left off.</p>
         </div>
     </section>
 
@@ -493,6 +628,16 @@
                         <h3>Battery health report</h3>
                         <p>A report for buyers when you sell your car, with any dealer or OBD battery tests beside it.</p>
                     </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon-row"><div class="icon ic-teal"><i class="fas fa-dot-circle"></i></div><span class="soon soon--next">1.3.2</span></div>
+                        <h3>Tyre tracking</h3>
+                        <p>Log tyres by corner and see how far each one has left on a plan of your car, with reminders before they're due a check.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="180">
+                        <div class="icon-row"><div class="icon ic-green"><i class="fas fa-sync-alt"></i></div><span class="soon soon--next">1.3.2</span></div>
+                        <h3>Tyre rotations</h3>
+                        <p>Log a rotation and each tyre's wear follows it round the car, with a countdown and reminders for the next one.</p>
+                    </div>
                 </div>
                 <button type="button" class="gallery-btn gallery-btn--next" aria-label="Next features"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
             </div>
@@ -545,6 +690,16 @@
                         <div class="icon-row"><div class="icon ic-plum"><i class="fas fa-file-medical-alt"></i></div><span class="badges"><span class="plan plan--pro">Pro</span><span class="soon soon--next">1.3.2</span></span></div>
                         <h3>Battery health report</h3>
                         <p>Selling your car? Make a report for buyers with your estimated health, what it's based on and how the car's been charged, plus any dealer or OBD tests.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up">
+                        <div class="icon-row"><div class="icon ic-teal"><i class="fas fa-dot-circle"></i></div><span class="badges"><span class="plan plan--pro">Pro</span><span class="soon soon--next">1.3.2</span></span></div>
+                        <h3>Tyres in the Expense Log</h3>
+                        <p>Tyres are a new expense type. Log which corners you fitted and how far they should last, and a plan of your car shows what's left on each, with reminders 30 and 7 days before they're due a check.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon-row"><div class="icon ic-green"><i class="fas fa-sync-alt"></i></div><span class="badges"><span class="plan plan--pro">Pro</span><span class="soon soon--next">1.3.2</span></span></div>
+                        <h3>Tyre rotations</h3>
+                        <p>Log a rotation, front to back, X pattern or side to side, and each tyre's wear follows it to its new corner, with a countdown and reminders before the next one's due.</p>
                     </div>
                     <div class="feature-card" data-aos="fade-up">
                         <div class="icon-row"><div class="icon ic-green"><i class="fas fa-road"></i></div><span class="badges"><span class="plan">Free</span><span class="soon soon--next">1.3.2</span></span></div>
@@ -624,7 +779,7 @@
                 <div class="head-card hc-sky">
                     <div>
                         <div class="head-card-title">Inside the JuiceBox</div>
-                        <p>Real screens from the latest version, on iPhone and Apple Watch.</p>
+                        <p>Real screens from the app on iPhone and Apple Watch, including what's coming in 1.3.2.</p>
                     </div>
                     <div class="head-card-icon" aria-hidden="true"><i class="fas fa-mobile-alt"></i></div>
                 </div>
@@ -633,6 +788,7 @@
                 <div class="gallery-filters" role="group" aria-label="Filter screenshots">
                     <button type="button" class="gallery-filter is-active" data-filter="all" aria-pressed="true">All</button>
                     <button type="button" class="gallery-filter" data-filter="new" aria-pressed="false">New in 1.3</button>
+                    <button type="button" class="gallery-filter" data-filter="next" aria-pressed="false">Coming in 1.3.2</button>
                     <button type="button" class="gallery-filter" data-filter="logging" aria-pressed="false">Logging</button>
                     <button type="button" class="gallery-filter" data-filter="insights" aria-pressed="false">Insights</button>
                     <button type="button" class="gallery-filter" data-filter="costs" aria-pressed="false">Costs</button>
@@ -661,6 +817,10 @@
                         <li class="gallery-item" data-tags="logging">
                             <img src="assets/juicebox/widgets.webp" alt="JuiceBox widgets on the Home Screen" width="392" height="800" loading="lazy" decoding="async">
                             <p class="gallery-caption"><b>Widgets</b>Recent sessions, efficiency and battery health at a glance.</p>
+                        </li>
+                        <li class="gallery-item" data-tags="logging next">
+                            <img src="assets/juicebox/range-widgets.webp" alt="Range widgets with today's range and the days ahead" width="392" height="800" loading="lazy" decoding="async">
+                            <p class="gallery-caption"><b>Range widgets <span class="soon soon--next">1.3.2</span></b>Today's range and the days ahead, at each day's temperature.</p>
                         </li>
                         <li class="gallery-item" data-tags="watch">
                             <img src="assets/juicebox/watch-driveway.webp" alt="The JuiceBox Driveway on Apple Watch" width="392" height="800" loading="lazy" decoding="async">
@@ -694,6 +854,22 @@
                             <img src="assets/juicebox/juicelog.webp" alt="JuiceBox monthly JuiceLog report" width="392" height="800" loading="lazy" decoding="async">
                             <p class="gallery-caption"><b>JuiceLog</b>A report for every month you charge.</p>
                         </li>
+                        <li class="gallery-item" data-tags="insights next">
+                            <img src="assets/juicebox/tempsense.webp" alt="Miles per kWh in each temperature band with TempSense" width="392" height="800" loading="lazy" decoding="async">
+                            <p class="gallery-caption"><b>TempSense <span class="soon soon--next">1.3.2</span></b>Your efficiency from freezing to scorching.</p>
+                        </li>
+                        <li class="gallery-item" data-tags="insights next">
+                            <img src="assets/juicebox/charge-temperature.webp" alt="A session's temperature while it charged" width="392" height="800" loading="lazy" decoding="async">
+                            <p class="gallery-caption"><b>Temperature while charging <span class="soon soon--next">1.3.2</span></b>Each charge shows the weather it charged in.</p>
+                        </li>
+                        <li class="gallery-item" data-tags="insights next">
+                            <img src="assets/juicebox/health-forecast.webp" alt="A forecast of the battery's health over the years" width="392" height="800" loading="lazy" decoding="async">
+                            <p class="gallery-caption"><b>Battery health forecast <span class="soon soon--next">1.3.2</span></b>Roughly when your battery reaches 70%, and why.</p>
+                        </li>
+                        <li class="gallery-item" data-tags="insights next">
+                            <img src="assets/juicebox/health-report.webp" alt="A battery health report for buyers" width="392" height="800" loading="lazy" decoding="async">
+                            <p class="gallery-caption"><b>Battery health report <span class="soon soon--next">1.3.2</span></b>A report for buyers when you sell your car.</p>
+                        </li>
                         <li class="gallery-item" data-tags="costs new">
                             <img src="assets/juicebox/running-costs.webp" alt="A year's running costs for a Polestar 2" width="392" height="800" loading="lazy" decoding="async">
                             <p class="gallery-caption"><b>Running costs <span class="soon">New</span></b>Charging, servicing, tax and finance in one total.</p>
@@ -705,6 +881,10 @@
                         <li class="gallery-item" data-tags="costs new">
                             <img src="assets/juicebox/reimbursement.webp" alt="A reimbursement report for home charging" width="392" height="800" loading="lazy" decoding="async">
                             <p class="gallery-caption"><b>Reimbursement <span class="soon">New</span></b>Claim home charging or mileage from your employer.</p>
+                        </li>
+                        <li class="gallery-item" data-tags="costs next">
+                            <img src="assets/juicebox/warranties.webp" alt="Warranty reminders filled in from the build date" width="392" height="800" loading="lazy" decoding="async">
+                            <p class="gallery-caption"><b>Warranties <span class="soon soon--next">1.3.2</span></b>Filled in for you, with reminders before each ends.</p>
                         </li>
                         <li class="gallery-item" data-tags="import">
                             <img src="assets/juicebox/import.webp" alt="Importing 100 sessions into an existing car" width="392" height="800" loading="lazy" decoding="async">
@@ -725,7 +905,7 @@
         </div>
     </section>
 
-    <!-- TRY IT: working copies of two app screens, run by scripts/juicebox-demo.js -->
+    <!-- TRY IT: working copies of three app screens, run by scripts/juicebox-demo.js -->
     <section class="section" id="try">
         <div class="app-wrap">
             <div class="section-head page-head" data-aos="fade-up">
@@ -734,7 +914,7 @@
                 <div class="head-card hc-green">
                     <div>
                         <div class="head-card-title">Try it here</div>
-                        <p>Two screens from the app, working in your browser, with the same sums as JuiceBox. Nothing you enter leaves this page.</p>
+                        <p>Three screens from the app, working in your browser, with the same sums as JuiceBox. Nothing you enter leaves this page.</p>
                     </div>
                     <div class="head-card-icon" aria-hidden="true"><i class="fas fa-hand-pointer"></i></div>
                 </div>
@@ -984,6 +1164,117 @@
                     </div>
                     <figcaption><b>Log a session</b>Estimates the kWh and cost before you save.</figcaption>
                 </figure>
+
+                <!-- STATS: a year and a half of made-up charging per car, charted the app's way -->
+                <figure class="jd-phone" data-aos="fade-up" data-aos-delay="200">
+                    <div class="jd-device">
+                        <div class="jd-screen" id="jd-stats">
+                            <div class="jd-status" aria-hidden="true"><span>9:41</span><span class="jd-island"></span><span class="jd-status-icons"><i class="fas fa-signal"></i><i class="fas fa-wifi"></i><i class="fas fa-battery-full"></i></span></div>
+                            <div class="jd-scroll">
+                                <img class="jd-watt" src="assets/juicebox/watt/watt.webp" alt="" width="240" height="240" loading="lazy" decoding="async">
+                                <div class="jd-title-row">
+                                    <div class="jd-title">Stats</div>
+                                    <label class="jd-car-pick"><i class="fas fa-car-side" aria-hidden="true"></i>
+                                        <select data-key="car" aria-label="Vehicle">
+                                            <option value="polestar">Polestar 2</option>
+                                            <option value="tesla">Tesla Model 3</option>
+                                            <option value="kia">Kia EV6</option>
+                                            <option value="mg">MG4</option>
+                                        </select>
+                                    </label>
+                                </div>
+
+                                <!-- Overview, as on the app's Stats page -->
+                                <div class="jd-overview">
+                                    <div class="jd-overview-top">
+                                        <div class="jd-overview-name"><b data-out="make">Polestar</b><span data-out="model">2</span></div>
+                                        <span class="jd-overview-car" aria-hidden="true"><i class="fas fa-car-side"></i></span>
+                                        <div class="jd-overview-cells">
+                                            <div><span>Capacity</span><b data-out="capacity"></b></div>
+                                            <div><span>Usable</span><b data-out="usable"></b></div>
+                                            <div><span>Sessions</span><b data-out="sessions"></b></div>
+                                        </div>
+                                    </div>
+                                    <div class="jd-overview-body">
+                                        <div class="jd-tiles">
+                                            <div class="jd-tile"><span>Total cost</span><b data-out="total-cost"></b></div>
+                                            <div class="jd-tile"><span>Energy added</span><b data-out="energy"></b></div>
+                                            <div class="jd-tile"><span>Average cost</span><b data-out="avg-cost"></b></div>
+                                            <div class="jd-tile"><span>Charge time</span><b data-out="charge-time"></b></div>
+                                        </div>
+                                        <div class="jd-pills">
+                                            <span class="jd-pill jd-pill--teal"><i class="fas fa-home"></i> <span data-out="home-count"></span></span>
+                                            <span class="jd-pill jd-pill--ember"><i class="fas fa-charging-station"></i> <span data-out="public-count"></span></span>
+                                            <span class="jd-pill jd-pill--volt"><i class="fas fa-road"></i> <span data-out="miles-gained"></span></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="jd-card">
+                                    <div class="jd-card-title">Key Metrics</div>
+                                    <div class="jd-card-sub">Core charging stats for the current selection</div>
+                                    <div class="jd-metrics">
+                                        <div class="jd-metric" style="--mc: var(--jb-green)"><i class="fas fa-plug"></i><span>Sessions</span><b data-out="sessions"></b></div>
+                                        <div class="jd-metric" style="--mc: #E0A800"><i class="fas fa-bolt"></i><span>Total kWh</span><b data-out="total-kwh"></b></div>
+                                        <div class="jd-metric" style="--mc: var(--jb-green)"><i class="fas fa-pound-sign"></i><span>Average Session</span><b data-out="avg-cost"></b></div>
+                                        <div class="jd-metric" style="--mc: var(--jb-sky)"><i class="fas fa-stopwatch"></i><span>Average Charge Time</span><b data-out="avg-time"></b></div>
+                                        <div class="jd-metric" style="--mc: var(--jb-sky)"><i class="fas fa-stopwatch"></i><span>Total Charge Time</span><b data-out="charge-time"></b></div>
+                                        <div class="jd-metric" style="--mc: var(--jb-teal)"><i class="fas fa-chart-line"></i><span>Miles per kWh <span class="jd-pro">Pro</span></span><b data-out="efficiency"></b></div>
+                                        <div class="jd-metric" style="--mc: #E0A800"><i class="fas fa-road"></i><span>Cost Per Mile <span class="jd-pro">Pro</span></span><b data-out="ppm"></b></div>
+                                        <div class="jd-metric" style="--mc: var(--jb-green)"><i class="fas fa-route"></i><span>Miles Tracked</span><b data-out="miles"></b></div>
+                                    </div>
+                                </div>
+
+                                <!-- Saved on Fuel, with the app's Compare With sliders inline -->
+                                <div class="jd-card">
+                                    <div class="jd-fuel-head">
+                                        <div class="jd-card-title">Saved on Fuel</div>
+                                        <select class="jd-link-select" data-key="fuelPeriod" aria-label="Period">
+                                            <option value="year">This Year</option>
+                                            <option value="all">All Time</option>
+                                        </select>
+                                        <button type="button" class="jd-icon-btn" data-act="compare" aria-expanded="false" aria-label="Compare with"><i class="fas fa-sliders-h"></i></button>
+                                    </div>
+                                    <div class="jd-fuel-tiles">
+                                        <div class="jd-fuel-tile jd-fuel-tile--petrol"><span>vs Petrol</span><b data-out="vs-petrol"></b><span data-out="vs-petrol-note">saved</span></div>
+                                        <div class="jd-fuel-tile jd-fuel-tile--diesel"><span>vs Diesel</span><b data-out="vs-diesel"></b><span data-out="vs-diesel-note">saved</span></div>
+                                    </div>
+                                    <div class="jd-compare" data-out="compare-panel" hidden>
+                                        <div class="jd-slider-head"><span class="jd-mini">Petrol economy</span><b data-out="petrol-mpg"></b></div>
+                                        <input class="jd-range jd-green" type="range" min="20" max="80" step="1" value="42" data-key="petrolMpg" aria-label="Petrol car economy in mpg">
+                                        <div class="jd-slider-head"><span class="jd-mini">Petrol price</span><b data-out="petrol-price"></b></div>
+                                        <input class="jd-range jd-green" type="range" min="100" max="200" step="0.1" value="145.9" data-key="petrolPrice" aria-label="Petrol price in pence per litre">
+                                        <div class="jd-slider-head"><span class="jd-mini">Diesel economy</span><b data-out="diesel-mpg"></b></div>
+                                        <input class="jd-range jd-teal" type="range" min="20" max="80" step="1" value="50" data-key="dieselMpg" aria-label="Diesel car economy in mpg">
+                                        <div class="jd-slider-head"><span class="jd-mini">Diesel price</span><b data-out="diesel-price"></b></div>
+                                        <input class="jd-range jd-teal" type="range" min="100" max="200" step="0.1" value="151.9" data-key="dieselPrice" aria-label="Diesel price in pence per litre">
+                                    </div>
+                                    <p class="jd-fuel-note" data-out="fuel-note" aria-live="polite"></p>
+                                </div>
+
+                                <div class="jd-seg jd-seg--page" role="group" aria-label="Category" data-seg="category">
+                                    <button type="button" data-value="usage" class="is-active" aria-pressed="true">Usage</button>
+                                    <button type="button" data-value="cost" aria-pressed="false">Cost</button>
+                                    <button type="button" data-value="battery" aria-pressed="false">Battery</button>
+                                </div>
+                                <div class="jd-seg jd-seg--page" role="group" aria-label="Range" data-seg="range" data-out="range-picker">
+                                    <button type="button" data-value="3" aria-pressed="false" aria-label="Last 3 months">3M</button>
+                                    <button type="button" data-value="6" aria-pressed="false" aria-label="Last 6 months">6M</button>
+                                    <button type="button" data-value="12" class="is-active" aria-pressed="true" aria-label="Last 12 months">1Y</button>
+                                    <button type="button" data-value="0" aria-pressed="false" aria-label="All time">All</button>
+                                </div>
+
+                                <!-- Filled by the script for the chosen category -->
+                                <div data-out="charts"></div>
+
+                                <p class="jd-fine">Example charging for a made-up driver. Drag across a chart to read it, as you would in the app.</p>
+                            </div>
+                            <div class="jd-tabbar" aria-hidden="true"><i class="fas fa-car"></i><i class="fas fa-chart-line is-active"></i><i class="fas fa-tools"></i><i class="fas fa-cogs"></i></div>
+                        </div>
+                        <img class="jd-frame" src="assets/juicebox/demo-frame.webp" alt="" width="390" height="796" loading="lazy" decoding="async">
+                    </div>
+                    <figcaption><b>Stats</b>Switch cars, ranges and charts, and set your own fuel prices.</figcaption>
+                </figure>
             </div>
         </div>
     </section>
@@ -1059,6 +1350,7 @@
                             <li>More in widgets</li>
                             <li>TempSense &amp; Weather Ahead <span class="soon soon--next">1.3.2</span></li>
                             <li>Battery health forecast &amp; report <span class="soon soon--next">1.3.2</span></li>
+                            <li>Tyre tracking &amp; rotations <span class="soon soon--next">1.3.2</span></li>
                         </ul>
                         <a class="tier-cta" href="https://apps.apple.com/app/id6773839547" target="_blank" rel="noopener">Get JuiceBox Pro</a>
                     </div>
@@ -1112,7 +1404,7 @@
                 </div>
                 <div class="faq-item" data-aos="fade-up">
                     <button class="faq-q">Can JuiceBox track more than just charging costs? <i class="fas fa-chevron-down chev"></i></button>
-                    <div class="faq-a"><div>Yes, <b>from 1.3</b>. Open a vehicle in Driveway and choose Running Costs to add your MOT, service, road tax and insurance dates. You get reminders 30 and 7 days before each is due, and the next one shows on your Driveway card. Services can be set by date, by distance, or whichever comes first. With Pro, the Expense Log also tracks services, repairs, tax, insurance and finance, recording your monthly payments so you can see what your EV really costs to run with charging included.</div></div>
+                    <div class="faq-a"><div>Yes, <b>from 1.3</b>. Open a vehicle in Driveway and choose Running Costs to add your MOT, service, road tax and insurance dates. You get reminders 30 and 7 days before each is due, and the next one shows on your Driveway card. Services can be set by date, by distance, or whichever comes first. With Pro, the Expense Log also tracks services, repairs, tax, insurance and finance, recording your monthly payments so you can see what your EV really costs to run with charging included. <b>From 1.3.2</b>, it tracks tyres too: what's left on each one, when they're due a rotation, and reminders before both.</div></div>
                 </div>
                 <div class="faq-item" data-aos="fade-up">
                     <button class="faq-q">Can I claim my home charging back from my employer? <i class="fas fa-chevron-down chev"></i></button>

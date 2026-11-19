@@ -31,9 +31,12 @@ node_modules/
 *.webm
 *.mov
 *.MOV
-# ...except the JuiceBox promo shown in the app page's hero
+# ...except the JuiceBox promo shown in the app page's hero, and the
+# Ditch the Spreadsheet video in its Why JuiceBox section
 !assets/juicebox/videos/juicebox-promo.mp4
 !assets/juicebox/videos/juicebox-promo-mobile.mp4
+!assets/juicebox/videos/juicebox-ditch-the-spreadsheet.mp4
+!assets/juicebox/videos/juicebox-ditch-the-spreadsheet-mobile.mp4
 
 # Affinity lock files
 *.af~lock~
